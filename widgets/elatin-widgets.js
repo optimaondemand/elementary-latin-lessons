@@ -542,8 +542,9 @@
      SECTION 7 — WIDGET: TALKING GUIDE / MAGISTER CAESAR (.elw-caesar)
      data-lines : ["Salvē, young scholar!","Today we meet…", ...]
      data-name  : optional guide name (default "Magister Caesar")
-     ▶ Play reads the current line with window.speechSynthesis and
-     cycles to the next line. Graceful fallback when speech is absent.
+     Text-only guide (no text-to-speech: browser TTS mispronounces Latin;
+     recorded voiceover is the production audio path). Multi-line guides
+     get a silent "Next" control to read through the dialogue.
      ============================================================== */
 
   var CAESAR_SVG =
