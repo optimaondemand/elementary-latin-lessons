@@ -590,50 +590,28 @@
     wrap.appendChild(figure); wrap.appendChild(speech);
     root.appendChild(wrap);
 
-    var btnRow = make("div", "elw-btn-row");
-    var playBtn  = make("button", "elw-btn-primary", "▶ Play");
-    var resetBtn = make("button", "elw-btn-reset", "↺ Reset");
-    btnRow.appendChild(playBtn); btnRow.appendChild(resetBtn);
-    root.appendChild(btnRow);
-
-    root.appendChild(make("div", "elw-subnote",
-      "Prototype voice uses the browser's built-in speech. In production, the guide uses recorded voiceover for warmth and correct Latin pronunciation."));
-
+    // Text-only guide. Browser text-to-speech is intentionally NOT used:
+    // there is no Latin TTS voice, so synthesized speech mispronounces Latin
+    // (e.g. "Salvē"). Recorded human voiceover is the production audio path.
+    // If the guide has multiple lines, offer a silent Next/Start-over control
+    // so students can read through the dialogue.
     var idx = 0;
-    var supported = ("speechSynthesis" in window) && ("SpeechSynthesisUtterance" in window);
+    if (lines.length > 1) {
+      var btnRow = make("div", "elw-btn-row");
+      var nextBtn  = make("button", "elw-btn-primary", "Next ▶");
+      var resetBtn = make("button", "elw-btn-reset", "↺ Start over");
+      btnRow.appendChild(nextBtn); btnRow.appendChild(resetBtn);
+      root.appendChild(btnRow);
 
-    if (!supported) {
-      playBtn.disabled = true;
-      playBtn.style.opacity = ".6";
-      playBtn.style.cursor = "not-allowed";
-      playBtn.title = "Speech is not available in this browser — read the text above.";
-      playBtn.textContent = "▶ Play (speech unavailable)";
+      nextBtn.addEventListener("click", function () {
+        idx = (idx + 1) % lines.length;
+        speech.textContent = lines[idx];
+      });
+      resetBtn.addEventListener("click", function () {
+        idx = 0;
+        speech.textContent = lines[0];
+      });
     }
-
-    playBtn.addEventListener("click", function () {
-      if (!supported) return;
-      var text = lines[idx];
-      speech.textContent = text;
-      try {
-        window.speechSynthesis.cancel();
-        var u = new SpeechSynthesisUtterance(text);
-        u.rate = 0.95; u.pitch = 1.0;
-        speech.classList.add("elw-speaking");
-        u.onend = function () { speech.classList.remove("elw-speaking"); };
-        u.onerror = function () { speech.classList.remove("elw-speaking"); };
-        window.speechSynthesis.speak(u);
-      } catch (err) {
-        speech.classList.remove("elw-speaking");
-      }
-      idx = (idx + 1) % lines.length; // cycle for next press
-    });
-
-    resetBtn.addEventListener("click", function () {
-      if (supported) { try { window.speechSynthesis.cancel(); } catch (e) {} }
-      speech.classList.remove("elw-speaking");
-      idx = 0;
-      speech.textContent = lines[0];
-    });
   }
 
   /* ==============================================================
