@@ -320,6 +320,156 @@
     outline-offset: 2px;
   }
 
+  /* ================================================
+     .elw-selfcheck — retrieval-practice self-check
+     (ungraded, immediate feedback, click + touch)
+     ================================================ */
+  .elw-selfcheck {
+    --sc-navy: #0E1C42;
+    --sc-cyan: #55C8E8;
+    --sc-gold: #C7922C;
+    --sc-teal: #2f9e8f;
+    margin-top: 22px;
+    padding: 18px 18px 20px;
+    background: #f4f9fc;
+    border: 2px solid #d7e3f0;
+    border-top: 5px solid #C7922C;
+    border-radius: 16px;
+  }
+  .elw-selfcheck__head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+  .elw-selfcheck__title {
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: var(--sc-navy);
+    margin: 0;
+  }
+  .elw-selfcheck__badge {
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--sc-teal);
+    padding: 3px 9px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .elw-selfcheck__note {
+    font-size: .9rem;
+    color: #52607d;
+    margin: 2px 0 16px;
+    font-style: italic;
+  }
+  .elw-selfcheck__q {
+    background: #fff;
+    border: 2px solid #e2ebf4;
+    border-radius: 14px;
+    padding: 14px 16px 16px;
+    margin-bottom: 14px;
+  }
+  .elw-selfcheck__q:last-of-type { margin-bottom: 16px; }
+  .elw-selfcheck__prompt {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--sc-navy);
+    margin: 0 0 12px;
+  }
+  .elw-selfcheck__prompt .qnum {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    margin-right: 8px;
+    font-size: .82rem;
+    color: #fff;
+    background: var(--sc-navy);
+    border-radius: 999px;
+    vertical-align: middle;
+  }
+  .elw-selfcheck__opts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .elw-selfcheck__opt {
+    flex: 1 1 auto;
+    min-width: 120px;
+    min-height: 56px;
+    padding: 12px 18px;
+    font-family: inherit;
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--sc-navy);
+    background: #fff;
+    border: 2px solid #d7e3f0;
+    border-radius: 14px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease, background .15s ease, color .15s ease;
+  }
+  .elw-selfcheck__opt:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(14,28,66,.12);
+    border-color: var(--sc-cyan);
+  }
+  .elw-selfcheck__opt:focus-visible {
+    outline: 3px solid var(--sc-gold);
+    outline-offset: 2px;
+  }
+  .elw-selfcheck__opt.is-correct {
+    background: #e6f6ec;
+    border-color: #2e9e5b;
+    color: #1c6b3a;
+    transform: none;
+    box-shadow: none;
+  }
+  .elw-selfcheck__opt.is-wrong {
+    background: #fdf3e0;
+    border-color: #d99a2b;
+    color: #8a5f14;
+    animation: sc-nudge .3s ease;
+  }
+  @keyframes sc-nudge {
+    0%,100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+  }
+  .elw-selfcheck__fb {
+    margin: 12px 0 0;
+    font-size: .96rem;
+    font-weight: 700;
+    min-height: 1.2em;
+  }
+  .elw-selfcheck__fb.is-correct { color: #1c6b3a; }
+  .elw-selfcheck__fb.is-wrong { color: #8a5f14; }
+  .elw-selfcheck__reset {
+    font-family: inherit;
+    font-size: .85rem;
+    font-weight: 700;
+    color: var(--sc-navy);
+    background: #eef3fa;
+    border: 2px solid #d7e3f0;
+    border-radius: 999px;
+    padding: 8px 18px;
+    min-height: 44px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    transition: background .15s ease, border-color .15s ease;
+  }
+  .elw-selfcheck__reset:hover { background: #dfeaf5; border-color: var(--sc-cyan); }
+  .elw-selfcheck__reset:focus-visible {
+    outline: 3px solid var(--sc-gold);
+    outline-offset: 2px;
+  }
+
   /* ---- bottom note ---- */
   .foot-note {
     margin-top: 30px;
@@ -447,6 +597,9 @@
           </div>
         </div>
       </div>
+
+      <!-- retrieval-practice self-check (ungraded) -->
+      <div class="elw-selfcheck" data-questions='[{"prompt":"About how many people could the Colosseum hold?","options":[{"text":"500"},{"text":"5,000"},{"text":"50,000","correct":true}]},{"prompt":"What was the vēlārium?","options":[{"text":"a sword"},{"text":"a giant sun-shade","correct":true},{"text":"a boat"}]}]'></div>
     </section>
 
 
@@ -465,6 +618,9 @@
 
       <!-- reusable data-driven widget; can later join the shared library as .elw-explore -->
       <div class="elw-explore" data-title="Meet the Gods of Rome" data-cards='[{"emoji":"⚡","name":"Iuppiter","gloss":"Jupiter","fact":"King of all the gods and god of the sky. Romans believed his thunderbolt was a sign of his power."},{"emoji":"🦚","name":"Iūnō","gloss":"Juno","fact":"Queen of the gods and protector of families. The peacock was her sacred bird."},{"emoji":"🔱","name":"Neptūnus","gloss":"Neptune","fact":"God of the sea. Sailors prayed to him for calm water, and his symbol was the three-pronged trident."}]'></div>
+
+      <!-- retrieval-practice self-check (ungraded) -->
+      <div class="elw-selfcheck" data-questions='[{"prompt":"Which god ruled the sea?","options":[{"text":"Iuppiter"},{"text":"Neptūnus","correct":true},{"text":"Iūnō"}]},{"prompt":"Whose sacred bird was the peacock?","options":[{"text":"Iūnō","correct":true},{"text":"Neptūnus"},{"text":"Iuppiter"}]}]'></div>
     </section>
 
 
@@ -573,10 +729,130 @@
     root.appendChild(reset);
   }
 
+  function buildSelfCheck(root) {
+    var questions;
+    try {
+      questions = JSON.parse(root.getAttribute("data-questions") || "[]");
+    } catch (e) {
+      questions = [];
+    }
+    if (!Array.isArray(questions)) questions = [];
+
+    var YES = ["¡Sí! Yes — that's right! 🎉", "¡Sí! You remembered it! ⭐", "¡Sí! Nice work! 👍"];
+
+    var head = document.createElement("div");
+    head.className = "elw-selfcheck__head";
+    var h = document.createElement("h3");
+    h.className = "elw-selfcheck__title";
+    h.textContent = "Show what you remember";
+    var badge = document.createElement("span");
+    badge.className = "elw-selfcheck__badge";
+    badge.textContent = "Just practice";
+    head.appendChild(h);
+    head.appendChild(badge);
+
+    var note = document.createElement("p");
+    note.className = "elw-selfcheck__note";
+    note.textContent = "Practice only — you'll show these again on the module Quick Check.";
+
+    root.appendChild(head);
+    root.appendChild(note);
+
+    var resetFns = [];
+
+    questions.forEach(function (q, qi) {
+      var opts = Array.isArray(q.options) ? q.options : [];
+
+      var qBox = document.createElement("div");
+      qBox.className = "elw-selfcheck__q";
+
+      var prompt = document.createElement("p");
+      prompt.className = "elw-selfcheck__prompt";
+      var qnum = document.createElement("span");
+      qnum.className = "qnum";
+      qnum.setAttribute("aria-hidden", "true");
+      qnum.textContent = String(qi + 1);
+      prompt.appendChild(qnum);
+      prompt.appendChild(document.createTextNode(q.prompt || ""));
+
+      var promptId = "sc-q-" + Math.random().toString(36).slice(2, 8);
+      prompt.id = promptId;
+
+      var optsWrap = document.createElement("div");
+      optsWrap.className = "elw-selfcheck__opts";
+      optsWrap.setAttribute("role", "group");
+      optsWrap.setAttribute("aria-labelledby", promptId);
+
+      var fb = document.createElement("p");
+      fb.className = "elw-selfcheck__fb";
+      fb.setAttribute("role", "status");
+      fb.setAttribute("aria-live", "polite");
+
+      var btns = [];
+
+      opts.forEach(function (o) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "elw-selfcheck__opt";
+        b.textContent = o.text || "";
+        b.setAttribute("aria-pressed", "false");
+
+        b.addEventListener("click", function () {
+          if (b.classList.contains("is-correct")) return; // already solved
+          if (o.correct) {
+            // clear any lingering wrong marks
+            btns.forEach(function (x) { x.classList.remove("is-wrong"); });
+            b.classList.add("is-correct");
+            b.setAttribute("aria-pressed", "true");
+            fb.textContent = YES[qi % YES.length];
+            fb.className = "elw-selfcheck__fb is-correct";
+          } else {
+            b.classList.remove("is-wrong");
+            // reflow so the nudge animation can replay
+            void b.offsetWidth;
+            b.classList.add("is-wrong");
+            fb.textContent = "Not quite — try again! 🙂";
+            fb.className = "elw-selfcheck__fb is-wrong";
+          }
+        });
+
+        btns.push(b);
+        optsWrap.appendChild(b);
+      });
+
+      qBox.appendChild(prompt);
+      qBox.appendChild(optsWrap);
+      qBox.appendChild(fb);
+      root.appendChild(qBox);
+
+      resetFns.push(function () {
+        btns.forEach(function (x) {
+          x.classList.remove("is-correct", "is-wrong");
+          x.setAttribute("aria-pressed", "false");
+        });
+        fb.textContent = "";
+        fb.className = "elw-selfcheck__fb";
+      });
+    });
+
+    var reset = document.createElement("button");
+    reset.type = "button";
+    reset.className = "elw-selfcheck__reset";
+    reset.textContent = "↺ Reset";
+    reset.addEventListener("click", function () {
+      resetFns.forEach(function (fn) { fn(); });
+    });
+    root.appendChild(reset);
+  }
+
   function init() {
     var nodes = document.querySelectorAll(".elw-explore");
     for (var i = 0; i < nodes.length; i++) {
       buildExplore(nodes[i]);
+    }
+    var checks = document.querySelectorAll(".elw-selfcheck");
+    for (var j = 0; j < checks.length; j++) {
+      buildSelfCheck(checks[j]);
     }
   }
 
