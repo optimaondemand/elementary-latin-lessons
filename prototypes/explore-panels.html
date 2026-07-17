@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elementary Latin — 'Explore' Panels (video replacements)</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", "Segoe UI Web", Frutiger, "Helvetica Neue", Arial, sans-serif;
+    background: #eef3fa;
+    color: #1c2540;
+    line-height: 1.55;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* ---- Page header ---- */
+  .page-head {
+    background: #0E1C42;
+    border-bottom: 6px solid #55C8E8;
+    color: #fff;
+    padding: 22px 20px 26px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .page-head img.owl {
+    width: 64px; height: 64px;
+    flex: 0 0 auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,.35));
+  }
+  .page-head .titles { min-width: 220px; }
+  .page-head h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: .2px;
+  }
+  .page-head .sub {
+    margin: 4px 0 0;
+    font-size: .95rem;
+    color: #b9d9ea;
+  }
+  .page-head .gold-rule {
+    height: 3px;
+    width: 54px;
+    background: #C7922C;
+    border-radius: 3px;
+    margin-top: 8px;
+  }
+
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 26px 18px 60px;
+  }
+
+  /* ---- Format label banners ---- */
+  .format-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 34px 0 16px;
+  }
+  .format-label:first-child { margin-top: 6px; }
+  .format-label .chip {
+    background: #C7922C;
+    color: #fff;
+    font-weight: 700;
+    font-size: .78rem;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+  .format-label .desc {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0E1C42;
+  }
+
+  /* ---- Generic card ---- */
+  .card {
+    background: #fff;
+    border: 2px solid #d7e3f0;
+    border-top: 5px solid #55C8E8;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(14,28,66,.08);
+    padding: 20px 22px 24px;
+    margin-bottom: 14px;
+  }
+  .card-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+  .card-head .lat {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0E1C42;
+  }
+  .card-head .mod-tag {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: #fff;
+    background: #0E1C42;
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+  .card .gloss {
+    display: block;
+    font-size: .98rem;
+    color: #52607d;
+    margin-bottom: 14px;
+    font-style: italic;
+  }
+
+  /* ---- FORMAT A layout ---- */
+  .explainer {
+    display: grid;
+    grid-template-columns: minmax(220px, 320px) 1fr;
+    gap: 22px;
+    align-items: start;
+  }
+  @media (max-width: 640px) {
+    .explainer { grid-template-columns: 1fr; }
+  }
+  .frame {
+    background: #f6f9fc;
+    border: 2px solid #e2ebf4;
+    border-radius: 14px;
+    padding: 10px;
+  }
+  .frame svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  .explainer-body .intro {
+    font-size: 1.05rem;
+    color: #23304e;
+    margin: 0 0 14px;
+  }
+  .fact-cards {
+    display: grid;
+    gap: 12px;
+  }
+  .fact {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: #fbf6ec;
+    border: 2px solid #ecdcbb;
+    border-left: 6px solid #C7922C;
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+  .fact .fi {
+    font-size: 1.5rem;
+    line-height: 1;
+    flex: 0 0 auto;
+    margin-top: 2px;
+  }
+  .fact .ft { }
+  .fact .ft strong {
+    display: block;
+    color: #8a5f14;
+    font-size: .78rem;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .fact .ft span {
+    font-size: .98rem;
+    color: #2a3552;
+  }
+
+  /* ================================================
+     .elw-explore  — reusable tap-to-reveal widget
+     ================================================ */
+  .elw-explore {
+    --elw-navy: #0E1C42;
+    --elw-cyan: #55C8E8;
+    --elw-gold: #C7922C;
+  }
+  .elw-explore__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--elw-navy);
+    margin: 0 0 4px;
+  }
+  .elw-explore__hint {
+    font-size: .9rem;
+    color: #6a7794;
+    margin: 0 0 16px;
+  }
+  .elw-explore__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  .elw-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+    min-height: 148px;
+    padding: 18px 14px;
+    background: #fff;
+    border: 2px solid #d7e3f0;
+    border-radius: 16px;
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    overflow: hidden;
+  }
+  .elw-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(14,28,66,.14);
+    border-color: var(--elw-cyan);
+  }
+  .elw-card:focus-visible {
+    outline: 3px solid var(--elw-gold);
+    outline-offset: 2px;
+  }
+  .elw-card__emoji {
+    font-size: 2.6rem;
+    line-height: 1;
+    transition: transform .2s ease;
+  }
+  .elw-card:hover .elw-card__emoji { transform: scale(1.08); }
+  .elw-card__name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--elw-navy);
+  }
+  .elw-card__gloss {
+    font-size: .85rem;
+    color: #6a7794;
+  }
+  .elw-card__tap {
+    margin-top: auto;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    color: var(--elw-gold);
+    padding-top: 8px;
+    transition: opacity .15s ease;
+  }
+  /* Revealed state */
+  .elw-card__fact {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px 16px 14px;
+    background: linear-gradient(160deg, #0E1C42 0%, #1a3163 100%);
+    color: #fff;
+    font-size: .95rem;
+    line-height: 1.4;
+    border-radius: 14px;
+    opacity: 0;
+    transform: scale(.94);
+    pointer-events: none;
+    transition: opacity .22s ease, transform .22s ease;
+  }
+  .elw-card__fact .elw-card__factname {
+    display: block;
+    color: var(--elw-cyan);
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+  .elw-card[aria-expanded="true"] {
+    border-color: var(--elw-gold);
+  }
+  .elw-card[aria-expanded="true"] .elw-card__fact {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .elw-card[aria-expanded="true"] .elw-card__emoji,
+  .elw-card[aria-expanded="true"] .elw-card__name,
+  .elw-card[aria-expanded="true"] .elw-card__gloss,
+  .elw-card[aria-expanded="true"] .elw-card__tap {
+    opacity: 0;
+    transition: opacity .12s ease;
+  }
+  .elw-explore__reset {
+    font-family: inherit;
+    font-size: .85rem;
+    font-weight: 700;
+    color: var(--elw-navy);
+    background: #eef3fa;
+    border: 2px solid #d7e3f0;
+    border-radius: 999px;
+    padding: 8px 18px;
+    cursor: pointer;
+    transition: background .15s ease, border-color .15s ease;
+  }
+  .elw-explore__reset:hover { background: #dfeaf5; border-color: var(--elw-cyan); }
+  .elw-explore__reset:focus-visible {
+    outline: 3px solid var(--elw-gold);
+    outline-offset: 2px;
+  }
+
+  /* ---- bottom note ---- */
+  .foot-note {
+    margin-top: 30px;
+    background: #0E1C42;
+    color: #dbe9f4;
+    border-left: 6px solid #55C8E8;
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 1rem;
+  }
+  .foot-note strong { color: #fff; }
+</style>
+</head>
+<body>
+
+  <header class="page-head">
+    <img class="owl" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy Online owl logo">
+    <div class="titles">
+      <h1>Elementary Latin — 'Explore' Panels</h1>
+      <p class="sub">Video replacements · Grades K–5 · Optima Academy Online</p>
+      <div class="gold-rule"></div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ FORMAT A ============ -->
+    <div class="format-label">
+      <span class="chip">Format A</span>
+      <span class="desc">Illustrated Explainer <em style="font-weight:400;color:#6a7794;font-style:italic;">— used where we have scene art</em></span>
+    </div>
+
+    <section class="card">
+      <div class="card-head">
+        <span class="lat">Colossēum</span>
+        <span class="mod-tag">Q2 · M14</span>
+      </div>
+      <span class="gloss">the Colosseum — the great amphitheater of Rome</span>
+
+      <div class="explainer">
+        <div class="frame">
+          <!-- Colosseum SVG copied verbatim from FINAL-scene-illustrations.html (data-illus="colosseum") -->
+          <div class="illus" data-illus="colosseum">
+          <svg viewBox="0 0 260 230" role="img" aria-label="The Roman Colosseum, an oval tiered amphitheater with three rows of arches under a sunny sky">
+            <defs>
+              <linearGradient id="coSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#cfeaf6"/><stop offset="1" stop-color="#fbe9cf"/>
+              </linearGradient>
+              <linearGradient id="coStone" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f2ddb2"/><stop offset="1" stop-color="#d7b072"/>
+              </linearGradient>
+              <linearGradient id="coStoneWarm" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e7c48a"/><stop offset="1" stop-color="#c6934f"/>
+              </linearGradient>
+              <radialGradient id="coArena" cx="0.5" cy="0.35" r="0.8">
+                <stop offset="0" stop-color="#e9d3a4"/><stop offset="1" stop-color="#c39a5e"/>
+              </radialGradient>
+            </defs>
+            <rect x="0" y="0" width="260" height="230" rx="16" fill="url(#coSky)"/>
+            <circle cx="212" cy="42" r="19" fill="#f4c86a" opacity=".9"/>
+            <!-- rolling hills -->
+            <path d="M0 158 q46 -30 96 -10 q50 18 96 -6 q40 -20 78 2 V230 H0 Z" fill="#9fb35a" opacity=".65"/>
+            <path d="M0 176 q56 -22 116 -4 q60 16 144 -8 V230 H0 Z" fill="#8aa04a"/>
+            <!-- amphitheater group -->
+            <g stroke-linejoin="round">
+              <!-- far rim (back of the oval) -->
+              <ellipse cx="130" cy="96" rx="98" ry="30" fill="url(#coStoneWarm)" stroke="#b0863f" stroke-width="2"/>
+              <!-- inner arena bowl -->
+              <ellipse cx="130" cy="98" rx="70" ry="19" fill="url(#coArena)" stroke="#b0863f" stroke-width="1.5"/>
+              <ellipse cx="130" cy="99" rx="52" ry="12" fill="#b98a4a" opacity=".55"/>
+              <!-- outer front wall body -->
+              <path d="M32 96
+                       a98 30 0 0 0 196 0
+                       L228 150
+                       a98 30 0 0 1 -196 0 Z"
+                    fill="url(#coStone)" stroke="#b0863f" stroke-width="2"/>
+              <!-- shadow on right of the drum -->
+              <path d="M228 96 L228 150 a98 30 0 0 1 -40 21 L188 117 a98 30 0 0 0 40 -21 Z" fill="#0E1C42" opacity=".08"/>
+            </g>
+            <!-- TIER 1 (upper) arches -->
+            <g fill="#b98a4a" stroke="#8f6a2f" stroke-width="1">
+              <path d="M46 106 a6 8 0 0 1 12 0 l0 12 l-12 0 Z"/>
+              <path d="M69 111 a6 8 0 0 1 12 0 l0 12 l-12 0 Z"/>
+              <path d="M93 114 a6 8 0 0 1 12 0 l0 13 l-12 0 Z"/>
+              <path d="M118 115 a6 8 0 0 1 12 0 l0 13 l-12 0 Z"/>
+              <path d="M143 114 a6 8 0 0 1 12 0 l0 13 l-12 0 Z"/>
+              <path d="M167 111 a6 8 0 0 1 12 0 l0 12 l-12 0 Z"/>
+              <path d="M190 106 a6 8 0 0 1 12 0 l0 12 l-12 0 Z"/>
+            </g>
+            <!-- pilaster caps between tiers -->
+            <g fill="#e7cf9d" opacity=".8">
+              <rect x="44" y="128" width="160" height="3"/>
+            </g>
+            <!-- TIER 2 (lower) arches -->
+            <g fill="#9c7238" stroke="#7a5626" stroke-width="1">
+              <path d="M50 132 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+              <path d="M74 136 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+              <path d="M99 138 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+              <path d="M124 139 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+              <path d="M149 138 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+              <path d="M173 136 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+              <path d="M197 132 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+            </g>
+            <!-- ground shadow -->
+            <ellipse cx="130" cy="176" rx="104" ry="12" fill="#0E1C42" opacity=".06"/>
+          </svg>
+          </div>
+        </div>
+
+        <div class="explainer-body">
+          <p class="intro">The Colosseum was the biggest arena in all of Rome — a giant oval of stone arches where whole crowds came to watch shows together. Roman builders were amazing engineers, and even today people study how they made it!</p>
+          <div class="fact-cards">
+            <div class="fact">
+              <span class="fi" aria-hidden="true">👥</span>
+              <span class="ft"><strong>Did you know?</strong><span>About 50,000 people could sit inside — as many as fill a big sports stadium today.</span></span>
+            </div>
+            <div class="fact">
+              <span class="fi" aria-hidden="true">⛵</span>
+              <span class="ft"><strong>Did you know?</strong><span>A huge cloth sun-shade called the <em>vēlārium</em> could be stretched over the top to keep the crowd cool in the sun. Sailors helped pull the ropes!</span></span>
+            </div>
+            <div class="fact">
+              <span class="fi" aria-hidden="true">⚙️</span>
+              <span class="ft"><strong>Did you know?</strong><span>Under the sandy floor were secret tunnels and wooden lifts that could raise scenery and animals up into the arena, like a trap door.</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============ FORMAT B ============ -->
+    <div class="format-label">
+      <span class="chip">Format B</span>
+      <span class="desc">Explore <em style="font-weight:400;color:#6a7794;font-style:italic;">— tap to discover; used where there's no scene art</em></span>
+    </div>
+
+    <section class="card">
+      <div class="card-head">
+        <span class="lat">Deī Rōmae</span>
+        <span class="mod-tag">Q2 · M08</span>
+      </div>
+      <span class="gloss">the Gods of Rome — the great gods the Romans honored</span>
+
+      <!-- reusable data-driven widget; can later join the shared library as .elw-explore -->
+      <div class="elw-explore" data-title="Meet the Gods of Rome" data-cards='[{"emoji":"⚡","name":"Iuppiter","gloss":"Jupiter","fact":"King of all the gods and god of the sky. Romans believed his thunderbolt was a sign of his power."},{"emoji":"🦚","name":"Iūnō","gloss":"Juno","fact":"Queen of the gods and protector of families. The peacock was her sacred bird."},{"emoji":"🔱","name":"Neptūnus","gloss":"Neptune","fact":"God of the sea. Sailors prayed to him for calm water, and his symbol was the three-pronged trident."}]'></div>
+    </section>
+
+
+    <!-- ============ bottom note ============ -->
+    <div class="foot-note">
+      <strong>Both are self-contained</strong> — no facilitator video sourcing required. Video remains an optional add-on.
+    </div>
+
+  </main>
+
+<script>
+(function () {
+  "use strict";
+
+  function buildExplore(root) {
+    var title = root.getAttribute("data-title") || "Explore";
+    var cards;
+    try {
+      cards = JSON.parse(root.getAttribute("data-cards") || "[]");
+    } catch (e) {
+      cards = [];
+    }
+    if (!Array.isArray(cards)) cards = [];
+
+    // Build DOM
+    var h = document.createElement("h3");
+    h.className = "elw-explore__title";
+    h.textContent = title;
+
+    var hint = document.createElement("p");
+    hint.className = "elw-explore__hint";
+    hint.textContent = "Tap a card to discover a fact. Tap again to close.";
+
+    var grid = document.createElement("div");
+    grid.className = "elw-explore__grid";
+
+    cards.forEach(function (c, i) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "elw-card";
+      btn.setAttribute("aria-expanded", "false");
+
+      var name = c.name || "";
+      var gloss = c.gloss || "";
+      var emoji = c.emoji || "";
+      var fact = c.fact || "";
+
+      btn.setAttribute("aria-label", name + (gloss ? " (" + gloss + ")" : "") + ". Tap to reveal a fact.");
+
+      var emojiEl = document.createElement("span");
+      emojiEl.className = "elw-card__emoji";
+      emojiEl.setAttribute("aria-hidden", "true");
+      emojiEl.textContent = emoji;
+
+      var nameEl = document.createElement("span");
+      nameEl.className = "elw-card__name";
+      nameEl.textContent = name;
+
+      var glossEl = document.createElement("span");
+      glossEl.className = "elw-card__gloss";
+      glossEl.textContent = gloss;
+
+      var tapEl = document.createElement("span");
+      tapEl.className = "elw-card__tap";
+      tapEl.textContent = "Tap to explore";
+
+      var factEl = document.createElement("span");
+      factEl.className = "elw-card__fact";
+      var factName = document.createElement("span");
+      factName.className = "elw-card__factname";
+      factName.textContent = name + (gloss ? " · " + gloss : "");
+      var factText = document.createElement("span");
+      factText.textContent = fact;
+      factEl.appendChild(factName);
+      factEl.appendChild(factText);
+
+      btn.appendChild(emojiEl);
+      btn.appendChild(nameEl);
+      btn.appendChild(glossEl);
+      btn.appendChild(tapEl);
+      btn.appendChild(factEl);
+
+      // Pointer events cover mouse + touch + pen with a single handler.
+      btn.addEventListener("click", function () {
+        var open = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", open ? "false" : "true");
+      });
+
+      grid.appendChild(btn);
+    });
+
+    var reset = document.createElement("button");
+    reset.type = "button";
+    reset.className = "elw-explore__reset";
+    reset.textContent = "↺ Reset";
+    reset.addEventListener("click", function () {
+      var open = grid.querySelectorAll('.elw-card[aria-expanded="true"]');
+      for (var i = 0; i < open.length; i++) {
+        open[i].setAttribute("aria-expanded", "false");
+      }
+    });
+
+    root.appendChild(h);
+    root.appendChild(hint);
+    root.appendChild(grid);
+    root.appendChild(reset);
+  }
+
+  function init() {
+    var nodes = document.querySelectorAll(".elw-explore");
+    for (var i = 0; i < nodes.length; i++) {
+      buildExplore(nodes[i]);
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>
