@@ -616,17 +616,221 @@
   }
 
   /* ==============================================================
-     SECTION 8 — SCANNER / BOOTSTRAP
+     SECTION 8 — WIDGET: EXPLORE / TAP-TO-REVEAL  (.elw-explore)
+     data-title : string (heading)
+     data-cards : [{ "emoji":"⚡", "name":"Iuppiter", "gloss":"Jupiter",
+                     "fact":"Two-sentence age-appropriate fact." }, ...]
+     Renders a grid of tappable cards (emoji + Latin name + English
+     gloss). Tap a card to flip it and reveal its fact; tap again to
+     close. Real <button>s with aria-expanded → works on mouse click
+     AND touch, and is keyboard/screen-reader accessible. Reset closes
+     every open card at once.
+     ============================================================== */
+
+  function buildExplore(root, index) {
+    var title = root.getAttribute("data-title") || "Explore";
+    var cards = readJSON(root, "data-cards", []);
+    if (!Array.isArray(cards)) cards = [];
+
+    var h = make("h3", "elw-explore__title");
+    h.textContent = title;
+
+    var hint = make("p", "elw-explore__hint");
+    hint.textContent = "Tap a card to discover a fact. Tap again to close.";
+
+    var grid = make("div", "elw-explore__grid");
+
+    cards.forEach(function (c) {
+      var name  = c.name  || "";
+      var gloss = c.gloss || "";
+      var emoji = c.emoji || "";
+      var fact  = c.fact  || "";
+
+      var btn = make("button", "elw-card");
+      btn.type = "button";
+      btn.setAttribute("aria-expanded", "false");
+      btn.setAttribute("aria-label",
+        name + (gloss ? " (" + gloss + ")" : "") + ". Tap to reveal a fact.");
+
+      var emojiEl = make("span", "elw-card__emoji");
+      emojiEl.setAttribute("aria-hidden", "true");
+      emojiEl.textContent = emoji;
+
+      var nameEl = make("span", "elw-card__name");
+      nameEl.textContent = name;
+
+      var glossEl = make("span", "elw-card__gloss");
+      glossEl.textContent = gloss;
+
+      var tapEl = make("span", "elw-card__tap");
+      tapEl.textContent = "Tap to explore";
+
+      var factEl = make("span", "elw-card__fact");
+      var factName = make("span", "elw-card__factname");
+      factName.textContent = name + (gloss ? " · " + gloss : "");
+      var factText = make("span");
+      factText.textContent = fact;
+      factEl.appendChild(factName);
+      factEl.appendChild(factText);
+
+      btn.appendChild(emojiEl);
+      btn.appendChild(nameEl);
+      btn.appendChild(glossEl);
+      btn.appendChild(tapEl);
+      btn.appendChild(factEl);
+
+      // A real <button> fires "click" for mouse, touch and keyboard alike.
+      btn.addEventListener("click", function () {
+        var open = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", open ? "false" : "true");
+      });
+
+      grid.appendChild(btn);
+    });
+
+    var reset = make("button", "elw-explore__reset", "↺ Reset");
+    reset.type = "button";
+    reset.addEventListener("click", function () {
+      var open = grid.querySelectorAll('.elw-card[aria-expanded="true"]');
+      for (var i = 0; i < open.length; i++) {
+        open[i].setAttribute("aria-expanded", "false");
+      }
+    });
+
+    root.appendChild(h);
+    root.appendChild(hint);
+    root.appendChild(grid);
+    root.appendChild(reset);
+  }
+
+  /* ==============================================================
+     SECTION 9 — WIDGET: SELF-CHECK / RETRIEVAL PRACTICE (.elw-selfcheck)
+     data-title     : string (heading; default "Show what you remember")
+     data-questions : [{ "q":"Which god ruled the sea?",
+                         "options":["Iuppiter","Neptūnus","Iūnō"],
+                         "answer":1 }, ...]
+                       answer = 0-based index of the correct option.
+     Ungraded retrieval practice. Each question renders as large,
+     tappable option buttons. Correct → green + a short "Yes!"; wrong →
+     gentle amber "Not quite — try again!" with retry allowed. Real
+     <button>s + aria-pressed + an aria-live status per question →
+     works on mouse click AND touch, and is screen-reader friendly.
+     Per-widget Reset clears every question.
+     ============================================================== */
+
+  function buildSelfCheck(root, index) {
+    var title = root.getAttribute("data-title") || "Show what you remember";
+    var questions = readJSON(root, "data-questions", []);
+    if (!Array.isArray(questions)) questions = [];
+
+    var YES = ["Yes! That's right! 🎉", "Yes! You remembered it! ⭐", "Yes! Nice work! 👍"];
+
+    var head = make("div", "elw-selfcheck__head");
+    var h = make("h3", "elw-selfcheck__title");
+    h.textContent = title;
+    var badge = make("span", "elw-selfcheck__badge");
+    badge.textContent = "Just practice";
+    head.appendChild(h);
+    head.appendChild(badge);
+
+    var note = make("p", "elw-selfcheck__note");
+    note.textContent = "Practice only — you'll see these again on the module Quick Check.";
+
+    root.appendChild(head);
+    root.appendChild(note);
+
+    var resetFns = [];
+
+    questions.forEach(function (q, qi) {
+      var opts = Array.isArray(q.options) ? q.options : [];
+      var answerIdx = (typeof q.answer === "number") ? q.answer : -1;
+
+      var qBox = make("div", "elw-selfcheck__q");
+
+      var prompt = make("p", "elw-selfcheck__prompt");
+      var qnum = make("span", "qnum");
+      qnum.setAttribute("aria-hidden", "true");
+      qnum.textContent = String(qi + 1);
+      prompt.appendChild(qnum);
+      prompt.appendChild(document.createTextNode(q.q || ""));
+
+      var promptId = "elw-sc-q-" + Math.random().toString(36).slice(2, 8);
+      prompt.id = promptId;
+
+      var optsWrap = make("div", "elw-selfcheck__opts");
+      optsWrap.setAttribute("role", "group");
+      optsWrap.setAttribute("aria-labelledby", promptId);
+
+      var fb = make("p", "elw-selfcheck__fb");
+      fb.setAttribute("role", "status");
+      fb.setAttribute("aria-live", "polite");
+
+      var btns = [];
+
+      opts.forEach(function (optText, oi) {
+        var b = make("button", "elw-selfcheck__opt");
+        b.type = "button";
+        b.textContent = optText;
+        b.setAttribute("aria-pressed", "false");
+
+        b.addEventListener("click", function () {
+          if (b.classList.contains("is-correct")) return; // already solved
+          if (oi === answerIdx) {
+            btns.forEach(function (x) { x.classList.remove("is-wrong"); });
+            b.classList.add("is-correct");
+            b.setAttribute("aria-pressed", "true");
+            fb.textContent = YES[qi % YES.length];
+            fb.className = "elw-selfcheck__fb is-correct";
+          } else {
+            b.classList.remove("is-wrong");
+            void b.offsetWidth; // reflow so the nudge animation can replay
+            b.classList.add("is-wrong");
+            fb.textContent = "Not quite — try again! 🙂";
+            fb.className = "elw-selfcheck__fb is-wrong";
+          }
+        });
+
+        btns.push(b);
+        optsWrap.appendChild(b);
+      });
+
+      qBox.appendChild(prompt);
+      qBox.appendChild(optsWrap);
+      qBox.appendChild(fb);
+      root.appendChild(qBox);
+
+      resetFns.push(function () {
+        btns.forEach(function (x) {
+          x.classList.remove("is-correct", "is-wrong");
+          x.setAttribute("aria-pressed", "false");
+        });
+        fb.textContent = "";
+        fb.className = "elw-selfcheck__fb";
+      });
+    });
+
+    var reset = make("button", "elw-selfcheck__reset", "↺ Reset");
+    reset.type = "button";
+    reset.addEventListener("click", function () {
+      resetFns.forEach(function (fn) { fn(); });
+    });
+    root.appendChild(reset);
+  }
+
+  /* ==============================================================
+     SECTION 10 — SCANNER / BOOTSTRAP
      Finds every declarative element and hydrates it once. A
      data-elw-ready flag guards against double-initialization.
      ============================================================== */
 
   var TYPES = [
-    { selector: ".elw-match",  build: buildMatch },
-    { selector: ".elw-memory", build: buildMemory },
-    { selector: ".elw-sort",   build: buildSort },
-    { selector: ".elw-guess",  build: buildGuess },
-    { selector: ".elw-caesar", build: buildCaesar }
+    { selector: ".elw-match",     build: buildMatch },
+    { selector: ".elw-memory",    build: buildMemory },
+    { selector: ".elw-sort",      build: buildSort },
+    { selector: ".elw-guess",     build: buildGuess },
+    { selector: ".elw-caesar",    build: buildCaesar },
+    { selector: ".elw-explore",   build: buildExplore },
+    { selector: ".elw-selfcheck", build: buildSelfCheck }
   ];
 
   function scan() {

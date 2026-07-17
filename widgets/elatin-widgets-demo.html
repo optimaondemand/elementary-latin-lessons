@@ -74,7 +74,7 @@
 
   <section class="intro">
     <h2>Data-driven widget library</h2>
-    <p>Link <code>elatin-widgets.css</code> and <code>elatin-widgets.js</code> in any lesson page, then drop in one of the five declarative elements below. The script auto-scans on load and turns each element into a working, mouse+touch game with its own Reset. Config lives in <code>data-*</code> attributes: wrap the attribute in <b>single quotes</b> so the JSON inside can keep its double quotes. This page shows one live example of each widget and doubles as the authoring spec.</p>
+    <p>Link <code>elatin-widgets.css</code> and <code>elatin-widgets.js</code> in any lesson page, then drop in one of the seven declarative elements below. The script auto-scans on load and turns each element into a working, mouse+touch game with its own Reset. Config lives in <code>data-*</code> attributes: wrap the attribute in <b>single quotes</b> so the JSON inside can keep its double quotes. This page shows one live example of each widget and doubles as the authoring spec.</p>
   </section>
 
   <!-- ==========================================================
@@ -142,6 +142,32 @@
   <div class="elw-caesar"
        data-name='Magister Caesar'
        data-lines='["Salvē, young scholar! Today we meet the numbers of Rome.","Ūnus, duo, trēs! Counting in Latin is easier than you think.","Remember: Latin is a living language, hiding in words you use every day. Valē!"]'></div>
+
+  <!-- ==========================================================
+       6 · EXPLORE / TAP-TO-REVEAL
+       ========================================================== -->
+  <span class="lesson-tag">6 · Explore &nbsp;·&nbsp; .elw-explore</span>
+  <p class="spec-note"><b>data-title</b> heading · <b>data-cards</b> array of card objects: <code>emoji</code>, <code>name</code> (Latin), <code>gloss</code> (English), <code>fact</code> (a short, age-appropriate fact). Renders tappable cards; tap flips the card to reveal its fact, tap again to close. Reset closes them all. Real buttons + <code>aria-expanded</code> → click, touch and keyboard.</p>
+  <div class="spec">&lt;div class=<span class="s">"elw-explore"</span> <span class="k">data-title</span>=<span class="s">'Meet the Gods of Rome'</span>
+     <span class="k">data-cards</span>=<span class="s">'[{"emoji":"⚡","name":"Iuppiter","gloss":"Jupiter",
+                 "fact":"King of the sky. His thunderbolt was a sign of power."}]'</span>&gt;&lt;/div&gt;</div>
+
+  <div class="elw-explore"
+       data-title='Meet the Gods of Rome'
+       data-cards='[{"emoji":"⚡","name":"Iuppiter","gloss":"Jupiter","fact":"King of all the gods and god of the sky. Romans believed his thunderbolt was a sign of his power."},{"emoji":"🦚","name":"Iūnō","gloss":"Juno","fact":"Queen of the gods and protector of families. The peacock was her sacred bird."},{"emoji":"🔱","name":"Neptūnus","gloss":"Neptune","fact":"God of the sea. Sailors prayed to him for calm water, and his symbol was the three-pronged trident."}]'></div>
+
+  <!-- ==========================================================
+       7 · SELF-CHECK / RETRIEVAL PRACTICE
+       ========================================================== -->
+  <span class="lesson-tag">7 · Self-Check &nbsp;·&nbsp; .elw-selfcheck</span>
+  <p class="spec-note"><b>data-title</b> heading (default "Show what you remember") · <b>data-questions</b> array of question objects: <code>q</code> (the prompt), <code>options</code> (array of choice strings), <code>answer</code> (0-based index of the correct option). Ungraded practice — correct locks green with a "Yes!"; wrong nudges amber and lets the student retry. Per-widget Reset.</p>
+  <div class="spec">&lt;div class=<span class="s">"elw-selfcheck"</span> <span class="k">data-title</span>=<span class="s">'Show what you remember'</span>
+     <span class="k">data-questions</span>=<span class="s">'[{"q":"Which god ruled the sea?",
+                     "options":["Iuppiter","Neptūnus","Iūnō"],"answer":1}]'</span>&gt;&lt;/div&gt;</div>
+
+  <div class="elw-selfcheck"
+       data-title='Show what you remember'
+       data-questions='[{"q":"Which god ruled the sea?","options":["Iuppiter","Neptūnus","Iūnō"],"answer":1},{"q":"Whose sacred bird was the peacock?","options":["Iūnō","Neptūnus","Iuppiter"],"answer":0}]'></div>
 
 </main>
 
