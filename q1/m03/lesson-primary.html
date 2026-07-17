@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elementary Latin — Module 3, Primary (3-5)</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — ELEMENTARY LATIN in-lesson palette: gold + teal ===== */
+    .optima-widget { background: linear-gradient(135deg, #FFF6E6 0%, #E6F6F5 100%); border: 1px solid #F0DBA8; border-left: 5px solid #0F8B8D; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 12px; color: #0a5f60; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 18px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #F0DBA8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 16px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #F0DBA8; border-radius: 8px; padding: 9px 16px; font-size: 15px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #FFF6E6; border-color: #C7922C; }
+    .widget-options button.selected { background: #0F8B8D; color: #FFFFFF; border-color: #0F8B8D; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #0F8B8D; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #0F8B8D; color: #0F8B8D; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #E6F6F5; }
+
+    /* ===== Video embed (responsive 16:9) ===== */
+    .el-video { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin: 12px 0 4px 0; border: 2px solid #0F8B8D; }
+    .el-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .el-video-credit { font-size: 12px; color: #888; font-style: italic; margin: 0 0 14px 2px; }
+
+    /* ===== Reading passage ===== */
+    .el-passage { background:#FBF8F0; border:1px solid #F0DBA8; border-left:5px solid #C7922C; border-radius:8px; padding:18px 22px; margin:14px 0; font-size:17px; line-height:1.8; color:#1a2340; }
+    .el-passage .latin { color:#0a5f60; font-style:italic; font-weight:600; }
+
+    /* ===== Number cards (gold + teal), reused component ===== */
+    .el-blocks-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; justify-content: center; }
+    .el-bb { flex: 1; min-width: 110px; max-width: 140px; background: #FFFFFF; border: 1px solid #F0DBA8; border-radius: 10px; padding: 14px 10px; text-align: center; }
+    .el-bb-emoji { font-size: 26px; color: #0E1C42; font-weight: 700; }
+    .el-bb-name { font-size: 17px; color: #0E1C42; margin: 6px 0 4px 0; font-weight:600; font-style: italic; }
+    .el-bb-def { font-size: 14px; color: #1a2340; line-height: 1.5; }
+
+    /* ===== Clock face graphic (CSS only, no external image) ===== */
+    .el-clock-wrap { background: #E6F6F5; border: 2px solid #0F8B8D; border-radius: 12px; padding: 18px; text-align:center; margin: 12px 0; }
+    .el-clock-face { width:170px; height:170px; border-radius:50%; border:4px solid #0F8B8D; background:#FFFFFF; position:relative; margin: 8px auto; }
+    .el-clock-num { position:absolute; font-size:13px; color:#0E1C42; font-weight:700; transform:translate(-50%,-50%); }
+    .el-clock-center { position:absolute; width:8px; height:8px; background:#C7922C; border-radius:50%; top:50%; left:50%; transform:translate(-50%,-50%); }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size:28px;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 34px; color: #ffffff; margin-bottom: 6px;">ELEMENTARY LATIN</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 3</div>
+        <div style="font-size: 12px; color: #666;">Roman Numbers I (I-X)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lane</div>
+        <div style="font-size: 17px; color: #0a5f60;">📖 Primary · Grades 3-5</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Roman Numerals in the Modern World</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">About how long</div>
+        <div style="font-size: 16px; color: #0e1c42;">35&ndash;40 min</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Session 1</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Numbers That Never Left</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Why do letters still show up where numbers should be?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.7;">Ancient Romans didn't write numbers the way we do today. Instead of digits like 1, 2, and 3, they built numbers out of letters: <em>I</em>, <em>V</em>, and <em>X</em>. That system is called Roman numerals, and it never fully disappeared — it still shows up on clocks, in the numbering of the Super Bowl, and inside plenty of books. Today you'll learn to read and say the numbers one through ten the Roman way.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🎯 BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;"><strong>I can</strong> say the Latin numbers one through ten: <em>ūnus, duo, trēs, quattuor, quīnque, sex, septem, octō, novem, decem</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;"><strong>I can</strong> read and write the Roman numerals I through X and know what quantity each one represents.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;"><strong>I can</strong> name at least two places Roman numerals still appear in modern life.</div>
+        </div>
+    </div>
+
+    <!-- Materials -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">📋 WHAT YOU NEED</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">▶</span><div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Headphones or speakers</div></div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">▶</span><div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A notebook or document for your typed reflection at the end</div></div>
+    </div>
+
+    <!-- PART 1: check-in -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">⚡ PART 1 &middot; LET'S BEGIN</div>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">⚡ QUICK CHECK-IN</div>
+            <div class="widget-question">Have you ever noticed Roman numerals on a clock, in a book, or on TV — even without knowing what they were?</div>
+            <div class="widget-options">
+                <button data-response="Nice catch — you were already reading Roman numerals without knowing the name for them.">🕰️ Yes, on a clock</button>
+                <button data-response="Good ear — the NFL has labeled every Super Bowl with a Roman numeral for decades.">🏈 Yes, on the Super Bowl</button>
+                <button data-response="You're about to start noticing them constantly — once you know what to look for, they show up everywhere.">🤷 Not that I know of</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2: reading passage + clock -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🕰️ PART 2 &middot; READING: NUMBERS THAT NEVER LEFT</div>
+
+        <div class="el-passage">
+            Long after Latin stopped being anyone's everyday spoken language, Roman numerals kept showing up in the modern world. Many analog clocks still print their hours using Roman numerals instead of the digits 1 through 12 — and on some of those clocks, the number four is written <span class="latin">IIII</span> instead of <span class="latin">IV</span>, an old habit among clockmakers that has stuck around for centuries. Each Super Bowl also gets its own Roman numeral instead of a regular number, so a football fan might see a game advertised as Super Bowl <span class="latin">LVIII</span> rather than "Super Bowl 58." Publishers still use Roman numerals too, printing them on chapter openers and on the introduction pages of many books.
+        </div>
+
+        <div class="el-clock-wrap">
+            <div class="el-clock-face">
+                <div class="el-clock-num" style="left:85px; top:13px;">XII</div>
+                <div class="el-clock-num" style="left:122px; top:22px;">I</div>
+                <div class="el-clock-num" style="left:148px; top:49px;">II</div>
+                <div class="el-clock-num" style="left:157px; top:85px;">III</div>
+                <div class="el-clock-num" style="left:148px; top:121px;">IV</div>
+                <div class="el-clock-num" style="left:122px; top:148px;">V</div>
+                <div class="el-clock-num" style="left:85px; top:157px;">VI</div>
+                <div class="el-clock-num" style="left:49px; top:148px;">VII</div>
+                <div class="el-clock-num" style="left:22px; top:121px;">VIII</div>
+                <div class="el-clock-num" style="left:13px; top:85px;">IX</div>
+                <div class="el-clock-num" style="left:22px; top:49px;">X</div>
+                <div class="el-clock-num" style="left:49px; top:22px;">XI</div>
+                <div class="el-clock-center"></div>
+            </div>
+            <div style="font-size:14px; color:#0E1C42; margin-top:6px;">A clock face using Roman numerals I through XII. Today's vocabulary covers I through X.</div>
+        </div>
+
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 10px 0 0 0;">Watch this short video for a closer look at Roman numerals in daily life.</p>
+        <div class="el-video">
+            <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#EEF1F8;color:#0E1C42;text-align:center;padding:16px;"><div style="font-size:42px;line-height:1;">🎬</div><div style="font-size:16px;font-weight:600;margin-top:8px;">Facilitator video goes here</div><div style="font-size:13px;color:#6b7a99;margin-top:4px;max-width:340px;">Your teacher will add a short, engaging video for this lesson.</div></div>
+        </div>
+        <p class="el-video-credit">Facilitator video slot — your teacher adds a short, vetted video here.</p>
+    </div>
+
+    <!-- PART 3: vocab + word matching -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🔢 PART 3 &middot; ŪNUS THROUGH DECEM</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 0 0 10px 0;">Here is how a Roman counted from one to ten. Say each word out loud before you try the matching activity below.</p>
+
+        <div class="el-blocks-row">
+            <div class="el-bb" style="border-top: 4px solid #C7922C;"><div class="el-bb-emoji">I</div><div class="el-bb-name">ūnus</div><div class="el-bb-def">one</div></div>
+            <div class="el-bb" style="border-top: 4px solid #0F8B8D;"><div class="el-bb-emoji">II</div><div class="el-bb-name">duo</div><div class="el-bb-def">two</div></div>
+            <div class="el-bb" style="border-top: 4px solid #C7922C;"><div class="el-bb-emoji">III</div><div class="el-bb-name">trēs</div><div class="el-bb-def">three</div></div>
+            <div class="el-bb" style="border-top: 4px solid #0F8B8D;"><div class="el-bb-emoji">IV</div><div class="el-bb-name">quattuor</div><div class="el-bb-def">four</div></div>
+            <div class="el-bb" style="border-top: 4px solid #C7922C;"><div class="el-bb-emoji">V</div><div class="el-bb-name">quīnque</div><div class="el-bb-def">five</div></div>
+            <div class="el-bb" style="border-top: 4px solid #0F8B8D;"><div class="el-bb-emoji">VI</div><div class="el-bb-name">sex</div><div class="el-bb-def">six</div></div>
+            <div class="el-bb" style="border-top: 4px solid #C7922C;"><div class="el-bb-emoji">VII</div><div class="el-bb-name">septem</div><div class="el-bb-def">seven</div></div>
+            <div class="el-bb" style="border-top: 4px solid #0F8B8D;"><div class="el-bb-emoji">VIII</div><div class="el-bb-name">octō</div><div class="el-bb-def">eight</div></div>
+            <div class="el-bb" style="border-top: 4px solid #C7922C;"><div class="el-bb-emoji">IX</div><div class="el-bb-name">novem</div><div class="el-bb-def">nine</div></div>
+            <div class="el-bb" style="border-top: 4px solid #0F8B8D;"><div class="el-bb-emoji">X</div><div class="el-bb-name">decem</div><div class="el-bb-def">ten</div></div>
+        </div>
+
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 14px 0 10px 0;">Now match each Latin number word to its Roman numeral.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">⚡ TRY IT &middot; MATCH THE WORD TO THE NUMERAL</div>
+            <div class="widget-question">Which Roman numeral matches this Latin number word?</div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right! Trēs is three, written III." data-hint="Trēs is a small number near the start of the list.">
+                <div class="widget-row-prompt">trēs</div>
+                <div class="widget-options">
+                    <button data-choice="0">V</button>
+                    <button data-choice="1">II</button>
+                    <button data-choice="2">III</button>
+                    <button data-choice="3">VI</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Yes! Quīnque is five, written V." data-hint="Quīnque is the middle number of the ten.">
+                <div class="widget-row-prompt">quīnque</div>
+                <div class="widget-options">
+                    <button data-choice="0">IV</button>
+                    <button data-choice="1">V</button>
+                    <button data-choice="2">IX</button>
+                    <button data-choice="3">VII</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Correct! Octō is eight, written VIII." data-hint="Octō is near the top of the list, close to ten.">
+                <div class="widget-row-prompt">octō</div>
+                <div class="widget-options">
+                    <button data-choice="0">VIII</button>
+                    <button data-choice="1">VI</button>
+                    <button data-choice="2">X</button>
+                    <button data-choice="3">III</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Right! Decem is ten, written X." data-hint="Decem is the last and biggest number in this set.">
+                <div class="widget-row-prompt">decem</div>
+                <div class="widget-options">
+                    <button data-choice="0">IX</button>
+                    <button data-choice="1">V</button>
+                    <button data-choice="2">VII</button>
+                    <button data-choice="3">X</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Need Help (gold) -->
+        <div style="background: #FFF6E6; border-left: 5px solid #C7922C; border-top: 3px solid #E0B45A; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #9a7b1e; margin-bottom: 8px;">🤗 NEED HELP?</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Ten new words at once is a lot. If a match feels tricky, scroll back up to the number cards and count the letters — I, V, and X repeat and combine to build every number from one to ten.</div>
+        </div>
+    </div>
+
+    <!-- PART 4: culminating scavenger sort -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🔍 PART 4 &middot; FIND THE ROMAN NUMERAL</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 0 0 10px 0;">In each set below, three of the options are regular (Arabic) numbers and one is a Roman numeral. Spot the Roman numeral in each set.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">⚡ TRY IT &middot; SPOT THE ROMAN NUMERAL</div>
+            <div class="widget-question">Which one of these is a Roman numeral?</div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right! VIII is the Roman way to write eight (octō)." data-hint="Look for the option built out of I, V, or X.">
+                <div class="widget-row-prompt">Set 1</div>
+                <div class="widget-options">
+                    <button data-choice="0">5</button>
+                    <button data-choice="1">VIII</button>
+                    <button data-choice="2">20</button>
+                    <button data-choice="3">14</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Yes! IX is nine (novem) in Roman numerals." data-hint="Look for the option built out of I, V, or X.">
+                <div class="widget-row-prompt">Set 2</div>
+                <div class="widget-options">
+                    <button data-choice="0">IX</button>
+                    <button data-choice="1">9</button>
+                    <button data-choice="2">90</button>
+                    <button data-choice="3">19</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Correct! II is two (duo) — two strokes side by side." data-hint="Look for the option built out of I, V, or X.">
+                <div class="widget-row-prompt">Set 3</div>
+                <div class="widget-options">
+                    <button data-choice="0">2</button>
+                    <button data-choice="1">22</button>
+                    <button data-choice="2">II</button>
+                    <button data-choice="3">12</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Right! X is ten (decem) — you'll see this one everywhere." data-hint="Look for the option built out of I, V, or X.">
+                <div class="widget-row-prompt">Set 4</div>
+                <div class="widget-options">
+                    <button data-choice="0">10</button>
+                    <button data-choice="1">100</button>
+                    <button data-choice="2">1</button>
+                    <button data-choice="3">X</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Yes! VI is six (sex) — five (V) plus one more stroke." data-hint="Look for the option built out of I, V, or X.">
+                <div class="widget-row-prompt">Set 5</div>
+                <div class="widget-options">
+                    <button data-choice="0">VI</button>
+                    <button data-choice="1">60</button>
+                    <button data-choice="2">16</button>
+                    <button data-choice="3">6</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Go Further (teal) -->
+        <details style="background: #FFFFFF; border: 1px solid #B9E4E1; border-left: 4px solid #0F8B8D; border-radius: 6px; padding: 12px 18px; margin: 14px 0;">
+            <summary style="font-size: 17px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #0F8B8D;">▶</span>&nbsp; Go Further: try the timed round
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.7; margin-top: 10px; padding-top: 10px; border-top: 1px solid #E6F6F5;">
+                Want a challenge? Replay the "Find the Roman Numeral" sets above in <strong>timed mode</strong> and see if you can beat your own best time. This mode is off by default, completely optional, and never affects your grade — it's just for fun.
+            </div>
+        </details>
+    </div>
+
+    <!-- What you'll do next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div><div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Module 3 Quick Check</strong></div><div style="font-size: 16px; color: #1a2340; line-height: 1.55;">A short 5-question quiz on today's number words, numeral shapes, and modern-day uses.</div></div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div><div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Module 3 Reflection</strong></div><div style="font-size: 16px; color: #1a2340; line-height: 1.55;">One or two typed sentences: where do you think you're most likely to spot a Roman numeral in your own life?</div></div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">💪 GREAT START</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 0;">You just learned to count to ten the Roman way and started spotting Roman numerals in the wild. Next week: the legend of Romulus and Remus, and the story Romans told about how their city began.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; ELEMENTARY LATIN &middot; Quarter 1 &middot; Primary (3-5) Lesson</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Module 3 &middot; Roman Numbers I (I-X)</div>
+    <div style="font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.5;">Facilitator video slot — your teacher adds a short, vetted video here.</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elementary Latin — Module 32, Primary (3-5)</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — ELEMENTARY LATIN in-lesson palette: gold + teal ===== */
+    .optima-widget { background: linear-gradient(135deg, #FFF6E6 0%, #E6F6F5 100%); border: 1px solid #F0DBA8; border-left: 5px solid #0F8B8D; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 12px; color: #0a5f60; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 18px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #F0DBA8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 16px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #F0DBA8; border-radius: 8px; padding: 9px 16px; font-size: 15px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #FFF6E6; border-color: #C7922C; }
+    .widget-options button.selected { background: #0F8B8D; color: #FFFFFF; border-color: #0F8B8D; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #0F8B8D; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #0F8B8D; color: #0F8B8D; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #E6F6F5; }
+
+    /* ===== Video embed (responsive 16:9) ===== */
+    .el-video { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin: 12px 0 4px 0; border: 2px solid #0F8B8D; }
+    .el-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .el-video-credit { font-size: 12px; color: #888; font-style: italic; margin: 0 0 14px 2px; }
+
+    /* ===== Reading passage ===== */
+    .el-passage { background:#FBF8F0; border:1px solid #F0DBA8; border-left:5px solid #C7922C; border-radius:8px; padding:18px 22px; margin:14px 0; font-size:17px; line-height:1.8; color:#1a2340; }
+    .el-passage .latin { color:#0a5f60; font-style:italic; font-weight:600; }
+
+    /* Simple map graphic (CSS only, no external image) */
+    .el-map { background: #E6F6F5; border: 2px solid #0F8B8D; border-radius: 12px; padding: 20px; text-align:center; margin: 12px 0; }
+    .el-boot { display:inline-block; width:80px; height:130px; background:#C7922C; clip-path: polygon(45% 0%, 70% 0%, 70% 55%, 100% 65%, 100% 85%, 60% 100%, 20% 90%, 30% 55%, 45% 55%); position:relative; }
+    .el-dot { display:inline-block; width:12px; height:12px; background:#E23A33; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 1px #0E1C42; }
+
+    /* ===== Roman-world building-block cards (gold + teal) ===== */
+    .el-blocks-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; justify-content: center; }
+    .el-bb { flex: 1; min-width: 130px; max-width: 160px; background: #FFFFFF; border: 1px solid #F0DBA8; border-radius: 10px; padding: 16px 12px; text-align: center; }
+    .el-bb-emoji { font-size: 32px; }
+    .el-bb-name { font-size: 18px; color: #0E1C42; margin: 8px 0 4px 0; font-weight:600; }
+    .el-bb-def { font-size: 14px; color: #1a2340; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size:28px;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 34px; color: #ffffff; margin-bottom: 6px;">ELEMENTARY LATIN</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q4 &middot; Module 32</div>
+        <div style="font-size: 12px; color: #666;">Rome's Legacy</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lane</div>
+        <div style="font-size: 17px; color: #0a5f60;">📖 Primary · Grades 3-5</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Cumulative Review Part 1: Numbers, Days &amp; Months</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">About how long</div>
+        <div style="font-size: 16px; color: #0e1c42;">35&ndash;40 min</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Session 1</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">One Big Look Back: Numbers, Days, and Months</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Look how much Latin you've learned this year.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.7;">Back in the fall, you learned to count in Latin. Later, you learned the seven day names and the twelve month names. Today we pull all of it back together in one big cumulative review &mdash; numbers, days, and months &mdash; before the year's final review module.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🎯 BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;"><strong>I can</strong> recall Latin numbers from <em>ūnus</em> through <em>vīgintī</em>, plus <em>L</em> and <em>C</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;"><strong>I can</strong> name the seven Latin day names and the Roman gods and heavenly bodies behind them.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;"><strong>I can</strong> name the twelve Latin months and explain why September, October, November, and December don't match their old number meanings anymore.</div>
+        </div>
+    </div>
+
+    <!-- Materials -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">📋 WHAT YOU NEED</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">▶</span><div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Headphones or speakers</div></div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">▶</span><div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your Roman Passport document (final entry of the year)</div></div>
+    </div>
+
+    <!-- PART 1: check-in -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">⚡ PART 1 &middot; LET'S BEGIN</div>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">⚡ QUICK CHECK-IN</div>
+            <div class="widget-question">This year you learned Latin numbers, days, and months. Which do you feel most confident about right now?</div>
+            <div class="widget-options">
+                <button data-response="Numbers are a great foundation &mdash; today's review will push you past twenty, all the way to C.">🔢 Numbers</button>
+                <button data-response="The day names carry Roman gods hiding inside them &mdash; today is a good chance to firm those up.">📅 Days of the week</button>
+                <button data-response="The months hide a famous calendar puzzle &mdash; today you'll get to explain it yourself.">🗓️ Months of the year</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2: reading passage + calendar puzzle -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">📜 PART 2 &middot; READING: A WHOLE YEAR OF LATIN</div>
+
+        <div class="el-passage">
+            Think back over everything you have learned this year. You can count from <span class="latin">ūnus</span> all the way to <span class="latin">vīgintī</span>, and you know the Latin words for fifty (<span class="latin">L</span>) and one hundred (<span class="latin">C</span>). You know all seven day names, each one named for the Sun, Moon, or a Roman god. And you know all twelve month names &mdash; including a strange fact hiding inside four of them. <span class="latin">September</span>, <span class="latin">October</span>, <span class="latin">November</span>, and <span class="latin">December</span> come from the Latin words for seven, eight, nine, and ten &mdash; even though they are now the ninth, tenth, eleventh, and twelfth months. That mismatch happened because the earliest Roman calendar began in March, not January.
+        </div>
+
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 14px 0 6px 0;"><strong>The Calendar Puzzle, laid out:</strong></p>
+        <div class="el-blocks-row">
+            <div class="el-bb" style="border-top: 4px solid #C7922C;"><div class="el-bb-emoji">7️⃣</div><div class="el-bb-name">Septem</div><div class="el-bb-def">"seven" &rarr; September, now month 9</div></div>
+            <div class="el-bb" style="border-top: 4px solid #0F8B8D;"><div class="el-bb-emoji">8️⃣</div><div class="el-bb-name">Octō</div><div class="el-bb-def">"eight" &rarr; October, now month 10</div></div>
+            <div class="el-bb" style="border-top: 4px solid #C7922C;"><div class="el-bb-emoji">9️⃣</div><div class="el-bb-name">Novem</div><div class="el-bb-def">"nine" &rarr; November, now month 11</div></div>
+            <div class="el-bb" style="border-top: 4px solid #0F8B8D;"><div class="el-bb-emoji">🔟</div><div class="el-bb-name">Decem</div><div class="el-bb-def">"ten" &rarr; December, now month 12</div></div>
+        </div>
+
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 14px 0 0 0;">Watch this short video for a quick refresher on the Roman calendar.</p>
+        <div class="el-video">
+            <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#EEF1F8;color:#0E1C42;text-align:center;padding:16px;"><div style="font-size:42px;line-height:1;">🎬</div><div style="font-size:16px;font-weight:600;margin-top:8px;">Facilitator video goes here</div><div style="font-size:13px;color:#6b7a99;margin-top:4px;max-width:340px;">Your teacher will add a short, engaging video for this lesson.</div></div>
+        </div>
+        <p class="el-video-credit">Facilitator video slot — your teacher adds a short, vetted video here.</p>
+    </div>
+
+    <!-- PART 3: Big Review Matching Game -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🏆 PART 3 &middot; BIG REVIEW MATCHING GAME</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 0 0 10px 0;">This game samples across everything &mdash; numbers, days, and months. Match each Latin clue to its correct answer.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">⚡ TRY IT &middot; MATCH THE CLUE</div>
+            <div class="widget-question">Choose the correct match for each Latin clue.</div>
+
+            <div class="widget-row" data-correct="1" data-fb="Correct! Vīgintī means twenty." data-hint="Think about how vīgintī compares to duodecim.">
+                <div class="widget-row-prompt">1. vīgintī</div>
+                <div class="widget-options">
+                    <button data-choice="0">twelve</button>
+                    <button data-choice="1">twenty</button>
+                    <button data-choice="2">fifty</button>
+                    <button data-choice="3">one hundred</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right! C is the Roman numeral for one hundred." data-hint="C is bigger than L (fifty).">
+                <div class="widget-row-prompt">2. C</div>
+                <div class="widget-options">
+                    <button data-choice="0">ten</button>
+                    <button data-choice="1">fifty</button>
+                    <button data-choice="2">one hundred</button>
+                    <button data-choice="3">twenty</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Yes! Dies Iovis, day of Jupiter, is Thursday." data-hint="Iovis is the Latin name for Jupiter.">
+                <div class="widget-row-prompt">3. dies Iovis</div>
+                <div class="widget-options">
+                    <button data-choice="0">Sunday</button>
+                    <button data-choice="1">Tuesday</button>
+                    <button data-choice="2">Wednesday</button>
+                    <button data-choice="3">Thursday</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Correct! Dies Veneris, day of Venus, is Friday." data-hint="Veneris is the Latin name for Venus.">
+                <div class="widget-row-prompt">4. dies Veneris</div>
+                <div class="widget-options">
+                    <button data-choice="0">Friday</button>
+                    <button data-choice="1">Saturday</button>
+                    <button data-choice="2">Monday</button>
+                    <button data-choice="3">Tuesday</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right! October comes from octō, the Latin word for eight." data-hint="Think about the calendar puzzle from Part 2.">
+                <div class="widget-row-prompt">5. October comes from the Latin word for which number?</div>
+                <div class="widget-options">
+                    <button data-choice="0">seven</button>
+                    <button data-choice="1">eight</button>
+                    <button data-choice="2">nine</button>
+                    <button data-choice="3">ten</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Need Help (gold) -->
+        <div style="background: #FFF6E6; border-left: 5px solid #C7922C; border-top: 3px solid #E0B45A; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #9a7b1e; margin-bottom: 8px;">🤗 NEED HELP?</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">This game covers a whole year of vocabulary at once, so missing a few is completely normal. Scroll back up to the review cards in Part 2, or think about the roots you already know &mdash; <em>septem, octō, novem, decem</em> &mdash; before trying again.</div>
+        </div>
+
+        <!-- Go Further (teal) -->
+        <details style="background: #FFFFFF; border: 1px solid #B9E4E1; border-left: 4px solid #0F8B8D; border-radius: 6px; padding: 12px 18px; margin: 14px 0;">
+            <summary style="font-size: 17px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #0F8B8D;">▶</span>&nbsp; Go Further: beat your best time (optional)
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.7; margin-top: 10px; padding-top: 10px; border-top: 1px solid #E6F6F5;">
+                Want a challenge? Replay the matching game above in <strong>timed mode</strong> and see if you can beat your own best time. This is optional, untimed by default, and never affects your grade &mdash; it's just for fun. For an extra challenge, try saying all twelve Latin month names in order from memory before you replay.
+            </div>
+        </details>
+    </div>
+
+    <!-- Roman Passport tie-in -->
+    <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-radius: 6px; padding: 16px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 10px;">📝 YOUR ROMAN PASSPORT</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.65;">Open your Roman Passport document and write today's date. This year you've filled it with words for greetings, numbers, days, and months. For this entry, write down which of those four you think you'll remember the longest, and why.</div>
+    </div>
+
+    <!-- What you'll do next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div><div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Module 32 Quick Check</strong></div><div style="font-size: 16px; color: #1a2340; line-height: 1.55;">A short 5-question quiz sampling today's numbers, days, and months, including the September&ndash;December calendar puzzle. Best of 2 attempts.</div></div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div><div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Module 32 Reflection</strong></div><div style="font-size: 16px; color: #1a2340; line-height: 1.55;">One or two sentences: explain the September&ndash;October&ndash;November&ndash;December calendar puzzle in your own words.</div></div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">💪 GREAT REVIEW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 0;">You just reviewed a whole year of counting, days, and months &mdash; and you can explain one of Latin's most famous calendar puzzles. One more cumulative review module awaits before the year's finale.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; ELEMENTARY LATIN &middot; Quarter 4 &middot; Primary (3-5) Lesson</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Module 32 &middot; Cumulative Review Part 1: Numbers, Days &amp; Months</div>
+    <div style="font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.5;">Facilitator video slot — your teacher adds a short, vetted video here.</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

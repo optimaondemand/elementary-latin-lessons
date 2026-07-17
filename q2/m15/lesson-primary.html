@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elementary Latin — Module 15, Primary (3-5)</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — ELEMENTARY LATIN in-lesson palette: gold + teal ===== */
+    .optima-widget { background: linear-gradient(135deg, #FFF6E6 0%, #E6F6F5 100%); border: 1px solid #F0DBA8; border-left: 5px solid #0F8B8D; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 12px; color: #0a5f60; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 18px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #F0DBA8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 16px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #F0DBA8; border-radius: 8px; padding: 9px 16px; font-size: 15px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #FFF6E6; border-color: #C7922C; }
+    .widget-options button.selected { background: #0F8B8D; color: #FFFFFF; border-color: #0F8B8D; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #0F8B8D; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #0F8B8D; color: #0F8B8D; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #E6F6F5; }
+
+    /* ===== Video embed (responsive 16:9) ===== */
+    .el-video { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin: 12px 0 4px 0; border: 2px solid #0F8B8D; }
+    .el-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .el-video-credit { font-size: 12px; color: #888; font-style: italic; margin: 0 0 14px 2px; }
+
+    /* ===== Reading passage ===== */
+    .el-passage { background:#FBF8F0; border:1px solid #F0DBA8; border-left:5px solid #C7922C; border-radius:8px; padding:18px 22px; margin:14px 0; font-size:17px; line-height:1.8; color:#1a2340; }
+    .el-passage .latin { color:#0a5f60; font-style:italic; font-weight:600; }
+
+    /* Simple map graphic (CSS only, no external image) */
+    .el-map { background: #E6F6F5; border: 2px solid #0F8B8D; border-radius: 12px; padding: 20px; text-align:center; margin: 12px 0; }
+    .el-boot { display:inline-block; width:80px; height:130px; background:#C7922C; clip-path: polygon(45% 0%, 70% 0%, 70% 55%, 100% 65%, 100% 85%, 60% 100%, 20% 90%, 30% 55%, 45% 55%); position:relative; }
+    .el-dot { display:inline-block; width:12px; height:12px; background:#E23A33; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 1px #0E1C42; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size:28px;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 34px; color: #ffffff; margin-bottom: 6px;">ELEMENTARY LATIN</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 15</div>
+        <div style="font-size: 12px; color: #666;">Roman Life &amp; Engineering</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lane</div>
+        <div style="font-size: 17px; color: #0a5f60;">📖 Primary · Grades 3-5</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Gods of Rome, Part II: Mars, Venus, Minerva &amp; Mercury</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">About how long</div>
+        <div style="font-size: 16px; color: #0e1c42;">35&ndash;40 min</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Session 1</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Four More Faces on Mount Olympus's Roman Cousins</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A symbol can carry a whole story.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.7;">Back in Module 8, you met <em>Iuppiter</em>, <em>Iūnō</em>, and <em>Neptūnus</em> and learned the picture-symbols that stood for each one. Today you'll meet four more Roman gods and their symbols, then play a review round that mixes all seven gods together.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🎯 BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;"><strong>I can</strong> name <em>Mārs</em>, <em>Venus</em>, <em>Minerva</em>, and <em>Mercurius</em>, along with their domains.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;"><strong>I can</strong> match each of these four gods to their symbol.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;"><strong>I can</strong> recall all seven gods and symbols I've met so far this year.</div>
+        </div>
+    </div>
+
+    <!-- Materials -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">📋 WHAT YOU NEED</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">▶</span><div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Headphones or speakers</div></div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">▶</span><div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A notebook or scratch paper, if you'd like to jot down the seven gods as a personal reference</div></div>
+    </div>
+
+    <!-- PART 1: check-in -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">⚡ PART 1 &middot; LET'S BEGIN</div>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">⚡ QUICK CHECK-IN</div>
+            <div class="widget-question">Can you still remember Jupiter, Juno, and Neptune's symbols from Module 8?</div>
+            <div class="widget-options">
+                <button data-response="Great — the eagle, the peacock, and the trident. Keep those in mind; today adds four more.">🦅 Yes, all three</button>
+                <button data-response="No problem — a quick reminder: Jupiter's eagle, Juno's peacock, and Neptune's trident. Now let's add four more.">🤔 One or two of them</button>
+                <button data-response="That's fine — you'll get a refresher today, plus four brand-new gods.">😐 Not really</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2: reading passage -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🏛️ PART 2 &middot; READING: FOUR MORE GODS</div>
+
+        <div class="el-passage">
+            <span class="latin">Mārs</span> was the Roman god of war. Romans pictured him with a spear and shield. <span class="latin">Venus</span>, goddess of love and beauty, was pictured with a gentle dove. <span class="latin">Minerva</span>, goddess of wisdom and crafts, was shown with a wise owl and an olive branch. <span class="latin">Mercurius</span>, god of travel, messages, and trade, wore winged sandals so he could move quickly between places.
+        </div>
+
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 10px 0 0 0;">Watch this short video for a closer look at all four gods.</p>
+        <div class="el-video">
+            <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#EEF1F8;color:#0E1C42;text-align:center;padding:16px;"><div style="font-size:42px;line-height:1;">🎬</div><div style="font-size:16px;font-weight:600;margin-top:8px;">Facilitator video goes here</div><div style="font-size:13px;color:#6b7a99;margin-top:4px;max-width:340px;">Your teacher will add a short, engaging video for this lesson.</div></div>
+        </div>
+        <p class="el-video-credit">Facilitator video slot — your teacher adds a short, vetted video here.</p>
+    </div>
+
+    <!-- PART 3: cumulative god-and-symbol match -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🔍 PART 3 &middot; GODS OF ROME — ROUND 2</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 0 0 10px 0;">This round mixes today's four gods with the three you met in Module 8. Match each god to their symbol.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">⚡ TRY IT &middot; MATCH THE GOD TO THE SYMBOL</div>
+            <div class="widget-question">Which symbol belongs to this god?</div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right! Iuppiter, king of the gods, is symbolized by an eagle and a thunderbolt." data-hint="Think back to Module 8's king of the gods.">
+                <div class="widget-row-prompt">1. Iuppiter (Jupiter)</div>
+                <div class="widget-options">
+                    <button data-choice="0">peacock</button>
+                    <button data-choice="1">eagle &amp; thunderbolt</button>
+                    <button data-choice="2">dove</button>
+                    <button data-choice="3">owl</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Yes! Iūnō, queen of the gods, is symbolized by a peacock." data-hint="Think back to Module 8's queen of the gods.">
+                <div class="widget-row-prompt">2. Iūnō (Juno)</div>
+                <div class="widget-options">
+                    <button data-choice="0">peacock</button>
+                    <button data-choice="1">trident</button>
+                    <button data-choice="2">winged sandals</button>
+                    <button data-choice="3">spear &amp; shield</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Correct! Neptūnus, god of the sea, carries a trident." data-hint="Think back to Module 8's god of the sea.">
+                <div class="widget-row-prompt">3. Neptūnus (Neptune)</div>
+                <div class="widget-options">
+                    <button data-choice="0">owl</button>
+                    <button data-choice="1">dove</button>
+                    <button data-choice="2">trident</button>
+                    <button data-choice="3">eagle &amp; thunderbolt</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Yes! Mārs, god of war, is symbolized by a spear and shield." data-hint="Think of today's god of war.">
+                <div class="widget-row-prompt">4. Mārs</div>
+                <div class="widget-options">
+                    <button data-choice="0">peacock</button>
+                    <button data-choice="1">owl</button>
+                    <button data-choice="2">winged sandals</button>
+                    <button data-choice="3">spear &amp; shield</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right! Venus, goddess of love and beauty, is symbolized by a dove." data-hint="Think of today's goddess of love.">
+                <div class="widget-row-prompt">5. Venus</div>
+                <div class="widget-options">
+                    <button data-choice="0">dove</button>
+                    <button data-choice="1">trident</button>
+                    <button data-choice="2">eagle &amp; thunderbolt</button>
+                    <button data-choice="3">peacock</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Correct! Minerva, goddess of wisdom and crafts, is symbolized by an owl and an olive branch." data-hint="Think of today's goddess of wisdom.">
+                <div class="widget-row-prompt">6. Minerva</div>
+                <div class="widget-options">
+                    <button data-choice="0">spear &amp; shield</button>
+                    <button data-choice="1">owl &amp; olive branch</button>
+                    <button data-choice="2">peacock</button>
+                    <button data-choice="3">winged sandals</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Yes! Mercurius, god of travel and messages, is symbolized by winged sandals." data-hint="Think of today's fast-traveling messenger god.">
+                <div class="widget-row-prompt">7. Mercurius</div>
+                <div class="widget-options">
+                    <button data-choice="0">trident</button>
+                    <button data-choice="1">dove</button>
+                    <button data-choice="2">winged sandals</button>
+                    <button data-choice="3">eagle &amp; thunderbolt</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Need Help (gold) -->
+        <div style="background: #FFF6E6; border-left: 5px solid #C7922C; border-top: 3px solid #E0B45A; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #9a7b1e; margin-bottom: 8px;">🤗 NEED HELP?</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Seven gods is a lot to hold in your head at once. If a match feels tricky, reread the passage above or rewatch the video, then try that row again.</div>
+        </div>
+
+        <!-- Go Further (teal) -->
+        <details style="background: #FFFFFF; border: 1px solid #B9E4E1; border-left: 4px solid #0F8B8D; border-radius: 6px; padding: 12px 18px; margin: 14px 0;">
+            <summary style="font-size: 17px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #0F8B8D;">▶</span>&nbsp; Go Further: try the timed round
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.7; margin-top: 10px; padding-top: 10px; border-top: 1px solid #E6F6F5;">
+                Want a challenge? Replay the matching game above in <strong>timed mode</strong> and see if you can beat your own best time. This is optional and never affects your grade — it's just for fun.
+            </div>
+        </details>
+    </div>
+
+    <!-- What you'll do next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div><div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Module 15 Quick Check</strong></div><div style="font-size: 16px; color: #1a2340; line-height: 1.55;">A short 5-question quiz covering all seven gods and symbols you've met so far. Best of 2 attempts.</div></div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div><div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Module 15 Reflection</strong></div><div style="font-size: 16px; color: #1a2340; line-height: 1.55;">One or two sentences: which of the seven gods' symbols is easiest for you to remember, and why?</div></div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">💪 GREAT START</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 0;">You now know seven Roman gods and their symbols. Next time: Animals of Rome — the dogs, cats, and horses a Roman child would have known.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; ELEMENTARY LATIN &middot; Quarter 2 &middot; Primary (3-5) Lesson</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Module 15 &middot; Gods of Rome II</div>
+    <div style="font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.5;">Facilitator video slot — your teacher adds a short, vetted video here.</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

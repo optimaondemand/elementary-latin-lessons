@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elementary Latin — Module 10, Primary (3-5)</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — ELEMENTARY LATIN in-lesson palette: gold + teal ===== */
+    .optima-widget { background: linear-gradient(135deg, #FFF6E6 0%, #E6F6F5 100%); border: 1px solid #F0DBA8; border-left: 5px solid #0F8B8D; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 12px; color: #0a5f60; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 18px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #F0DBA8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 16px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #F0DBA8; border-radius: 8px; padding: 9px 16px; font-size: 15px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #FFF6E6; border-color: #C7922C; }
+    .widget-options button.selected { background: #0F8B8D; color: #FFFFFF; border-color: #0F8B8D; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #0F8B8D; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #0F8B8D; color: #0F8B8D; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #E6F6F5; }
+
+    /* ===== Video embed (responsive 16:9) ===== */
+    .el-video { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin: 12px 0 4px 0; border: 2px solid #0F8B8D; }
+    .el-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .el-video-credit { font-size: 12px; color: #888; font-style: italic; margin: 0 0 14px 2px; }
+
+    /* ===== Reading passage ===== */
+    .el-passage { background:#FBF8F0; border:1px solid #F0DBA8; border-left:5px solid #C7922C; border-radius:8px; padding:18px 22px; margin:14px 0; font-size:17px; line-height:1.8; color:#1a2340; }
+    .el-passage .latin { color:#0a5f60; font-style:italic; font-weight:600; }
+
+    /* ===== Roman-world building-block cards (gold + teal) ===== */
+    .el-blocks-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; justify-content: center; }
+    .el-bb { flex: 1; min-width: 130px; max-width: 160px; background: #FFFFFF; border: 1px solid #F0DBA8; border-radius: 10px; padding: 16px 12px; text-align: center; }
+    .el-bb-emoji { font-size: 34px; }
+    .el-bb-name { font-size: 19px; color: #0E1C42; margin: 8px 0 4px 0; font-weight:600; }
+    .el-bb-def { font-size: 14px; color: #1a2340; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size:28px;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 34px; color: #ffffff; margin-bottom: 6px;">ELEMENTARY LATIN</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 10</div>
+        <div style="font-size: 12px; color: #666;">Roman Life &amp; Engineering</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lane</div>
+        <div style="font-size: 17px; color: #0a5f60;">📖 Primary · Grades 3-5</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Sun, Moon, and Saturn: The Latin Week</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">About how long</div>
+        <div style="font-size: 16px; color: #0e1c42;">35&ndash;40 min</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Session 1</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">The Week Rome Built</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Why do some day names sound Roman and others don't?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.7;">Every day of your week traces back to something the Romans saw in the sky. But English didn't keep all seven Latin names — some got swapped out along the way. Today you'll become a word detective and figure out which days stayed Roman and which ones changed, and why.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🎯 BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;"><strong>I can</strong> say all seven Latin day names: <em>dies Sōlis, dies Lūnae, dies Mārtis, dies Mercuriī, dies Iovis, dies Veneris, dies Saturnī</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;"><strong>I can</strong> explain why Sunday, Monday, and Saturday still sound Roman in English, while Tuesday through Friday don't.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;"><strong>I can</strong> name two English words that come from the Latin words for sun and moon: <em>solar</em> and <em>lunar</em>.</div>
+        </div>
+    </div>
+
+    <!-- Materials -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">📋 WHAT YOU NEED</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">▶</span><div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Headphones or speakers</div></div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">▶</span><div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A calendar or planner, if one is handy</div></div>
+    </div>
+
+    <!-- PART 1: check-in -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">⚡ PART 1 &middot; LET'S BEGIN</div>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">⚡ QUICK CHECK-IN</div>
+            <div class="widget-question">Have you ever wondered why Saturday sounds like "Saturn"?</div>
+            <div class="widget-options">
+                <button data-response="Good ear! Saturday really does come from Saturn's day — you'll learn exactly why today.">🪐 I've noticed that before</button>
+                <button data-response="You're about to find out — and a few other days have surprising stories too.">🤷 Never thought about it</button>
+                <button data-response="Great instinct — several of our day names trace back to Roman gods.">🤔 Maybe it's from a Roman god?</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2: reading passage + vocabulary -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🕵️ PART 2 &middot; READING: A WEEK-LONG DETECTIVE STORY</div>
+
+        <div class="el-passage">
+            The Romans named each day of the week for the sun, the moon, or one of five wandering stars they linked to their gods: <span class="latin">dies Sōlis, dies Lūnae, dies Mārtis, dies Mercuriī, dies Iovis, dies Veneris,</span> and <span class="latin">dies Saturnī</span>. English kept the pattern whole for three of those days — Sunday, Monday, and Saturday are still Sun's day, Moon's day, and Saturn's day. But English speakers were also shaped by old Germanic and Norse traditions, so Tuesday, Wednesday, Thursday, and Friday were renamed for the gods Tiw, Woden, Thor, and Frigg — gods that English speakers saw as matching Mars, Mercury, Jupiter, and Venus.
+        </div>
+
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 10px 0 0 0;">Watch this short video for the full picture.</p>
+        <div class="el-video">
+            <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#EEF1F8;color:#0E1C42;text-align:center;padding:16px;"><div style="font-size:42px;line-height:1;">🎬</div><div style="font-size:16px;font-weight:600;margin-top:8px;">Facilitator video goes here</div><div style="font-size:13px;color:#6b7a99;margin-top:4px;max-width:340px;">Your teacher will add a short, engaging video for this lesson.</div></div>
+        </div>
+        <p class="el-video-credit">Facilitator video slot — your teacher adds a short, vetted video here.</p>
+
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 14px 0 10px 0;">All seven Latin day names:</p>
+        <div class="el-blocks-row">
+            <div class="el-bb" style="border-top: 4px solid #C7922C;"><div class="el-bb-emoji">☀️</div><div class="el-bb-name">dies Sōlis</div><div class="el-bb-def">Sunday</div></div>
+            <div class="el-bb" style="border-top: 4px solid #0F8B8D;"><div class="el-bb-emoji">🌙</div><div class="el-bb-name">dies Lūnae</div><div class="el-bb-def">Monday</div></div>
+            <div class="el-bb" style="border-top: 4px solid #C7922C;"><div class="el-bb-emoji">⚔️</div><div class="el-bb-name">dies Mārtis</div><div class="el-bb-def">named for Mars</div></div>
+            <div class="el-bb" style="border-top: 4px solid #0F8B8D;"><div class="el-bb-emoji">📜</div><div class="el-bb-name">dies Mercuriī</div><div class="el-bb-def">named for Mercury</div></div>
+            <div class="el-bb" style="border-top: 4px solid #C7922C;"><div class="el-bb-emoji">⚡</div><div class="el-bb-name">dies Iovis</div><div class="el-bb-def">named for Jupiter</div></div>
+            <div class="el-bb" style="border-top: 4px solid #0F8B8D;"><div class="el-bb-emoji">💛</div><div class="el-bb-name">dies Veneris</div><div class="el-bb-def">named for Venus</div></div>
+            <div class="el-bb" style="border-top: 4px solid #C7922C;"><div class="el-bb-emoji">🪐</div><div class="el-bb-name">dies Saturnī</div><div class="el-bb-def">Saturday</div></div>
+        </div>
+
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 14px 0 0 0;">Two useful English words grow right out of this module's Latin: <strong>solar</strong> (from <em>sōl</em>, "sun") and <strong>lunar</strong> (from <em>lūna</em>, "moon") — words you've probably heard for solar power or a lunar eclipse.</p>
+    </div>
+
+    <!-- PART 3: matching / puzzle widget -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🔍 PART 3 &middot; SOLVE THE WEEK</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 0 0 10px 0;">Match each Latin day name to its English day.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">⚡ TRY IT &middot; MATCH THE DAY</div>
+            <div class="widget-question">Which English day matches this Latin name?</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Yes! Dies Sōlis is Sun's day — Sunday." data-hint="Think about what Sōlis means.">
+                <div class="widget-row-prompt">1. dies Sōlis</div>
+                <div class="widget-options">
+                    <button data-choice="0">Sunday</button>
+                    <button data-choice="1">Monday</button>
+                    <button data-choice="2">Saturday</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right! Dies Lūnae is Moon's day — Monday." data-hint="Think about what Lūnae means.">
+                <div class="widget-row-prompt">2. dies Lūnae</div>
+                <div class="widget-options">
+                    <button data-choice="0">Sunday</button>
+                    <button data-choice="1">Monday</button>
+                    <button data-choice="2">Saturday</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Correct! English swapped Mars for the Germanic war-god Tiw — so dies Mārtis lines up with Tuesday, not a day that sounds Roman." data-hint="This is the tricky one — English didn't keep the Roman name here. Which weekday honors a war-god?">
+                <div class="widget-row-prompt">3. dies Mārtis (which English day honors a war-god, even though it doesn't sound like "Mars"?)</div>
+                <div class="widget-options">
+                    <button data-choice="0">Wednesday</button>
+                    <button data-choice="1">Thursday</button>
+                    <button data-choice="2">Friday</button>
+                    <button data-choice="3">Tuesday</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Correct! Dies Saturnī is Saturn's day — Saturday, one of the three days English kept Roman." data-hint="Think about what Saturnī means.">
+                <div class="widget-row-prompt">4. dies Saturnī</div>
+                <div class="widget-options">
+                    <button data-choice="0">Sunday</button>
+                    <button data-choice="1">Monday</button>
+                    <button data-choice="2">Saturday</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Need Help (gold) -->
+        <div style="background: #FFF6E6; border-left: 5px solid #C7922C; border-top: 3px solid #E0B45A; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #9a7b1e; margin-bottom: 8px;">🤗 NEED HELP?</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Remember: only three days kept their Roman sound in English — Sunday, Monday, and Saturday. The other four (Tuesday, Wednesday, Thursday, Friday) were renamed for old Germanic gods that people thought matched the Roman ones.</div>
+        </div>
+
+        <!-- Go Further (teal) -->
+        <details style="background: #FFFFFF; border: 1px solid #B9E4E1; border-left: 4px solid #0F8B8D; border-radius: 6px; padding: 12px 18px; margin: 14px 0;">
+            <summary style="font-size: 17px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #0F8B8D;">▶</span>&nbsp; Go Further: try the timed round
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.7; margin-top: 10px; padding-top: 10px; border-top: 1px solid #E6F6F5;">
+                Want a challenge? Replay the matching game above in <strong>timed mode</strong> and see if you can beat your own best time. This is optional and never affects your grade — it's just for fun.
+            </div>
+        </details>
+    </div>
+
+    <!-- What you'll do next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div><div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Module 10 Quick Check</strong></div><div style="font-size: 16px; color: #1a2340; line-height: 1.55;">A short 5-question quiz on today's Latin day names and the Roman-versus-Germanic puzzle.</div></div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div><div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Module 10 Reflection</strong></div><div style="font-size: 16px; color: #1a2340; line-height: 1.55;">One or two sentences: which day-name story surprised you more, the Roman ones or the Germanic ones?</div></div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">💪 GREAT START</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 0;">You just solved a whole week's worth of word history! Next week we look at the months of the year in Latin — and untangle a strange puzzle: why is October, whose name means "eighth," now our tenth month?</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; ELEMENTARY LATIN &middot; Quarter 2 &middot; Primary (3-5) Lesson</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Module 10 &middot; Sun, Moon, and Saturn: The Latin Week</div>
+    <div style="font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.5;">Facilitator video slot — your teacher adds a short, vetted video here.</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Elementary Latin — Widget Prototype Kit</title>
+<style>
+  /* ============================================================
+     BRAND TOKENS — Optima Academy Online / Elementary Latin
+     ============================================================ */
+  :root{
+    --navy:#0E1C42;
+    --cyan:#55C8E8;
+    --gold:#C7922C;
+    --teal:#0F8B8D;
+    --ground:#F0F2F8;
+    --text:#1a2340;
+    --card:#ffffff;
+    --good:#1f9d55;
+    --good-bg:#e4f7ec;
+    --bad:#d64545;
+    --shadow:0 6px 20px rgba(14,28,66,.12);
+    --shadow-sm:0 3px 10px rgba(14,28,66,.10);
+    --radius:18px;
+    --font:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:var(--font);
+    background:var(--ground);
+    color:var(--text);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- Header ---------- */
+  header.brandbar{
+    background:var(--navy);
+    border-bottom:5px solid var(--cyan);
+    padding:16px 22px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .owl-circle{
+    width:52px;height:52px;border-radius:50%;
+    background:#fff;
+    display:flex;align-items:center;justify-content:center;
+    flex:0 0 auto;
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+  }
+  .brand-text h1{
+    font-size:1.15rem;margin:0;color:#fff;font-weight:700;letter-spacing:.3px;
+  }
+  .brand-text p{
+    font-size:.78rem;margin:2px 0 0;color:var(--cyan);
+    font-weight:600;letter-spacing:1.2px;
+  }
+
+  /* ---------- Layout ---------- */
+  main{max-width:920px;margin:0 auto;padding:22px 18px 60px;}
+
+  .card{
+    background:var(--card);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:26px 26px 30px;
+    margin:26px 0;
+  }
+  .card > h2{
+    margin:0 0 4px;
+    font-size:1.4rem;
+    color:var(--navy);
+  }
+  .lesson-tag{
+    display:inline-block;
+    background:var(--teal);
+    color:#fff;
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.8px;
+    text-transform:uppercase;
+    padding:5px 12px;
+    border-radius:999px;
+    margin-bottom:12px;
+  }
+  .widget-desc{margin:0 0 18px;color:#41506e;font-size:1rem;}
+
+  /* Intro card */
+  .intro{
+    background:linear-gradient(135deg,var(--navy),#16295c);
+    color:#fff;
+  }
+  .intro h2{color:#fff;}
+  .intro p{color:#dbe4ff;font-size:1.05rem;margin:8px 0 0;}
+
+  /* ---------- Buttons ---------- */
+  button{
+    font-family:var(--font);
+    cursor:pointer;
+    border:none;
+    border-radius:12px;
+    font-weight:700;
+    transition:transform .08s ease, box-shadow .15s ease, background .15s ease;
+    touch-action:manipulation;
+  }
+  button:active{transform:scale(.96);}
+  .btn-primary{
+    background:var(--gold);color:#fff;padding:12px 20px;font-size:1rem;
+    box-shadow:var(--shadow-sm);
+  }
+  .btn-primary:hover{background:#b07f22;}
+  .btn-reset{
+    background:var(--ground);color:var(--navy);
+    border:2px solid #c9d2e8;padding:10px 18px;font-size:.95rem;
+  }
+  .btn-reset:hover{background:#e2e8f6;}
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:18px;}
+
+  /* ---------- Toggle switch ---------- */
+  .toggle-wrap{display:flex;align-items:center;gap:10px;font-size:.95rem;font-weight:600;color:var(--navy);}
+  .switch{position:relative;display:inline-block;width:52px;height:28px;flex:0 0 auto;}
+  .switch input{opacity:0;width:0;height:0;}
+  .slider{
+    position:absolute;inset:0;background:#c9d2e8;border-radius:999px;transition:.2s;
+  }
+  .slider:before{
+    content:"";position:absolute;height:22px;width:22px;left:3px;top:3px;
+    background:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.3);
+  }
+  .switch input:checked + .slider{background:var(--teal);}
+  .switch input:checked + .slider:before{transform:translateX(24px);}
+
+  .subnote{font-size:.82rem;color:#6b7896;font-style:italic;margin-top:8px;}
+  .status-line{margin-top:14px;font-weight:700;min-height:1.4em;font-size:1.05rem;}
+  .status-line.win{color:var(--good);}
+
+  /* ============================================================
+     WIDGET 1 — DRAG & DROP MATCH
+     ============================================================ */
+  .match-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+  .col-label{font-weight:700;color:var(--teal);margin-bottom:10px;font-size:.9rem;letter-spacing:.5px;text-transform:uppercase;}
+  .word-chip{
+    background:var(--cyan);color:var(--navy);font-size:1.3rem;font-weight:700;
+    padding:14px 10px;border-radius:14px;margin-bottom:12px;text-align:center;
+    box-shadow:var(--shadow-sm);cursor:grab;user-select:none;touch-action:none;
+    border:3px solid transparent;
+  }
+  .word-chip.dragging{opacity:.55;cursor:grabbing;}
+  .word-chip.locked{background:var(--good-bg);color:var(--good);border-color:var(--good);cursor:default;}
+  .word-chip.nudge{animation:nudge .4s ease;}
+  @keyframes nudge{0%,100%{transform:translateX(0);}25%{transform:translateX(-8px);}75%{transform:translateX(8px);}}
+  .drop-target{
+    background:var(--ground);border:3px dashed #b6c1de;border-radius:14px;
+    padding:14px 10px;margin-bottom:12px;min-height:56px;font-size:1.15rem;font-weight:600;
+    display:flex;align-items:center;justify-content:center;text-align:center;color:var(--navy);
+  }
+  .drop-target.over{border-color:var(--gold);background:#fff6e6;}
+  .drop-target.filled{border-style:solid;border-color:var(--good);background:var(--good-bg);color:var(--good);}
+  .drop-target .answer-word{font-weight:800;margin-right:6px;}
+  /* Floating drag ghost used for pointer-based dragging */
+  #dragGhost{
+    position:fixed;pointer-events:none;z-index:999;
+    background:var(--cyan);color:var(--navy);font-size:1.3rem;font-weight:700;
+    padding:14px 22px;border-radius:14px;box-shadow:var(--shadow);display:none;
+  }
+
+  /* ============================================================
+     WIDGET 2 — FLIP CARD MEMORY
+     ============================================================ */
+  .memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  @media(max-width:560px){.memory-grid{grid-template-columns:repeat(2,1fr);}}
+  .mcard{
+    aspect-ratio:1/1;border-radius:14px;position:relative;cursor:pointer;
+    perspective:800px;touch-action:manipulation;
+  }
+  .mcard-inner{
+    position:absolute;inset:0;transition:transform .4s;transform-style:preserve-3d;
+  }
+  .mcard.flipped .mcard-inner,.mcard.matched .mcard-inner{transform:rotateY(180deg);}
+  .mface{
+    position:absolute;inset:0;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    backface-visibility:hidden;font-weight:700;box-shadow:var(--shadow-sm);text-align:center;padding:6px;
+  }
+  .mface.back{
+    background:var(--navy);color:var(--cyan);font-size:2rem;
+    background-image:radial-gradient(circle at 30% 30%, #1b3170, var(--navy));
+  }
+  .mface.front{
+    background:#fff;color:var(--navy);transform:rotateY(180deg);font-size:1.25rem;
+    border:3px solid var(--cyan);
+  }
+  .mcard.matched .mface.front{background:var(--good-bg);color:var(--good);border-color:var(--good);}
+  .moves-badge{font-weight:700;color:var(--navy);}
+
+  /* ============================================================
+     WIDGET 3 — SORT INTO BINS
+     ============================================================ */
+  .bin-source{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;min-height:56px;margin-bottom:20px;}
+  .bins-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .bin{
+    background:var(--ground);border:3px dashed #b6c1de;border-radius:16px;
+    padding:14px;min-height:150px;
+  }
+  .bin.over{border-color:var(--gold);background:#fff6e6;}
+  .bin h4{margin:0 0 12px;text-align:center;color:var(--navy);font-size:1rem;}
+  .bin .bin-items{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+  .sort-chip{
+    background:var(--gold);color:#fff;font-weight:700;font-size:1.05rem;
+    padding:10px 16px;border-radius:999px;cursor:grab;user-select:none;touch-action:none;
+    box-shadow:var(--shadow-sm);border:3px solid transparent;
+  }
+  .sort-chip.dragging{opacity:.55;}
+  .sort-chip.correct{background:var(--good-bg);color:var(--good);border-color:var(--good);cursor:default;}
+  .sort-chip.wrong{animation:nudge .4s ease;}
+
+  /* ============================================================
+     WIDGET 4 — LIVING LATIN GUESS
+     ============================================================ */
+  .living-stage{
+    background:linear-gradient(135deg,#f3f8ff,#e7f4fb);border-radius:16px;padding:26px 20px;text-align:center;
+    border:2px solid #d5e6f5;
+  }
+  .living-emoji{font-size:4.5rem;line-height:1;margin-bottom:6px;}
+  .living-prompt{font-size:1.25rem;font-weight:700;color:var(--navy);margin:8px 0 20px;}
+  .choice-row{display:flex;flex-direction:column;gap:12px;max-width:420px;margin:0 auto;}
+  .choice-btn{
+    background:#fff;border:3px solid var(--cyan);color:var(--navy);
+    padding:14px 16px;font-size:1.15rem;border-radius:14px;
+  }
+  .choice-btn:hover{background:#eefaff;}
+  .choice-btn.correct{background:var(--good-bg);border-color:var(--good);color:var(--good);}
+  .choice-btn.wrong{background:#fde7e7;border-color:var(--bad);color:var(--bad);}
+  .choice-btn:disabled{cursor:default;}
+  .reveal{
+    margin-top:20px;background:#fff;border-radius:14px;padding:18px;border-left:6px solid var(--gold);
+    text-align:left;font-size:1.02rem;display:none;
+  }
+  .reveal.show{display:block;animation:pop .4s ease;}
+  @keyframes pop{0%{transform:scale(.85);opacity:0;}60%{transform:scale(1.04);}100%{transform:scale(1);opacity:1;}}
+  .tada{font-size:1.4rem;font-weight:800;color:var(--gold);}
+  .round-dots{display:flex;gap:8px;justify-content:center;margin-top:16px;}
+  .round-dots span{width:11px;height:11px;border-radius:50%;background:#c9d2e8;}
+  .round-dots span.active{background:var(--teal);}
+
+  /* ============================================================
+     WIDGET 5 — MAGISTER CAESAR
+     ============================================================ */
+  .caesar-wrap{display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;}
+  .caesar-figure{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:6px;}
+  .caesar-body{position:relative;width:130px;}
+  .caesar-name{font-weight:800;color:var(--gold);font-size:.95rem;}
+  .speech{
+    background:#fff;border:3px solid var(--cyan);border-radius:18px;padding:18px 20px;
+    position:relative;flex:1 1 320px;min-width:260px;font-size:1.2rem;color:var(--navy);font-weight:600;
+  }
+  .speech:before{
+    content:"";position:absolute;left:-16px;top:32px;border-width:10px 16px 10px 0;
+    border-style:solid;border-color:transparent var(--cyan) transparent transparent;
+  }
+  .speech.speaking{border-color:var(--gold);box-shadow:0 0 0 4px rgba(199,146,44,.18);}
+  .caesar-svg{display:block;filter:drop-shadow(0 4px 6px rgba(14,28,66,.2));}
+
+  footer{text-align:center;color:#7a86a4;font-size:.82rem;padding:20px;}
+  .notes-list{margin:10px 0 0;padding-left:20px;}
+  .notes-list li{margin-bottom:10px;}
+  .notes-list b{color:var(--navy);}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="brandbar">
+  <div class="owl-circle">
+    <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width:50px;height:40px;object-fit:contain;" />
+  </div>
+  <div class="brand-text">
+    <h1>Optima Academy Online</h1>
+    <p>ELEMENTARY LATIN — WIDGET PROTOTYPE KIT</p>
+  </div>
+</header>
+
+<main>
+
+  <!-- INTRO -->
+  <section class="card intro">
+    <h2>Prototype kit — for review</h2>
+    <p>These are the interactive game types proposed for Elementary Latin. Try them out! Every widget works with mouse or touch, and each has a Reset button.</p>
+  </section>
+
+  <!-- ============================================================
+       WIDGET 1 — DRAG & DROP MATCH
+       ============================================================ -->
+  <section class="card" id="w1">
+    <span class="lesson-tag">Vocabulary Practice · core recurring game</span>
+    <h2>1 · Match the Words</h2>
+    <p class="widget-desc">Drag each Latin word onto its English meaning. Correct matches lock in green; wrong drops bounce back.</p>
+
+    <div class="toggle-wrap">
+      <label class="switch"><input type="checkbox" id="timerToggle"><span class="slider"></span></label>
+      <span>⏱ Beat your best time</span>
+    </div>
+    <div class="subnote">Optional & just for fun — the timer is never graded.</div>
+    <div class="status-line" id="w1status"></div>
+
+    <div class="match-grid" style="margin-top:18px;">
+      <div>
+        <div class="col-label">Latin</div>
+        <div id="w1words"></div>
+      </div>
+      <div>
+        <div class="col-label">Meaning</div>
+        <div id="w1targets"></div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-reset" onclick="W1.reset()">↺ Reset</button>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WIDGET 2 — FLIP CARD MEMORY
+       ============================================================ -->
+  <section class="card" id="w2">
+    <span class="lesson-tag">Culture / Vocabulary · memory game</span>
+    <h2>2 · Memory Match — Roman Gods</h2>
+    <p class="widget-desc">Flip two cards to find a matching pair — a god's name and what they rule. Matches stay face-up.</p>
+
+    <div class="status-line">Moves: <span class="moves-badge" id="w2moves">0</span> &nbsp;·&nbsp; <span id="w2msg"></span></div>
+    <div class="memory-grid" id="w2grid" style="margin-top:14px;"></div>
+
+    <div class="btn-row">
+      <button class="btn-reset" onclick="W2.reset()">↺ Reset &amp; Shuffle</button>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WIDGET 3 — SORT INTO BINS
+       ============================================================ -->
+  <section class="card" id="w3">
+    <span class="lesson-tag">Word Roots · sorting game</span>
+    <h2>3 · Sort the Words</h2>
+    <p class="widget-desc">Some English words grew from Latin long ago. Others came from different languages entirely. Drag each word into the right bin.</p>
+
+    <div class="col-label" style="text-align:center;">Words to sort</div>
+    <div class="bin-source" id="w3source"></div>
+
+    <div class="bins-row">
+      <div class="bin" id="w3binLatin" data-bin="latin"><h4>🏛️ Comes from Latin</h4><div class="bin-items"></div></div>
+      <div class="bin" id="w3binOther" data-bin="other"><h4>🌍 Not from Latin</h4><div class="bin-items"></div></div>
+    </div>
+
+    <div class="status-line" id="w3status"></div>
+    <div class="btn-row">
+      <button class="btn-reset" onclick="W3.reset()">↺ Reset</button>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WIDGET 4 — LIVING LATIN GUESS
+       ============================================================ -->
+  <section class="card" id="w4">
+    <span class="lesson-tag">Living Latin · awe &amp; wonder</span>
+    <h2>4 · Guess Where It Came From!</h2>
+    <p class="widget-desc">Latin is still alive all around us. Look at each modern thing and guess which ancient Latin word it grew from.</p>
+
+    <div class="living-stage">
+      <div class="living-emoji" id="w4emoji">🚀</div>
+      <div class="living-prompt" id="w4prompt"></div>
+      <div class="choice-row" id="w4choices"></div>
+      <div class="reveal" id="w4reveal"></div>
+      <div class="round-dots" id="w4dots"></div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-primary" id="w4next" onclick="W4.next()" style="display:none;">Next ▶</button>
+      <button class="btn-reset" onclick="W4.reset()">↺ Start Over</button>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WIDGET 5 — MAGISTER CAESAR
+       ============================================================ -->
+  <section class="card" id="w5">
+    <span class="lesson-tag">Guide Character · read-aloud</span>
+    <h2>5 · Meet Magister Caesar</h2>
+    <p class="widget-desc">Your friendly Roman guide! Press Play and he'll read his line aloud.</p>
+
+    <div class="caesar-wrap">
+      <div class="caesar-figure">
+        <div class="caesar-body">
+          <!-- Magister Caesar built from inline SVG: toga, laurel wreath, friendly face -->
+          <svg class="caesar-svg" width="130" height="150" viewBox="0 0 130 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Magister Caesar, a friendly Roman guide">
+            <!-- toga shoulders -->
+            <path d="M18 150 Q20 108 40 100 L90 100 Q110 108 112 150 Z" fill="#ffffff" stroke="#d7dcec" stroke-width="2"/>
+            <path d="M40 100 L65 132 L90 100 Z" fill="#C7922C" opacity=".9"/>
+            <!-- neck -->
+            <rect x="55" y="88" width="20" height="20" rx="6" fill="#e8b48a"/>
+            <!-- head -->
+            <circle cx="65" cy="62" r="34" fill="#f0c19a"/>
+            <!-- ears -->
+            <circle cx="31" cy="63" r="6" fill="#f0c19a"/>
+            <circle cx="99" cy="63" r="6" fill="#f0c19a"/>
+            <!-- hair -->
+            <path d="M33 52 Q40 26 65 26 Q90 26 97 52 Q86 40 65 40 Q44 40 33 52 Z" fill="#5a4632"/>
+            <!-- laurel wreath -->
+            <g fill="#2e8b57">
+              <ellipse cx="34" cy="46" rx="5" ry="9" transform="rotate(-40 34 46)"/>
+              <ellipse cx="30" cy="56" rx="5" ry="9" transform="rotate(-15 30 56)"/>
+              <ellipse cx="96" cy="46" rx="5" ry="9" transform="rotate(40 96 46)"/>
+              <ellipse cx="100" cy="56" rx="5" ry="9" transform="rotate(15 100 56)"/>
+              <ellipse cx="42" cy="38" rx="5" ry="8" transform="rotate(-55 42 38)"/>
+              <ellipse cx="88" cy="38" rx="5" ry="8" transform="rotate(55 88 38)"/>
+            </g>
+            <!-- eyes -->
+            <circle cx="53" cy="60" r="4" fill="#1a2340"/>
+            <circle cx="77" cy="60" r="4" fill="#1a2340"/>
+            <!-- eyebrows -->
+            <path d="M47 52 Q53 49 59 52" stroke="#5a4632" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M71 52 Q77 49 83 52" stroke="#5a4632" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <!-- smile -->
+            <path d="M52 74 Q65 84 78 74" stroke="#b5651d" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- cheeks -->
+            <circle cx="46" cy="70" r="4" fill="#f2a08a" opacity=".5"/>
+            <circle cx="84" cy="70" r="4" fill="#f2a08a" opacity=".5"/>
+          </svg>
+        </div>
+        <div class="caesar-name">Magister Caesar</div>
+      </div>
+
+      <div class="speech" id="w5speech">Salvē, young scholar!</div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-primary" id="w5play" onclick="W5.play()">▶ Play</button>
+      <button class="btn-reset" onclick="W5.reset()">↺ Reset</button>
+    </div>
+    <div class="subnote">Prototype voice uses the browser's built-in speech. In production, Magister Caesar will use recorded voiceover for warmth and correct Latin pronunciation.</div>
+  </section>
+
+  <!-- ============================================================
+       DESIGNER NOTES
+       ============================================================ -->
+  <section class="card" id="notes" style="background:#fbfcff;">
+    <h2>Designer notes</h2>
+    <ul class="notes-list">
+      <li><b>1 · Match the Words</b> — Upgrades the current static "vocabulary list + fill-in-blank" review with a tactile drag-to-match. Optional non-graded timer adds replay motivation without pressure.</li>
+      <li><b>2 · Memory Match</b> — Replaces flashcard slideshows with an active concentration game; doubles as a culture touchpoint (Roman gods).</li>
+      <li><b>3 · Sort the Words</b> — Upgrades multiple-choice "which is Latin?" items into a hands-on two-bin sort that makes word-origin thinking visible.</li>
+      <li><b>4 · Guess Where It Came From</b> — New "Living Latin" wonder moment; replaces passive did-you-know text boxes with a guess-then-reveal that rewards curiosity. Etymologies fact-checked (octō → October; octopus noted as Greek sharing the same ancient root for eight).</li>
+      <li><b>5 · Magister Caesar</b> — New recurring guide persona; replaces plain instruction text with a friendly read-aloud character for early/emerging readers.</li>
+      <li style="list-style:none;margin-left:-20px;margin-top:14px;border-top:1px solid #e3e8f4;padding-top:14px;"><b>Deployment:</b> All widgets are self-contained HTML/CSS/JS intended to be hosted on <b>GitHub Pages</b> and embedded via <code>&lt;iframe&gt;</code> into Canvas lesson pages, per the <i>canvas-interactive-widgets</i> workflow. No external JS libraries; only the Optima owl logo loads remotely.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>Optima Academy Online · Elementary Latin (5007090) · Widget Prototype Kit — internal review artifact</footer>
+
+<!-- Floating ghost element reused by pointer-drag widgets -->
+<div id="dragGhost"></div>
+
+<script>
+/* ================================================================
+   SHARED POINTER-DRAG HELPER
+   Works with mouse + touch via Pointer Events. Creates a floating
+   "ghost" clone that follows the pointer, and reports which drop
+   zone the pointer is over on release.
+   ================================================================ */
+const ghost = document.getElementById('dragGhost');
+
+function startPointerDrag(e, sourceEl, dropSelector, onDrop){
+  // Only left button / primary pointer
+  if(e.button && e.button !== 0) return;
+  e.preventDefault();
+  sourceEl.setPointerCapture(e.pointerId);
+  sourceEl.classList.add('dragging');
+
+  ghost.textContent = sourceEl.dataset.label || sourceEl.textContent;
+  ghost.style.display = 'block';
+  positionGhost(e);
+
+  let currentZone = null;
+
+  function positionGhost(ev){
+    ghost.style.left = (ev.clientX - ghost.offsetWidth/2) + 'px';
+    ghost.style.top  = (ev.clientY - ghost.offsetHeight/2) + 'px';
+  }
+  function zoneUnder(ev){
+    // Hide ghost so elementFromPoint sees what's beneath it
+    ghost.style.display='none';
+    const el = document.elementFromPoint(ev.clientX, ev.clientY);
+    ghost.style.display='block';
+    return el ? el.closest(dropSelector) : null;
+  }
+  function move(ev){
+    positionGhost(ev);
+    const z = zoneUnder(ev);
+    if(z !== currentZone){
+      if(currentZone) currentZone.classList.remove('over');
+      currentZone = z;
+      if(currentZone) currentZone.classList.add('over');
+    }
+  }
+  function up(ev){
+    sourceEl.releasePointerCapture(ev.pointerId);
+    sourceEl.removeEventListener('pointermove', move);
+    sourceEl.removeEventListener('pointerup', up);
+    sourceEl.removeEventListener('pointercancel', up);
+    ghost.style.display='none';
+    sourceEl.classList.remove('dragging');
+    if(currentZone) currentZone.classList.remove('over');
+    onDrop(currentZone, ev);
+  }
+  sourceEl.addEventListener('pointermove', move);
+  sourceEl.addEventListener('pointerup', up);
+  sourceEl.addEventListener('pointercancel', up);
+}
+
+/* ================================================================
+   WIDGET 1 — DRAG & DROP MATCH
+   ================================================================ */
+const W1 = (function(){
+  const PAIRS = [
+    {la:'ūnus',  en:'one'},
+    {la:'duo',   en:'two'},
+    {la:'trēs',  en:'three'},
+    {la:'salvē', en:'hello'},
+    {la:'valē',  en:'goodbye'}
+  ];
+  const BEST_KEY = 'elatin_w1_best';
+  const wordsEl   = document.getElementById('w1words');
+  const targetsEl = document.getElementById('w1targets');
+  const statusEl  = document.getElementById('w1status');
+  const toggle    = document.getElementById('timerToggle');
+
+  let solved = 0, timerOn=false, startTime=0, tick=null;
+
+  function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+  function fmt(ms){const s=Math.floor(ms/1000);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');}
+
+  function showBest(){
+    const b = localStorage.getItem(BEST_KEY);
+    if(toggle.checked && b){ statusEl.innerHTML = 'Your best: '+fmt(+b); }
+  }
+  function startTimer(){
+    if(!timerOn) return;
+    startTime = Date.now();
+    tick = setInterval(()=>{ if(solved<PAIRS.length) statusEl.textContent='⏱ '+fmt(Date.now()-startTime); },250);
+  }
+
+  function build(){
+    solved=0;
+    wordsEl.innerHTML=''; targetsEl.innerHTML='';
+    // Latin words (shuffled) — draggable
+    shuffle(PAIRS).forEach(p=>{
+      const chip=document.createElement('div');
+      chip.className='word-chip';
+      chip.textContent=p.la;
+      chip.dataset.la=p.la;
+      chip.dataset.label=p.la;
+      chip.addEventListener('pointerdown',e=>{
+        if(chip.classList.contains('locked'))return;
+        startPointerDrag(e,chip,'.drop-target',(zone)=>{
+          if(!zone) return;
+          if(zone.classList.contains('filled')) return;
+          if(zone.dataset.la === chip.dataset.la){
+            // correct
+            chip.classList.add('locked');
+            zone.classList.add('filled');
+            zone.innerHTML='<span class="answer-word">'+chip.dataset.la+'</span> = '+zone.dataset.en;
+            solved++;
+            if(solved===PAIRS.length) finish();
+          }else{
+            // wrong — bounce
+            chip.classList.add('nudge');
+            setTimeout(()=>chip.classList.remove('nudge'),400);
+          }
+        });
+      });
+      wordsEl.appendChild(chip);
+    });
+    // English meanings (shuffled) — drop targets
+    shuffle(PAIRS).forEach(p=>{
+      const t=document.createElement('div');
+      t.className='drop-target';
+      t.textContent=p.en;
+      t.dataset.en=p.en;
+      t.dataset.la=p.la;
+      targetsEl.appendChild(t);
+    });
+  }
+
+  function finish(){
+    if(tick){clearInterval(tick);tick=null;}
+    if(timerOn){
+      const elapsed=Date.now()-startTime;
+      const prev=localStorage.getItem(BEST_KEY);
+      let msg='🎉 All matched! Time: '+fmt(elapsed);
+      if(!prev || elapsed < +prev){ localStorage.setItem(BEST_KEY,elapsed); msg+=' — new best!'; }
+      else { msg+=' (best: '+fmt(+prev)+')'; }
+      statusEl.textContent=msg;
+    }else{
+      statusEl.textContent='🎉 All matched! Great work.';
+    }
+    statusEl.classList.add('win');
+  }
+
+  toggle.addEventListener('change',()=>{
+    timerOn=toggle.checked;
+    reset();
+  });
+
+  function reset(){
+    if(tick){clearInterval(tick);tick=null;}
+    statusEl.className='status-line';
+    statusEl.textContent='';
+    build();
+    showBest();
+    startTimer();
+  }
+
+  build(); showBest();
+  return {reset};
+})();
+
+/* ================================================================
+   WIDGET 2 — FLIP CARD MEMORY
+   ================================================================ */
+const W2 = (function(){
+  // 4 pairs (8 cards): each pair = a Latin god name + its domain emoji
+  const PAIRS = [
+    {id:'nep', a:'Neptūnus', b:'🔱 sea'},
+    {id:'iup', a:'Iuppiter', b:'⚡ sky'},
+    {id:'mar', a:'Mārs',     b:'⚔️ war'},
+    {id:'ven', a:'Venus',    b:'💗 love'}
+  ];
+  const grid=document.getElementById('w2grid');
+  const movesEl=document.getElementById('w2moves');
+  const msgEl=document.getElementById('w2msg');
+  let first=null, lock=false, moves=0, matched=0;
+
+  function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+  function build(){
+    grid.innerHTML=''; first=null; lock=false; moves=0; matched=0;
+    movesEl.textContent='0'; msgEl.textContent='';
+    let deck=[];
+    PAIRS.forEach(p=>{ deck.push({pid:p.id,text:p.a}); deck.push({pid:p.id,text:p.b}); });
+    deck=shuffle(deck);
+    deck.forEach(c=>{
+      const card=document.createElement('div');
+      card.className='mcard';
+      card.dataset.pid=c.pid;
+      card.innerHTML='<div class="mcard-inner">'+
+        '<div class="mface back">?</div>'+
+        '<div class="mface front">'+c.text+'</div></div>';
+      card.addEventListener('click',()=>flip(card));
+      grid.appendChild(card);
+    });
+  }
+
+  function flip(card){
+    if(lock) return;
+    if(card.classList.contains('flipped')||card.classList.contains('matched')) return;
+    card.classList.add('flipped');
+    if(!first){ first=card; return; }
+    // second card
+    moves++; movesEl.textContent=moves;
+    if(first.dataset.pid === card.dataset.pid){
+      first.classList.add('matched'); card.classList.add('matched');
+      first=null; matched++;
+      if(matched===PAIRS.length){ msgEl.innerHTML='<span style="color:var(--good);font-weight:800;">🎉 All pairs found!</span>'; }
+    }else{
+      lock=true;
+      const a=first, b=card;
+      setTimeout(()=>{ a.classList.remove('flipped'); b.classList.remove('flipped'); first=null; lock=false; },850);
+    }
+  }
+
+  function reset(){ build(); }
+  build();
+  return {reset};
+})();
+
+/* ================================================================
+   WIDGET 3 — SORT INTO BINS
+   ================================================================ */
+const W3 = (function(){
+  // Latin-origin vs Japanese-origin English words
+  const WORDS=[
+    {w:'aquarium', origin:'latin'},
+    {w:'territory', origin:'latin'},
+    {w:'video',     origin:'latin'},
+    {w:'october',   origin:'latin'},
+    {w:'senator',   origin:'latin'},
+    {w:'ninja',     origin:'other'},
+    {w:'sushi',     origin:'other'},
+    {w:'karate',    origin:'other'}
+  ];
+  const source=document.getElementById('w3source');
+  const binLatin=document.getElementById('w3binLatin');
+  const binOther=document.getElementById('w3binOther');
+  const statusEl=document.getElementById('w3status');
+  let placed=0;
+
+  function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+  function build(){
+    source.innerHTML=''; placed=0;
+    binLatin.querySelector('.bin-items').innerHTML='';
+    binOther.querySelector('.bin-items').innerHTML='';
+    statusEl.className='status-line'; statusEl.textContent='';
+    shuffle(WORDS).forEach(item=>{
+      const chip=document.createElement('div');
+      chip.className='sort-chip';
+      chip.textContent=item.w;
+      chip.dataset.origin=item.origin;
+      chip.dataset.label=item.w;
+      chip.addEventListener('pointerdown',e=>{
+        if(chip.classList.contains('correct'))return;
+        startPointerDrag(e,chip,'.bin',(zone)=>{
+          if(!zone)return;
+          if(zone.dataset.bin === chip.dataset.origin){
+            // correct
+            chip.classList.add('correct');
+            zone.querySelector('.bin-items').appendChild(chip);
+            placed++;
+            if(placed===WORDS.length){ statusEl.classList.add('win'); statusEl.textContent='🎉 All sorted correctly!'; }
+          }else{
+            chip.classList.add('wrong');
+            setTimeout(()=>chip.classList.remove('wrong'),400);
+          }
+        });
+      });
+      source.appendChild(chip);
+    });
+  }
+
+  function reset(){ build(); }
+  build();
+  return {reset};
+})();
+
+/* ================================================================
+   WIDGET 4 — LIVING LATIN "GUESS WHERE IT CAME FROM"
+   Etymologies checked for accuracy.
+   ================================================================ */
+const W4 = (function(){
+  const ROUNDS=[
+    {
+      emoji:'🚀',
+      prompt:'NASA’s Moon rockets are named "Artemis," and Mars rovers explore the Red Planet. The planet Mars is named after a Roman god. Which Latin word gave us the planet name "Mars"?',
+      options:['Mārs (god of war)','mare (the sea)','magnus (big)'],
+      answer:0,
+      reveal:'The Red Planet is named for <b>Mārs</b>, the Roman god of war — its blood-red color reminded ancient people of battle. The month <i>March</i> comes from the same god!'
+    },
+    {
+      emoji:'🐙',
+      prompt:'A fish tank at the zoo is called an "aquarium." Which Latin word do you think it grew from?',
+      options:['aqua (water)','ager (field)','avis (bird)'],
+      answer:0,
+      reveal:'<b>Aqua</b> means <i>water</i> in Latin — an <i>aquarium</i> is literally "a place of water"! (Fun fact: the word <i>octopus</i> is actually Greek, but Greek and Latin both go back to the same ancient word for "eight.")'
+    },
+    {
+      emoji:'📅',
+      prompt:'October is the 10th month — but its name hides a number. Which Latin number word is inside "October"?',
+      options:['octō (eight)','decem (ten)','ūnus (one)'],
+      answer:0,
+      reveal:'<b>Octō</b> means <i>eight</i>! October was the 8th month in the oldest Roman calendar, which started in March. Later two months were added at the start, but the name stuck.'
+    }
+  ];
+  const emojiEl=document.getElementById('w4emoji');
+  const promptEl=document.getElementById('w4prompt');
+  const choicesEl=document.getElementById('w4choices');
+  const revealEl=document.getElementById('w4reveal');
+  const dotsEl=document.getElementById('w4dots');
+  const nextBtn=document.getElementById('w4next');
+  let idx=0, answered=false;
+
+  function renderDots(){
+    dotsEl.innerHTML='';
+    ROUNDS.forEach((_,i)=>{const s=document.createElement('span');if(i===idx)s.className='active';dotsEl.appendChild(s);});
+  }
+
+  function render(){
+    const r=ROUNDS[idx];
+    answered=false;
+    emojiEl.textContent=r.emoji;
+    promptEl.textContent=r.prompt;
+    revealEl.className='reveal';
+    revealEl.innerHTML='';
+    nextBtn.style.display='none';
+    choicesEl.innerHTML='';
+    r.options.forEach((opt,i)=>{
+      const b=document.createElement('button');
+      b.className='choice-btn';
+      b.textContent=opt;
+      b.addEventListener('click',()=>choose(i,b));
+      choicesEl.appendChild(b);
+    });
+    renderDots();
+  }
+
+  function choose(i,btn){
+    if(answered) return;
+    answered=true;
+    const r=ROUNDS[idx];
+    const buttons=[...choicesEl.children];
+    buttons.forEach(b=>b.disabled=true);
+    if(i===r.answer){
+      btn.classList.add('correct');
+    }else{
+      btn.classList.add('wrong');
+      buttons[r.answer].classList.add('correct');
+    }
+    revealEl.innerHTML='<span class="tada">✨ Ta-da!</span><br>'+r.reveal;
+    revealEl.classList.add('show');
+    nextBtn.style.display = (idx < ROUNDS.length-1) ? 'inline-block' : 'none';
+    if(idx===ROUNDS.length-1){
+      const done=document.createElement('div');
+      done.style.marginTop='14px';done.style.fontWeight='800';done.style.color='var(--good)';
+      done.textContent='🎉 You explored all the Living Latin words!';
+      revealEl.appendChild(done);
+    }
+  }
+
+  function next(){ if(idx<ROUNDS.length-1){ idx++; render(); } }
+  function reset(){ idx=0; render(); }
+  render();
+  return {next,reset};
+})();
+
+/* ================================================================
+   WIDGET 5 — MAGISTER CAESAR (Web Speech API read-aloud)
+   ================================================================ */
+const W5 = (function(){
+  const LINES=[
+    'Salvē, young scholar! Today we meet the numbers of Rome.',
+    'Ūnus, duo, trēs! Counting in Latin is easier than you think.',
+    'Remember: Latin is a living language, hiding in words you use every day. Valē!'
+  ];
+  const speechEl=document.getElementById('w5speech');
+  const playBtn=document.getElementById('w5play');
+  let idx=0;
+  const supported = ('speechSynthesis' in window) && ('SpeechSynthesisUtterance' in window);
+
+  // Show first line
+  speechEl.textContent=LINES[0];
+
+  if(!supported){
+    playBtn.disabled=true;
+    playBtn.style.opacity='.6';
+    playBtn.style.cursor='not-allowed';
+    playBtn.title='Speech is not available in this browser — read the text above.';
+    playBtn.textContent='▶ Play (speech unavailable)';
+  }
+
+  function play(){
+    if(!supported) return;
+    const text=LINES[idx];
+    speechEl.textContent=text;
+    try{
+      window.speechSynthesis.cancel(); // stop anything already speaking
+      const u=new SpeechSynthesisUtterance(text);
+      u.rate=0.95; u.pitch=1.0;
+      speechEl.classList.add('speaking');
+      u.onend=()=>{ speechEl.classList.remove('speaking'); };
+      u.onerror=()=>{ speechEl.classList.remove('speaking'); };
+      window.speechSynthesis.speak(u);
+    }catch(err){
+      speechEl.classList.remove('speaking');
+    }
+    idx=(idx+1)%LINES.length; // cycle to next line for next press
+  }
+
+  function reset(){
+    if(supported){ try{window.speechSynthesis.cancel();}catch(e){} }
+    speechEl.classList.remove('speaking');
+    idx=0;
+    speechEl.textContent=LINES[0];
+  }
+
+  return {play,reset};
+})();
+</script>
+
+</body>
+</html>

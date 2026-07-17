@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elementary Latin — Module 28, Primary (3-5)</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — ELEMENTARY LATIN in-lesson palette: gold + teal ===== */
+    .optima-widget { background: linear-gradient(135deg, #FFF6E6 0%, #E6F6F5 100%); border: 1px solid #F0DBA8; border-left: 5px solid #0F8B8D; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 12px; color: #0a5f60; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 18px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #F0DBA8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 16px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #F0DBA8; border-radius: 8px; padding: 9px 16px; font-size: 15px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #FFF6E6; border-color: #C7922C; }
+    .widget-options button.selected { background: #0F8B8D; color: #FFFFFF; border-color: #0F8B8D; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #0F8B8D; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #0F8B8D; color: #0F8B8D; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #E6F6F5; }
+
+    /* ===== Video embed (responsive 16:9) ===== */
+    .el-video { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin: 12px 0 4px 0; border: 2px solid #0F8B8D; }
+    .el-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .el-video-credit { font-size: 12px; color: #888; font-style: italic; margin: 0 0 14px 2px; }
+
+    /* ===== Reading passage ===== */
+    .el-passage { background:#FBF8F0; border:1px solid #F0DBA8; border-left:5px solid #C7922C; border-radius:8px; padding:18px 22px; margin:14px 0; font-size:17px; line-height:1.8; color:#1a2340; }
+    .el-passage .latin { color:#0a5f60; font-style:italic; font-weight:600; }
+
+    /* Simple map graphic (CSS only, no external image) */
+    .el-map { background: #E6F6F5; border: 2px solid #0F8B8D; border-radius: 12px; padding: 20px; text-align:center; margin: 12px 0; }
+    .el-boot { display:inline-block; width:80px; height:130px; background:#C7922C; clip-path: polygon(45% 0%, 70% 0%, 70% 55%, 100% 65%, 100% 85%, 60% 100%, 20% 90%, 30% 55%, 45% 55%); position:relative; }
+    .el-dot { display:inline-block; width:12px; height:12px; background:#E23A33; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 1px #0E1C42; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size:28px;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 34px; color: #ffffff; margin-bottom: 6px;">ELEMENTARY LATIN</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q4 &middot; Module 28</div>
+        <div style="font-size: 12px; color: #666;">Rome's Legacy</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lane</div>
+        <div style="font-size: 17px; color: #0a5f60;">📖 Primary · Grades 3-5</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Latin in Everyday English: The Motto Hunt</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">About how long</div>
+        <div style="font-size: 16px; color: #0e1c42;">35&ndash;40 min</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Session 1</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Out of Many, One: Latin Mottoes All Around Us</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Why does a coin in your pocket have Latin written on it?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.7;">A <strong>motto</strong> is a short saying that stands for what a place or group believes in. Long after Rome fell, people kept choosing Latin for their mottoes — you'll find them on U.S. money, on state flags and seals, and on school crests. Today you'll go hunting for a few of the most famous ones and figure out what they really mean.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🎯 BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;"><strong>I can</strong> explain what "E pluribus unum" means and where it appears.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;"><strong>I can</strong> match at least four Latin mottoes to their English meanings.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;"><strong>I can</strong> consider a short motto of my own using a Latin word I've learned this year.</div>
+        </div>
+    </div>
+
+    <!-- Materials -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">📋 WHAT YOU NEED</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">▶</span><div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Headphones or speakers</div></div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">▶</span><div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your Roman Passport document</div></div>
+    </div>
+
+    <!-- PART 1: check-in -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">⚡ PART 1 &middot; LET'S BEGIN</div>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">⚡ QUICK CHECK-IN</div>
+            <div class="widget-question">Have you ever noticed Latin words on money, a flag, or a school crest — even without knowing it was Latin?</div>
+            <div class="widget-options">
+                <button data-response="Nice catch — E pluribus unum has been on American money for over two hundred years.">🪙 Maybe — on a coin?</button>
+                <button data-response="You're about to start noticing mottoes everywhere — several U.S. states put them right on their state seal.">🤷 Not that I know of</button>
+                <button data-response="Great instinct — many universities chose Latin mottoes too, like Harvard's Veritas.">🎓 I've seen one on a school crest</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2: reading passage -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🪙 PART 2 &middot; READING: OUT OF MANY, ONE</div>
+
+        <div class="el-passage">
+            Turn over almost any U.S. coin and you can find three Latin words: <span class="latin">E pluribus unum</span>, meaning "Out of many, one." This motto has appeared on the Great Seal of the United States and on American money for more than two hundred years, reminding people that one country was formed out of many separate states. Mottoes like this are not only national — many individual states have their own. Virginia's state motto is <span class="latin">Sic Semper Tyrannis</span> ("Thus Always to Tyrants"), and Kansas chose <span class="latin">Ad Astra Per Aspera</span> ("To the Stars Through Difficulties") for its state seal.
+        </div>
+
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 10px 0 0 0;">Watch this short video for a closer look at Latin mottoes on U.S. state seals and flags.</p>
+        <div class="el-video">
+            <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#EEF1F8;color:#0E1C42;text-align:center;padding:16px;"><div style="font-size:42px;line-height:1;">🎬</div><div style="font-size:16px;font-weight:600;margin-top:8px;">Facilitator video goes here</div><div style="font-size:13px;color:#6b7a99;margin-top:4px;max-width:340px;">Your teacher will add a short, engaging video for this lesson.</div></div>
+        </div>
+        <p class="el-video-credit">Facilitator video slot — your teacher adds a short, vetted video here.</p>
+    </div>
+
+    <!-- PART 3: motto matching -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🔍 PART 3 &middot; MOTTO MATCH</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 0 0 10px 0;">Schools choose Latin mottoes too. Harvard University's motto is <em>Veritas</em>, meaning "Truth." Yale University's motto is <em>Lux et Veritas</em>, meaning "Light and Truth." Now match each Latin motto below to its correct English meaning.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">⚡ TRY IT &middot; MATCH THE MOTTO</div>
+            <div class="widget-question">Which English meaning matches this Latin motto?</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Yes! E Pluribus Unum is the U.S. motto on the Great Seal and on our money." data-hint="Think of the national motto found on money.">
+                <div class="widget-row-prompt">1. E Pluribus Unum</div>
+                <div class="widget-options">
+                    <button data-choice="0">Out of Many, One</button>
+                    <button data-choice="1">To the Stars Through Difficulties</button>
+                    <button data-choice="2">Ever Upward</button>
+                    <button data-choice="3">While I Breathe, I Hope</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Right! Sic Semper Tyrannis is Virginia's state motto." data-hint="Think of Virginia's state seal.">
+                <div class="widget-row-prompt">2. Sic Semper Tyrannis</div>
+                <div class="widget-options">
+                    <button data-choice="0">Truth</button>
+                    <button data-choice="1">Light and Truth</button>
+                    <button data-choice="2">Ever Upward</button>
+                    <button data-choice="3">Thus Always to Tyrants</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Correct! Excelsior is New York's state motto." data-hint="Think of New York's state motto.">
+                <div class="widget-row-prompt">3. Excelsior</div>
+                <div class="widget-options">
+                    <button data-choice="0">Out of Many, One</button>
+                    <button data-choice="1">While I Breathe, I Hope</button>
+                    <button data-choice="2">Ever Upward</button>
+                    <button data-choice="3">Thus Always to Tyrants</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Correct! Ad Astra Per Aspera is Kansas's state motto." data-hint="Think of Kansas's state motto.">
+                <div class="widget-row-prompt">4. Ad Astra Per Aspera</div>
+                <div class="widget-options">
+                    <button data-choice="0">Truth</button>
+                    <button data-choice="1">To the Stars Through Difficulties</button>
+                    <button data-choice="2">Ever Upward</button>
+                    <button data-choice="3">Out of Many, One</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Correct! Dum Spiro Spero is South Carolina's state motto." data-hint="Think of South Carolina's state motto.">
+                <div class="widget-row-prompt">5. Dum Spiro Spero</div>
+                <div class="widget-options">
+                    <button data-choice="0">While I Breathe, I Hope</button>
+                    <button data-choice="1">Light and Truth</button>
+                    <button data-choice="2">To the Stars Through Difficulties</button>
+                    <button data-choice="3">Thus Always to Tyrants</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Need Help (gold) -->
+        <div style="background: #FFF6E6; border-left: 5px solid #C7922C; border-top: 3px solid #E0B45A; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #9a7b1e; margin-bottom: 8px;">🤗 NEED HELP?</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Five mottoes at once is a lot to remember. Re-read the passage in Part 2 and say each motto out loud once before you choose — hearing it can help the meaning click.</div>
+        </div>
+
+        <!-- Go Further (teal) -->
+        <details style="background: #FFFFFF; border: 1px solid #B9E4E1; border-left: 4px solid #0F8B8D; border-radius: 6px; padding: 12px 18px; margin: 14px 0;">
+            <summary style="font-size: 17px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #0F8B8D;">▶</span>&nbsp; Go Further: try the timed round, or design your own motto
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.7; margin-top: 10px; padding-top: 10px; border-top: 1px solid #E6F6F5;">
+                Want a challenge? Replay the matching game above in <strong>timed mode</strong> and see if you can beat your own best time. This is optional, untimed by default, and never affects your grade — it's just for fun.<br><br>
+                Feeling creative? Try designing a short motto for your own class — in English, or using a Latin word you've already learned this year, like <em>salvē</em> or <em>valē</em>. There's no single "correct" motto — this is just for fun and creative practice.
+            </div>
+        </details>
+    </div>
+
+    <!-- Roman Passport tie-in -->
+    <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-radius: 6px; padding: 16px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 10px;">📝 ADD TO YOUR ROMAN PASSPORT</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.65;">Open your Roman Passport document and write today's date. Write down one motto from today and what it means. You'll add to this passport once each quarter all year.</div>
+    </div>
+
+    <!-- What you'll do next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div><div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Module 28 Quick Check</strong></div><div style="font-size: 16px; color: #1a2340; line-height: 1.55;">A short 5-question quiz on today's mottoes and their meanings. Best of 2 attempts.</div></div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div><div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Module 28 Reflection</strong></div><div style="font-size: 16px; color: #1a2340; line-height: 1.55;">One or two sentences: which motto's meaning did you like best, and why?</div></div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">💪 GREAT START</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 0;">You just went on a motto hunt and found Latin hiding on money, state seals, and school crests. Next time, we'll keep hunting for Rome's legacy in the world around us.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; ELEMENTARY LATIN &middot; Quarter 4 &middot; Primary (3-5) Lesson</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Module 28 &middot; Latin in Everyday English: The Motto Hunt</div>
+    <div style="font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.5;">Facilitator video slot — your teacher adds a short, vetted video here.</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
