@@ -155,16 +155,71 @@
         </div>
 
         <div class="el-map">
-            <div class="el-road-row">
-                <div class="el-city other"></div>
-                <div class="el-road-line"></div>
-                <div class="el-city rome"></div>
-                <div class="el-road-line"></div>
-                <div class="el-city other"></div>
-                <div class="el-road-line"></div>
-                <div class="el-city other"></div>
+            <div style="max-width:320px;margin:0 auto;">
+          <svg viewBox="0 0 240 230" role="img" aria-label="A paved Roman road made of stone blocks receding toward distant hills, with a stone milestone beside it" style="width:100%;height:auto;display:block;">
+            <defs>
+              <linearGradient id="rdSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#cfeaf6"/><stop offset="1" stop-color="#f3f7e6"/>
+              </linearGradient>
+              <linearGradient id="rdGrass" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#9fb857"/><stop offset="1" stop-color="#7f9542"/>
+              </linearGradient>
+              <linearGradient id="rdStone" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#cdbfa6"/><stop offset="1" stop-color="#a99a7c"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="240" height="230" rx="16" fill="url(#rdSky)"/>
+            <circle cx="196" cy="44" r="16" fill="#f4c86a" opacity=".85"/>
+            <g fill="#ffffff" opacity=".8">
+              <ellipse cx="58" cy="46" rx="24" ry="11"/>
+              <ellipse cx="40" cy="50" rx="15" ry="8"/>
+            </g>
+            <!-- distant hills -->
+            <path d="M0 120 q48 -26 100 -8 q54 18 140 -8 V150 H0 Z" fill="#9fb35a" opacity=".7"/>
+            <path d="M0 132 q60 -18 120 -4 q60 12 120 -6 V150 H0 Z" fill="#8aa04a"/>
+            <!-- grass field -->
+            <rect x="0" y="120" width="240" height="110" fill="url(#rdGrass)"/>
+            <!-- road (receding trapezoid) -->
+            <path d="M104 120 L136 120 L212 226 L28 226 Z" fill="url(#rdStone)" stroke="#8a7c60" stroke-width="2" stroke-linejoin="round"/>
+            <!-- kerb stones -->
+            <path d="M104 120 L28 226 L36 226 L110 120 Z" fill="#8f8266"/>
+            <path d="M136 120 L212 226 L204 226 L130 120 Z" fill="#8f8266"/>
+            <!-- paving joints: transverse -->
+            <g stroke="#8a7c60" stroke-width="1.6" opacity=".8">
+              <path d="M112 138 L128 138"/>
+              <path d="M107 158 L133 158"/>
+              <path d="M101 180 L139 180"/>
+              <path d="M93 204 L147 204"/>
+            </g>
+            <!-- paving joints: longitudinal, fanning -->
+            <g stroke="#8a7c60" stroke-width="1.4" opacity=".7">
+              <path d="M120 120 L120 226"/>
+              <path d="M113 138 L92 204"/>
+              <path d="M127 138 L148 204"/>
+            </g>
+            <!-- stone block highlights -->
+            <g fill="#ddd0b8" opacity=".55">
+              <path d="M112 140 L119 140 L118 156 L109 156 Z"/>
+              <path d="M121 140 L128 140 L131 156 L120 156 Z"/>
+              <path d="M103 182 L118 182 L117 202 L96 202 Z"/>
+              <path d="M122 182 L137 182 L144 202 L123 202 Z"/>
+            </g>
+            <!-- milestone (miliarium) -->
+            <g transform="translate(196,150)">
+              <ellipse cx="0" cy="46" rx="16" ry="5" fill="#0E1C42" opacity=".12"/>
+              <path d="M-9 46 L-7 6 a7 7 0 0 1 14 0 L9 46 Z" fill="#e6d3a8" stroke="#b89a63" stroke-width="1.6" stroke-linejoin="round"/>
+              <ellipse cx="0" cy="6" rx="7" ry="4" fill="#f2e4c2" stroke="#b89a63" stroke-width="1.2"/>
+              <g stroke="#b0863f" stroke-width="1.4" stroke-linecap="round">
+                <path d="M-4 20 h8"/><path d="M-4 27 h8"/><path d="M-4 34 h8"/>
+              </g>
+            </g>
+            <!-- roadside shrub -->
+            <g transform="translate(40,168)" fill="#5f7431">
+              <circle cx="0" cy="0" r="9"/><circle cx="9" cy="4" r="7"/><circle cx="-8" cy="4" r="6"/>
+            </g>
+          </svg>
             </div>
-            <div class="el-road-label">🟥 = Rome &nbsp; 🟨 = other cities in the empire &nbsp; striped line = a Roman <span style="font-style:italic;">via</span>, a paved road</div>
+            <div class="el-road-label">🛣️ A paved Roman <span style="font-style:italic;">via</span> receding toward the hills, with a stone milestone marking the distance.</div>
         </div>
 
         <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 10px 0 0 0;">Watch this short video about the Roman road network.</p>

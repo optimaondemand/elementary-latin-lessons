@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Elementary Latin — Final Scene Illustrations (source of truth)</title>
+<style>
+  :root{
+    --navy:#0E1C42;
+    --cyan:#55C8E8;
+    --gold:#C7922C;
+    --terracotta:#C4703F;
+    --olive:#7B8C3F;
+    --sky:#AEE0F2;
+    --sand:#E8D6A8;
+    --ink:#243049;
+    --paper:#FBF7EF;
+    --card:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.5;
+  }
+
+  /* ---- Optima header ---- */
+  header.optima{
+    background:var(--navy);
+    border-bottom:4px solid var(--cyan);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:16px 28px;
+  }
+  header.optima .brand{display:flex;align-items:center;gap:12px;}
+  header.optima h1{
+    font-size:1.25rem;
+    margin:0;
+    font-weight:700;
+    letter-spacing:.2px;
+  }
+  header.optima .kicker{
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:var(--cyan);
+    margin:0 0 2px;
+  }
+
+  main{max-width:1080px;margin:0 auto;padding:28px 24px 64px;}
+  .intro{
+    font-size:1.02rem;
+    color:#4a566e;
+    background:#fff;
+    border-left:5px solid var(--gold);
+    padding:14px 18px;
+    border-radius:8px;
+    box-shadow:0 1px 3px rgba(14,28,66,.08);
+    margin-bottom:32px;
+  }
+  .intro b{color:var(--navy);}
+
+  /* ---- mapping table ---- */
+  .map-wrap{
+    background:#fff;
+    border:1px solid #ece4d4;
+    border-radius:16px;
+    box-shadow:0 6px 18px rgba(14,28,66,.07);
+    padding:20px 22px;
+    margin-bottom:36px;
+    overflow-x:auto;
+  }
+  .map-wrap h2{
+    margin:0 0 12px;
+    color:var(--navy);
+    font-size:1.1rem;
+    font-weight:800;
+    letter-spacing:.3px;
+  }
+  table.mapping{
+    width:100%;
+    border-collapse:collapse;
+    font-size:.92rem;
+    min-width:640px;
+  }
+  table.mapping th,table.mapping td{
+    text-align:left;
+    padding:10px 12px;
+    border-bottom:1px solid #eee2ca;
+    vertical-align:top;
+  }
+  table.mapping thead th{
+    background:var(--navy);
+    color:#fff;
+    font-weight:700;
+    letter-spacing:.4px;
+    border-bottom:none;
+  }
+  table.mapping thead th:first-child{border-top-left-radius:8px;}
+  table.mapping thead th:last-child{border-top-right-radius:8px;}
+  table.mapping tbody tr:nth-child(even){background:#faf5ea;}
+  table.mapping td.lat{font-weight:800;color:var(--navy);white-space:nowrap;}
+  table.mapping td.mods code,table.mapping td.crude code{
+    background:#f1e7cf;border:1px solid #e4d3a6;border-radius:5px;
+    padding:1px 6px;font-size:.82rem;color:var(--navy);
+    display:inline-block;margin:1px 2px;
+  }
+
+  /* ---- illustration cards grid ---- */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:24px;
+  }
+  section.card{
+    background:var(--card);
+    border:1px solid #ece4d4;
+    border-radius:16px;
+    box-shadow:0 6px 18px rgba(14,28,66,.07);
+    padding:20px 22px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+  }
+  .card-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;justify-content:center;}
+  .lat{font-size:1.5rem;font-weight:800;color:var(--navy);}
+  .gloss{font-size:.9rem;color:var(--gold);font-weight:600;font-style:italic;text-align:center;}
+  .mod-tag{
+    font-size:.66rem;font-weight:700;color:var(--navy);background:#f1e7cf;
+    border:1px solid #e4d3a6;border-radius:6px;padding:3px 8px;letter-spacing:.5px;
+  }
+  .frame.big{
+    background:linear-gradient(160deg,#ffffff,#f7f2e8);
+    border:1px solid #e7dcc6;border-radius:16px;
+    width:280px;height:280px;display:flex;align-items:center;justify-content:center;
+    box-shadow:inset 0 2px 10px rgba(14,28,66,.05);
+    padding:8px;
+  }
+  .frame.big svg{width:258px;height:258px;}
+  .illus{display:flex;align-items:center;justify-content:center;}
+
+  footer{color:#8a8778;font-size:.8rem;text-align:center;padding:20px;}
+</style>
+</head>
+<body>
+
+<header class="optima">
+  <div class="brand">
+    <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width:50px;height:40px;object-fit:contain;" />
+    <div>
+      <p class="kicker">Elementary Latin</p>
+      <h1>Elementary Latin — Final Scene Illustrations (source of truth)</h1>
+    </div>
+  </div>
+</header>
+
+<main>
+  <p class="intro">The <b>10 final, approved</b> scene illustrations for the K–5 Latin course, assembled into one canonical source file. Each SVG below is the exact reviewer-chosen variant — copied verbatim from the prototype files — and is the single source of truth for deploying illustrations into lessons. Each is wrapped in a container carrying a <code>data-illus</code> id so it can be located programmatically.</p>
+
+  <!-- ============ MAPPING TABLE ============ -->
+  <div class="map-wrap">
+    <h2>Deployment mapping — illustration → target module(s) → crude class it replaces</h2>
+    <table class="mapping">
+      <thead>
+        <tr>
+          <th>Illustration</th>
+          <th>Target module(s)</th>
+          <th>Crude class it replaces</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="lat">Italia</td>
+          <td class="mods"><code>q1/m01</code> <code>q1/m02</code></td>
+          <td class="crude"><code>el-boot</code> <code>el-map</code></td>
+        </tr>
+        <tr>
+          <td class="lat">Rōma</td>
+          <td class="mods"><code>q1/m02</code></td>
+          <td class="crude"><code>el-dot</code> (city marker)</td>
+        </tr>
+        <tr>
+          <td class="lat">mōns</td>
+          <td class="mods"><code>q1/m02</code></td>
+          <td class="crude"><code>el-hill</code></td>
+        </tr>
+        <tr>
+          <td class="lat">īnsula</td>
+          <td class="mods"><code>q1/m02</code></td>
+          <td class="crude"><code>el-island</code></td>
+        </tr>
+        <tr>
+          <td class="lat">Colossēum</td>
+          <td class="mods"><code>q2/m14</code></td>
+          <td class="crude"><code>el-colosseum</code> <code>el-tier</code> <code>el-arches</code> <code>el-floor</code></td>
+        </tr>
+        <tr>
+          <td class="lat">aquaeductus</td>
+          <td class="mods"><code>q2/m13</code></td>
+          <td class="crude"><code>el-arch</code> <code>el-channel</code> <code>el-arcade-row</code></td>
+        </tr>
+        <tr>
+          <td class="lat">via</td>
+          <td class="mods"><code>q2/m12</code></td>
+          <td class="crude"><code>el-road-line</code> <code>el-road-row</code></td>
+        </tr>
+        <tr>
+          <td class="lat">tunica &amp; toga</td>
+          <td class="mods"><code>q1/m07</code></td>
+          <td class="crude"><code>el-toga-drape</code> <code>el-tunic-body</code> <code>el-garment</code></td>
+        </tr>
+        <tr>
+          <td class="lat">lupa</td>
+          <td class="mods"><code>q1/m04</code></td>
+          <td class="crude"><code>el-story-emoji</code></td>
+        </tr>
+        <tr>
+          <td class="lat">hōrologium</td>
+          <td class="mods"><code>q1/m03</code></td>
+          <td class="crude"><code>el-clock</code> <code>el-clock-face</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============ ILLUSTRATION CARDS ============ -->
+  <div class="grid">
+
+    <!-- 1. ITALIA -->
+    <section class="card">
+      <div class="card-head">
+        <span class="lat">Italia</span>
+        <span class="mod-tag">Q1 · M01 / M02</span>
+      </div>
+      <span class="gloss">Italy — the peninsula</span>
+      <div class="frame big">
+        <div class="illus" data-illus="italia">
+          <!-- ITALIA MAP -->
+          <svg viewBox="0 0 240 260" role="img" aria-label="Stylized map of the Italian peninsula with the capital city Rome marked by a gold star">
+            <defs>
+              <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#bfe6f4"/><stop offset="1" stop-color="#8fcfe8"/>
+              </linearGradient>
+              <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#a9bd66"/><stop offset="1" stop-color="#7f9542"/>
+              </linearGradient>
+              <linearGradient id="landHi" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#c7d68a"/><stop offset="1" stop-color="#a9bd66"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="240" height="260" rx="20" fill="url(#sea)"/>
+            <!-- subtle sea wave strokes -->
+            <g stroke="#a6dcf0" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".7">
+              <path d="M24 214 q9 -7 18 0 t18 0"/>
+              <path d="M198 60 q9 -7 18 0 t18 0"/>
+              <path d="M196 210 q9 -7 18 0 t18 0"/>
+            </g>
+            <!-- Sardinia -->
+            <path d="M34 138 q-8 10 -3 24 q4 12 16 12 q11 -1 12 -14 q1 -14 -8 -24 q-9 -8 -17 2 Z" fill="url(#land)" stroke="#6c8138" stroke-width="2"/>
+            <!-- Sicily -->
+            <path d="M64 218 q-12 4 -14 16 q-1 11 12 15 q16 4 27 -4 q7 -6 -1 -13 q-11 -9 -24 -14 Z" fill="url(#land)" stroke="#6c8138" stroke-width="2"/>
+            <!-- Peninsula (the boot) -->
+            <path d="M56 56
+                     C 72 40, 122 42, 152 56
+                     C 164 62, 158 80, 146 92
+                     C 138 102, 150 114, 160 128
+                     C 174 146, 190 160, 192 178
+                     C 193 189, 182 192, 174 186
+                     C 167 181, 162 175, 154 172
+                     C 147 176, 146 184, 138 188
+                     C 122 196, 112 206, 102 214
+                     C 94 220, 84 216, 88 206
+                     C 92 195, 104 188, 110 176
+                     C 115 164, 106 156, 98 148
+                     C 86 135, 78 120, 72 104
+                     C 66 88, 58 74, 56 62 Z"
+                  fill="url(#land)" stroke="#6c8138" stroke-width="2.4" stroke-linejoin="round"/>
+            <!-- inner highlight for depth -->
+            <path d="M64 62 C 80 52, 118 54, 142 64 C 150 70, 146 82, 138 90 C 128 100, 138 112, 146 126 C 132 118, 122 106, 116 92 C 100 80, 82 74, 64 70 Z"
+                  fill="url(#landHi)" opacity=".55"/>
+            <!-- Rome star + label -->
+            <g transform="translate(96,116)">
+              <circle r="15" fill="#0E1C42" opacity=".12"/>
+              <path d="M0 -11 L3.2 -3.4 L11 -3 L4.8 2.2 L6.8 10 L0 5.4 L-6.8 10 L-4.8 2.2 L-11 -3 L-3.2 -3.4 Z"
+                    fill="#C7922C" stroke="#8f6614" stroke-width="1"/>
+            </g>
+            <text x="112" y="120" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="800" fill="#0E1C42">Rōma</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ROMA -->
+    <section class="card">
+      <div class="card-head">
+        <span class="lat">Rōma</span>
+        <span class="mod-tag">Q1 · M02</span>
+      </div>
+      <span class="gloss">Rome — the city</span>
+      <div class="frame big">
+        <div class="illus" data-illus="roma">
+          <!-- ROMA VIGNETTE -->
+          <svg viewBox="0 0 260 210" role="img" aria-label="A warm illustration of the city of Rome with a Colosseum, a temple with columns, an aqueduct, and hills">
+            <defs>
+              <linearGradient id="rSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#cfeaf6"/><stop offset="1" stop-color="#fbe9cf"/>
+              </linearGradient>
+              <linearGradient id="rStone" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f0dcb6"/><stop offset="1" stop-color="#d9b980"/>
+              </linearGradient>
+              <linearGradient id="rStoneWarm" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e6c58f"/><stop offset="1" stop-color="#c99a5c"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="260" height="210" rx="16" fill="url(#rSky)"/>
+            <!-- sun -->
+            <circle cx="212" cy="44" r="20" fill="#f4c86a" opacity=".9"/>
+            <!-- back hills -->
+            <path d="M0 150 q40 -34 90 -12 q46 20 90 -6 q42 -24 80 2 V210 H0 Z" fill="#9fb35a" opacity=".7"/>
+            <path d="M0 168 q54 -26 110 -6 q56 18 150 -8 V210 H0 Z" fill="#8aa04a"/>
+            <!-- aqueduct (back left) -->
+            <g fill="url(#rStone)" stroke="#c19a5f" stroke-width="1.5">
+              <rect x="8" y="96" width="86" height="12" rx="2"/>
+              <g>
+                <rect x="10" y="108" width="9" height="46"/>
+                <rect x="31" y="108" width="9" height="46"/>
+                <rect x="52" y="108" width="9" height="46"/>
+                <rect x="73" y="108" width="9" height="46"/>
+                <rect x="90" y="108" width="6" height="46"/>
+              </g>
+              <path d="M19 130 a10 10 0 0 1 12 0" fill="none" stroke="#b98f52" stroke-width="2.4"/>
+              <path d="M40 130 a10 10 0 0 1 12 0" fill="none" stroke="#b98f52" stroke-width="2.4"/>
+              <path d="M61 130 a10 10 0 0 1 12 0" fill="none" stroke="#b98f52" stroke-width="2.4"/>
+            </g>
+            <!-- temple (center back, on a rise) -->
+            <g transform="translate(120,70)">
+              <!-- steps -->
+              <rect x="-2" y="76" width="72" height="8" rx="2" fill="#cfae74"/>
+              <rect x="4" y="70" width="60" height="8" rx="2" fill="#e0c48c"/>
+              <!-- columns -->
+              <g fill="url(#rStone)" stroke="#c19a5f" stroke-width="1">
+                <rect x="8" y="30" width="9" height="42" rx="2"/>
+                <rect x="24" y="30" width="9" height="42" rx="2"/>
+                <rect x="40" y="30" width="9" height="42" rx="2"/>
+                <rect x="56" y="30" width="9" height="42" rx="2"/>
+              </g>
+              <!-- entablature -->
+              <rect x="2" y="22" width="68" height="9" rx="2" fill="#e0c48c" stroke="#c19a5f" stroke-width="1"/>
+              <!-- pediment -->
+              <path d="M0 22 L36 2 L72 22 Z" fill="url(#rStoneWarm)" stroke="#b98f52" stroke-width="1.5" stroke-linejoin="round"/>
+            </g>
+            <!-- Colosseum (front right) -->
+            <g transform="translate(150,96)">
+              <path d="M0 62 C 0 30, 96 30, 96 62 L96 96 L0 96 Z" fill="url(#rStoneWarm)" stroke="#b0863f" stroke-width="2" stroke-linejoin="round"/>
+              <!-- top arch row -->
+              <g fill="#c99a5c" stroke="#a87e3c" stroke-width="1">
+                <rect x="10" y="46" width="10" height="18" rx="5"/>
+                <rect x="27" y="43" width="10" height="21" rx="5"/>
+                <rect x="45" y="42" width="10" height="22" rx="5"/>
+                <rect x="63" y="43" width="10" height="21" rx="5"/>
+                <rect x="80" y="46" width="8" height="18" rx="4"/>
+              </g>
+              <!-- lower arch row -->
+              <g fill="#b98a4a" stroke="#8f6a2f" stroke-width="1">
+                <rect x="8" y="70" width="11" height="22" rx="5"/>
+                <rect x="26" y="70" width="11" height="22" rx="5"/>
+                <rect x="44" y="70" width="11" height="22" rx="5"/>
+                <rect x="62" y="70" width="11" height="22" rx="5"/>
+                <rect x="79" y="70" width="10" height="22" rx="5"/>
+              </g>
+              <!-- shading -->
+              <path d="M96 62 L96 96 L70 96 C 86 90, 92 78, 96 62 Z" fill="#0E1C42" opacity=".08"/>
+            </g>
+            <!-- foreground ground -->
+            <path d="M0 190 q60 -14 130 -4 q70 10 130 -2 V210 H0 Z" fill="#7f9542"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. MONS (Option A — softer / rounded) -->
+    <section class="card">
+      <div class="card-head">
+        <span class="lat">mōns</span>
+        <span class="mod-tag">Q1 · M02</span>
+      </div>
+      <span class="gloss">mountain / hill — soft &amp; rounded (Option A)</span>
+      <div class="frame big">
+        <div class="illus" data-illus="mons">
+          <!-- MONS — Option A: soft / rounded (reviewer-approved style) -->
+          <svg viewBox="0 0 240 210" role="img" aria-label="Soft rounded style mountain with gentle curved peaks and pastel shading">
+            <defs>
+              <linearGradient id="sSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#d6eef9"/><stop offset="1" stop-color="#f2f9fc"/>
+              </linearGradient>
+              <linearGradient id="sMt" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#9aa7c4"/><stop offset="1" stop-color="#77849f"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="240" height="210" rx="16" fill="url(#sSky)"/>
+            <circle cx="192" cy="48" r="18" fill="#f7d27e" opacity=".9"/>
+            <!-- soft clouds -->
+            <g fill="#ffffff" opacity=".8">
+              <ellipse cx="52" cy="52" rx="26" ry="12"/>
+              <ellipse cx="72" cy="48" rx="18" ry="11"/>
+            </g>
+            <!-- rounded back hill -->
+            <path d="M-10 168 q70 -74 150 -30 q40 22 110 8 V210 H-10 Z" fill="#b3bdd4"/>
+            <!-- rounded front mountain -->
+            <path d="M6 176 q60 -104 108 -104 q48 0 112 104 Z" fill="url(#sMt)"/>
+            <!-- soft snow cap -->
+            <path d="M78 96 q36 -50 72 0 q-20 -12 -36 -6 q-18 -6 -36 6 Z" fill="#ffffff"/>
+            <!-- gentle shade -->
+            <path d="M114 72 q48 26 112 104 q-58 0 -112 0 Z" fill="#0E1C42" opacity=".08"/>
+            <!-- grass base -->
+            <path d="M0 182 q60 -16 120 -6 q60 10 120 -2 V210 H0 Z" fill="#8fa24e"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. INSULA -->
+    <section class="card">
+      <div class="card-head">
+        <span class="lat">īnsula</span>
+        <span class="mod-tag">Q1 · M02</span>
+      </div>
+      <span class="gloss">island</span>
+      <div class="frame big">
+        <div class="illus" data-illus="insula">
+          <!-- INSULA -->
+          <svg viewBox="0 0 240 210" role="img" aria-label="A small island with a tree, surrounded by blue water with waves">
+            <defs>
+              <radialGradient id="iSky" cx="0.7" cy="0.2" r="1">
+                <stop offset="0" stop-color="#eaf7fc"/><stop offset="1" stop-color="#bfe6f4"/>
+              </radialGradient>
+              <linearGradient id="iSea" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#7fc9e8"/><stop offset="1" stop-color="#3f9dc9"/>
+              </linearGradient>
+              <linearGradient id="iSand" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f4e2b4"/><stop offset="1" stop-color="#e0c483"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="240" height="210" rx="16" fill="url(#iSky)"/>
+            <circle cx="196" cy="44" r="17" fill="#f4c86a" opacity=".85"/>
+            <!-- sea -->
+            <path d="M0 96 q60 -12 120 0 q60 12 120 0 V210 H0 Z" fill="url(#iSea)"/>
+            <!-- wave strokes -->
+            <g stroke="#d3effa" stroke-width="2.6" stroke-linecap="round" fill="none" opacity=".85">
+              <path d="M24 150 q8 -7 16 0 t16 0"/>
+              <path d="M186 158 q8 -7 16 0 t16 0"/>
+              <path d="M150 186 q8 -7 16 0 t16 0"/>
+              <path d="M40 190 q8 -7 16 0 t16 0"/>
+            </g>
+            <!-- island sand -->
+            <ellipse cx="120" cy="158" rx="72" ry="26" fill="url(#iSand)" stroke="#cba85f" stroke-width="1.5"/>
+            <!-- grassy mound -->
+            <path d="M74 152 q46 -30 92 0 q-46 12 -92 0 Z" fill="#8aa04a"/>
+            <path d="M84 150 q36 -20 72 0 q-36 8 -72 0 Z" fill="#7f9542"/>
+            <!-- palm tree -->
+            <g transform="translate(120,132)">
+              <path d="M-3 0 q-2 -22 3 -34 q3 8 2 34 Z" fill="#9a6a3b" stroke="#7c5330" stroke-width="1"/>
+              <g fill="#6f8b39" stroke="#5f7431" stroke-width="1">
+                <path d="M2 -34 q-22 -10 -34 -2 q16 -2 34 6 Z"/>
+                <path d="M2 -34 q22 -10 34 -2 q-16 -2 -34 6 Z"/>
+                <path d="M2 -34 q-14 -20 -6 -32 q6 14 6 34 Z"/>
+                <path d="M2 -34 q16 -18 30 -16 q-16 4 -30 18 Z"/>
+                <path d="M2 -34 q-18 -6 -30 4 q16 -4 30 2 Z"/>
+              </g>
+              <circle cx="2" cy="-34" r="3" fill="#5f7431"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. COLOSSEUM -->
+    <section class="card">
+      <div class="card-head">
+        <span class="lat">Colossēum</span>
+        <span class="mod-tag">Q2 · M14</span>
+      </div>
+      <span class="gloss">the Colosseum — the great amphitheater</span>
+      <div class="frame big">
+        <div class="illus" data-illus="colosseum">
+          <svg viewBox="0 0 260 230" role="img" aria-label="The Roman Colosseum, an oval tiered amphitheater with three rows of arches under a sunny sky">
+            <defs>
+              <linearGradient id="coSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#cfeaf6"/><stop offset="1" stop-color="#fbe9cf"/>
+              </linearGradient>
+              <linearGradient id="coStone" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f2ddb2"/><stop offset="1" stop-color="#d7b072"/>
+              </linearGradient>
+              <linearGradient id="coStoneWarm" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e7c48a"/><stop offset="1" stop-color="#c6934f"/>
+              </linearGradient>
+              <radialGradient id="coArena" cx="0.5" cy="0.35" r="0.8">
+                <stop offset="0" stop-color="#e9d3a4"/><stop offset="1" stop-color="#c39a5e"/>
+              </radialGradient>
+            </defs>
+            <rect x="0" y="0" width="260" height="230" rx="16" fill="url(#coSky)"/>
+            <circle cx="212" cy="42" r="19" fill="#f4c86a" opacity=".9"/>
+            <!-- rolling hills -->
+            <path d="M0 158 q46 -30 96 -10 q50 18 96 -6 q40 -20 78 2 V230 H0 Z" fill="#9fb35a" opacity=".65"/>
+            <path d="M0 176 q56 -22 116 -4 q60 16 144 -8 V230 H0 Z" fill="#8aa04a"/>
+            <!-- amphitheater group -->
+            <g stroke-linejoin="round">
+              <!-- far rim (back of the oval) -->
+              <ellipse cx="130" cy="96" rx="98" ry="30" fill="url(#coStoneWarm)" stroke="#b0863f" stroke-width="2"/>
+              <!-- inner arena bowl -->
+              <ellipse cx="130" cy="98" rx="70" ry="19" fill="url(#coArena)" stroke="#b0863f" stroke-width="1.5"/>
+              <ellipse cx="130" cy="99" rx="52" ry="12" fill="#b98a4a" opacity=".55"/>
+              <!-- outer front wall body -->
+              <path d="M32 96
+                       a98 30 0 0 0 196 0
+                       L228 150
+                       a98 30 0 0 1 -196 0 Z"
+                    fill="url(#coStone)" stroke="#b0863f" stroke-width="2"/>
+              <!-- shadow on right of the drum -->
+              <path d="M228 96 L228 150 a98 30 0 0 1 -40 21 L188 117 a98 30 0 0 0 40 -21 Z" fill="#0E1C42" opacity=".08"/>
+            </g>
+            <!-- TIER 1 (upper) arches -->
+            <g fill="#b98a4a" stroke="#8f6a2f" stroke-width="1">
+              <path d="M46 106 a6 8 0 0 1 12 0 l0 12 l-12 0 Z"/>
+              <path d="M69 111 a6 8 0 0 1 12 0 l0 12 l-12 0 Z"/>
+              <path d="M93 114 a6 8 0 0 1 12 0 l0 13 l-12 0 Z"/>
+              <path d="M118 115 a6 8 0 0 1 12 0 l0 13 l-12 0 Z"/>
+              <path d="M143 114 a6 8 0 0 1 12 0 l0 13 l-12 0 Z"/>
+              <path d="M167 111 a6 8 0 0 1 12 0 l0 12 l-12 0 Z"/>
+              <path d="M190 106 a6 8 0 0 1 12 0 l0 12 l-12 0 Z"/>
+            </g>
+            <!-- pilaster caps between tiers -->
+            <g fill="#e7cf9d" opacity=".8">
+              <rect x="44" y="128" width="160" height="3"/>
+            </g>
+            <!-- TIER 2 (lower) arches -->
+            <g fill="#9c7238" stroke="#7a5626" stroke-width="1">
+              <path d="M50 132 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+              <path d="M74 136 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+              <path d="M99 138 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+              <path d="M124 139 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+              <path d="M149 138 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+              <path d="M173 136 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+              <path d="M197 132 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+            </g>
+            <!-- ground shadow -->
+            <ellipse cx="130" cy="176" rx="104" ry="12" fill="#0E1C42" opacity=".06"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. AQUAEDUCTUS -->
+    <section class="card">
+      <div class="card-head">
+        <span class="lat">aquaeductus</span>
+        <span class="mod-tag">Q2 · M13</span>
+      </div>
+      <span class="gloss">aqueduct — a bridge that carries water</span>
+      <div class="frame big">
+        <div class="illus" data-illus="aquaeductus">
+          <svg viewBox="0 0 260 230" role="img" aria-label="A Roman aqueduct with a long row of stone arches crossing a green valley, water flowing in a channel across the top">
+            <defs>
+              <linearGradient id="aqSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#cfeaf6"/><stop offset="1" stop-color="#eaf6ee"/>
+              </linearGradient>
+              <linearGradient id="aqStone" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f0dcb6"/><stop offset="1" stop-color="#d3ac72"/>
+              </linearGradient>
+              <linearGradient id="aqStoneTop" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e7c98f"/><stop offset="1" stop-color="#cea15e"/>
+              </linearGradient>
+              <linearGradient id="aqWater" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#7fc9e8"/><stop offset="1" stop-color="#4aa6cf"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="260" height="230" rx="16" fill="url(#aqSky)"/>
+            <circle cx="42" cy="44" r="17" fill="#f4c86a" opacity=".85"/>
+            <g fill="#ffffff" opacity=".8">
+              <ellipse cx="196" cy="46" rx="26" ry="12"/>
+              <ellipse cx="176" cy="50" rx="16" ry="9"/>
+            </g>
+            <!-- distant hills -->
+            <path d="M0 150 q60 -30 130 -8 q66 20 130 -6 V230 H0 Z" fill="#a6bd63" opacity=".55"/>
+            <!-- aqueduct -->
+            <g stroke-linejoin="round">
+              <!-- lower pier band -->
+              <rect x="14" y="70" width="232" height="118" fill="none"/>
+              <!-- big lower arcade: piers -->
+              <g fill="url(#aqStone)" stroke="#b98f52" stroke-width="1.6">
+                <rect x="16" y="96" width="14" height="86" rx="3"/>
+                <rect x="58" y="96" width="14" height="86" rx="3"/>
+                <rect x="100" y="96" width="14" height="86" rx="3"/>
+                <rect x="142" y="96" width="14" height="86" rx="3"/>
+                <rect x="184" y="96" width="14" height="86" rx="3"/>
+                <rect x="226" y="96" width="14" height="86" rx="3"/>
+              </g>
+              <!-- lower arch openings (sky/hills show through) -->
+              <g fill="#dfeecf">
+                <path d="M30 182 L30 118 a20 20 0 0 1 28 0 L58 182 Z"/>
+                <path d="M72 182 L72 118 a20 20 0 0 1 28 0 L100 182 Z"/>
+                <path d="M114 182 L114 118 a20 20 0 0 1 28 0 L142 182 Z"/>
+                <path d="M156 182 L156 118 a20 20 0 0 1 28 0 L184 182 Z"/>
+                <path d="M198 182 L198 118 a20 20 0 0 1 28 0 L226 182 Z"/>
+              </g>
+              <!-- arch outlines -->
+              <g fill="none" stroke="#b98f52" stroke-width="2">
+                <path d="M30 118 a20 20 0 0 1 28 0"/>
+                <path d="M72 118 a20 20 0 0 1 28 0"/>
+                <path d="M114 118 a20 20 0 0 1 28 0"/>
+                <path d="M156 118 a20 20 0 0 1 28 0"/>
+                <path d="M198 118 a20 20 0 0 1 28 0"/>
+              </g>
+              <!-- deck / entablature -->
+              <rect x="12" y="82" width="236" height="16" rx="3" fill="url(#aqStoneTop)" stroke="#b98f52" stroke-width="1.6"/>
+              <!-- water channel walls on top -->
+              <rect x="12" y="66" width="236" height="8" rx="2" fill="url(#aqStoneTop)" stroke="#b98f52" stroke-width="1.4"/>
+              <rect x="16" y="74" width="228" height="8" fill="url(#aqWater)"/>
+              <!-- water sparkle -->
+              <g stroke="#d3effa" stroke-width="1.6" stroke-linecap="round" opacity=".85">
+                <path d="M40 78 h10"/><path d="M96 78 h10"/><path d="M160 78 h10"/><path d="M212 78 h10"/>
+              </g>
+            </g>
+            <!-- foreground grass + shrubs -->
+            <path d="M0 190 q64 -12 130 -2 q66 8 130 -4 V230 H0 Z" fill="#7f9542"/>
+            <g fill="#5f7431">
+              <path d="M28 190 l7 -18 l7 18 Z"/>
+              <path d="M218 192 l8 -20 l8 20 Z"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. VIA -->
+    <section class="card">
+      <div class="card-head">
+        <span class="lat">via</span>
+        <span class="mod-tag">Q2 · M12</span>
+      </div>
+      <span class="gloss">a Roman road</span>
+      <div class="frame big">
+        <div class="illus" data-illus="via">
+          <svg viewBox="0 0 240 230" role="img" aria-label="A paved Roman road made of stone blocks receding toward distant hills, with a stone milestone beside it">
+            <defs>
+              <linearGradient id="rdSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#cfeaf6"/><stop offset="1" stop-color="#f3f7e6"/>
+              </linearGradient>
+              <linearGradient id="rdGrass" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#9fb857"/><stop offset="1" stop-color="#7f9542"/>
+              </linearGradient>
+              <linearGradient id="rdStone" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#cdbfa6"/><stop offset="1" stop-color="#a99a7c"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="240" height="230" rx="16" fill="url(#rdSky)"/>
+            <circle cx="196" cy="44" r="16" fill="#f4c86a" opacity=".85"/>
+            <g fill="#ffffff" opacity=".8">
+              <ellipse cx="58" cy="46" rx="24" ry="11"/>
+              <ellipse cx="40" cy="50" rx="15" ry="8"/>
+            </g>
+            <!-- distant hills -->
+            <path d="M0 120 q48 -26 100 -8 q54 18 140 -8 V150 H0 Z" fill="#9fb35a" opacity=".7"/>
+            <path d="M0 132 q60 -18 120 -4 q60 12 120 -6 V150 H0 Z" fill="#8aa04a"/>
+            <!-- grass field -->
+            <rect x="0" y="120" width="240" height="110" fill="url(#rdGrass)"/>
+            <!-- road (receding trapezoid) -->
+            <path d="M104 120 L136 120 L212 226 L28 226 Z" fill="url(#rdStone)" stroke="#8a7c60" stroke-width="2" stroke-linejoin="round"/>
+            <!-- kerb stones -->
+            <path d="M104 120 L28 226 L36 226 L110 120 Z" fill="#8f8266"/>
+            <path d="M136 120 L212 226 L204 226 L130 120 Z" fill="#8f8266"/>
+            <!-- paving joints: transverse -->
+            <g stroke="#8a7c60" stroke-width="1.6" opacity=".8">
+              <path d="M112 138 L128 138"/>
+              <path d="M107 158 L133 158"/>
+              <path d="M101 180 L139 180"/>
+              <path d="M93 204 L147 204"/>
+            </g>
+            <!-- paving joints: longitudinal, fanning -->
+            <g stroke="#8a7c60" stroke-width="1.4" opacity=".7">
+              <path d="M120 120 L120 226"/>
+              <path d="M113 138 L92 204"/>
+              <path d="M127 138 L148 204"/>
+            </g>
+            <!-- stone block highlights -->
+            <g fill="#ddd0b8" opacity=".55">
+              <path d="M112 140 L119 140 L118 156 L109 156 Z"/>
+              <path d="M121 140 L128 140 L131 156 L120 156 Z"/>
+              <path d="M103 182 L118 182 L117 202 L96 202 Z"/>
+              <path d="M122 182 L137 182 L144 202 L123 202 Z"/>
+            </g>
+            <!-- milestone (miliarium) -->
+            <g transform="translate(196,150)">
+              <ellipse cx="0" cy="46" rx="16" ry="5" fill="#0E1C42" opacity=".12"/>
+              <path d="M-9 46 L-7 6 a7 7 0 0 1 14 0 L9 46 Z" fill="#e6d3a8" stroke="#b89a63" stroke-width="1.6" stroke-linejoin="round"/>
+              <ellipse cx="0" cy="6" rx="7" ry="4" fill="#f2e4c2" stroke="#b89a63" stroke-width="1.2"/>
+              <g stroke="#b0863f" stroke-width="1.4" stroke-linecap="round">
+                <path d="M-4 20 h8"/><path d="M-4 27 h8"/><path d="M-4 34 h8"/>
+              </g>
+            </g>
+            <!-- roadside shrub -->
+            <g transform="translate(40,168)" fill="#5f7431">
+              <circle cx="0" cy="0" r="9"/><circle cx="9" cy="4" r="7"/><circle cx="-8" cy="4" r="6"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. TUNICA & TOGA -->
+    <section class="card">
+      <div class="card-head">
+        <span class="lat">tunica &amp; toga</span>
+        <span class="mod-tag">Q1 · M07</span>
+      </div>
+      <span class="gloss">Roman clothing — everyday tunica &amp; formal toga</span>
+      <div class="frame big">
+        <div class="illus" data-illus="tunica-toga">
+          <svg viewBox="0 0 240 230" role="img" aria-label="Two friendly Roman figures, one wearing a simple tunica and one wearing a draped toga over a tunic">
+            <defs>
+              <linearGradient id="clBg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f4ecd8"/><stop offset="1" stop-color="#eadcbe"/>
+              </linearGradient>
+              <linearGradient id="clTunic" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#7bc0dc"/><stop offset="1" stop-color="#4f9fc0"/>
+              </linearGradient>
+              <linearGradient id="clToga" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f6f1e6"/><stop offset="1" stop-color="#e4d9c2"/>
+              </linearGradient>
+              <linearGradient id="clUnderTunic" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e0b06a"/><stop offset="1" stop-color="#c7922c"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="240" height="230" rx="16" fill="url(#clBg)"/>
+            <!-- floor shadow band -->
+            <ellipse cx="72" cy="206" rx="42" ry="9" fill="#0E1C42" opacity=".08"/>
+            <ellipse cx="168" cy="206" rx="44" ry="9" fill="#0E1C42" opacity=".08"/>
+
+            <!-- ===== FIGURE 1: TUNICA (left) ===== -->
+            <g transform="translate(72,44)">
+              <!-- legs -->
+              <rect x="-12" y="118" width="10" height="42" rx="4" fill="#e6c9a0"/>
+              <rect x="2" y="118" width="10" height="42" rx="4" fill="#e6c9a0"/>
+              <path d="M-16 160 h16 v6 h-18 Z" fill="#8a6a3c"/>
+              <path d="M0 160 h16 v6 h-18 Z" fill="#8a6a3c"/>
+              <!-- tunic body -->
+              <path d="M-26 40 q26 -14 52 0 l-6 84 q-20 8 -40 0 Z" fill="url(#clTunic)" stroke="#3f88a8" stroke-width="2" stroke-linejoin="round"/>
+              <!-- sleeves -->
+              <path d="M-26 40 l-14 30 l10 6 l16 -26 Z" fill="url(#clTunic)" stroke="#3f88a8" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M26 40 l14 30 l-10 6 l-16 -26 Z" fill="url(#clTunic)" stroke="#3f88a8" stroke-width="2" stroke-linejoin="round"/>
+              <!-- arms -->
+              <rect x="-40" y="66" width="9" height="26" rx="4" fill="#e6c9a0"/>
+              <rect x="31" y="66" width="9" height="26" rx="4" fill="#e6c9a0"/>
+              <!-- belt -->
+              <rect x="-24" y="80" width="48" height="6" rx="3" fill="#b0863f"/>
+              <!-- fold lines -->
+              <g stroke="#3f88a8" stroke-width="1.4" opacity=".5" fill="none">
+                <path d="M-8 46 L-10 78"/><path d="M8 46 L10 78"/><path d="M-6 90 L-8 120"/><path d="M8 90 L10 120"/>
+              </g>
+              <!-- head -->
+              <circle cx="0" cy="18" r="20" fill="#f0d3a6" stroke="#d9b378" stroke-width="1.5"/>
+              <path d="M-20 12 q4 -22 20 -22 q16 0 20 22 q-8 -8 -20 -8 q-12 0 -20 8 Z" fill="#6e4a2a"/>
+              <circle cx="-7" cy="18" r="2.2" fill="#3a2a18"/><circle cx="7" cy="18" r="2.2" fill="#3a2a18"/>
+              <path d="M-6 27 q6 5 12 0" fill="none" stroke="#b07a4a" stroke-width="1.6" stroke-linecap="round"/>
+            </g>
+
+            <!-- ===== FIGURE 2: TOGA (right) ===== -->
+            <g transform="translate(168,42)">
+              <!-- legs -->
+              <rect x="-6" y="150" width="11" height="14" rx="4" fill="#e6c9a0"/>
+              <path d="M-12 164 h16 v6 h-18 Z" fill="#8a6a3c"/>
+              <path d="M2 164 h16 v6 h-18 Z" fill="#8a6a3c"/>
+              <!-- under-tunic hem -->
+              <path d="M-20 120 q20 8 40 0 l-4 34 q-16 6 -32 0 Z" fill="url(#clUnderTunic)" stroke="#a9791f" stroke-width="1.6"/>
+              <!-- toga: big draped sheet -->
+              <path d="M-30 44
+                       q30 -16 60 0
+                       l6 40
+                       q6 26 -14 40
+                       q-4 -30 -14 -44
+                       q-6 20 -18 30
+                       q-20 -8 -24 -30
+                       q-6 -20 4 -36 Z"
+                    fill="url(#clToga)" stroke="#c9bda0" stroke-width="2" stroke-linejoin="round"/>
+              <!-- diagonal drape sash -->
+              <path d="M-26 52 q40 20 52 66 q-4 8 -12 10 q-16 -44 -48 -60 q2 -12 8 -16 Z" fill="#efe7d4" stroke="#c9bda0" stroke-width="1.4"/>
+              <!-- shoulder fold over left arm -->
+              <path d="M-30 46 q-10 20 -4 40 l10 -4 q-4 -18 4 -34 Z" fill="#efe7d4" stroke="#c9bda0" stroke-width="1.4"/>
+              <!-- drape fold lines -->
+              <g stroke="#cabfa2" stroke-width="1.3" opacity=".55" fill="none">
+                <path d="M-16 60 q20 26 26 60"/>
+                <path d="M-2 58 q14 30 16 64"/>
+                <path d="M-24 70 q10 20 8 44"/>
+              </g>
+              <!-- gold border trim (clavus feel) -->
+              <path d="M-26 52 q40 20 52 66" fill="none" stroke="#C7922C" stroke-width="2.4" opacity=".8" stroke-linecap="round"/>
+              <!-- arms/hand -->
+              <rect x="26" y="70" width="9" height="30" rx="4" fill="#e6c9a0"/>
+              <!-- head -->
+              <circle cx="0" cy="18" r="20" fill="#f0d3a6" stroke="#d9b378" stroke-width="1.5"/>
+              <path d="M-20 14 q2 -24 20 -24 q18 0 20 24 q-9 -10 -20 -10 q-11 0 -20 10 Z" fill="#4a3320"/>
+              <!-- laurel wreath -->
+              <g stroke="#5f7431" stroke-width="2" fill="none" stroke-linecap="round">
+                <path d="M-19 8 q-4 -8 2 -14"/>
+                <path d="M19 8 q4 -8 -2 -14"/>
+              </g>
+              <g fill="#7b8c3f">
+                <ellipse cx="-18" cy="2" rx="3" ry="1.6" transform="rotate(-40 -18 2)"/>
+                <ellipse cx="-14" cy="-6" rx="3" ry="1.6" transform="rotate(-30 -14 -6)"/>
+                <ellipse cx="18" cy="2" rx="3" ry="1.6" transform="rotate(40 18 2)"/>
+                <ellipse cx="14" cy="-6" rx="3" ry="1.6" transform="rotate(30 14 -6)"/>
+              </g>
+              <circle cx="-7" cy="18" r="2.2" fill="#3a2a18"/><circle cx="7" cy="18" r="2.2" fill="#3a2a18"/>
+              <path d="M-6 27 q6 5 12 0" fill="none" stroke="#b07a4a" stroke-width="1.6" stroke-linecap="round"/>
+            </g>
+
+            <!-- little name ribbons -->
+            <text x="72" y="222" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="800" fill="#0E1C42">tunica</text>
+            <text x="168" y="222" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="800" fill="#0E1C42">toga</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. LUPA (Option 2 — storybook gray wolf) -->
+    <section class="card">
+      <div class="card-head">
+        <span class="lat">lupa</span>
+        <span class="mod-tag">Q1 · M04</span>
+      </div>
+      <span class="gloss">the she-wolf &amp; the twins — storybook gray wolf (Option 2)</span>
+      <div class="frame big">
+        <div class="illus" data-illus="lupa">
+          <!-- LUPA — Option 2: storybook gray wolf (reviewer-approved) -->
+          <svg viewBox="0 0 260 230" role="img" aria-label="The she-wolf as a friendly storybook gray wolf with soft fur, head lowered protectively over the twins Romulus and Remus, with the seven hills and river behind">
+            <defs>
+              <linearGradient id="stSky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8e2bf"/><stop offset="1" stop-color="#fbeed6"/></linearGradient>
+              <linearGradient id="stRiver2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd0ea"/><stop offset="1" stop-color="#5aa9cf"/></linearGradient>
+              <linearGradient id="gry2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#c7cbd3"/><stop offset=".55" stop-color="#a3a8b2"/><stop offset="1" stop-color="#868b96"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="260" height="230" rx="16" fill="url(#stSky2)"/>
+            <circle cx="200" cy="52" r="26" fill="#f6c96a" opacity=".55"/>
+            <circle cx="200" cy="52" r="16" fill="#f4b74a" opacity=".8"/>
+            <path d="M0 120 q26 -34 52 0 q26 -30 52 0 q26 -34 52 0 q30 -28 60 0 q22 -18 44 0 V150 H0 Z" fill="#c79a63" opacity=".55"/>
+            <path d="M0 132 q34 -24 70 -4 q40 22 84 0 q46 -22 106 -2 V152 H0 Z" fill="#a9803f" opacity=".6"/>
+            <path d="M0 150 q70 -16 140 -4 q70 10 120 -6 V230 H0 Z" fill="#8aa04a"/>
+            <path d="M0 168 q80 -12 150 -2 q60 8 110 -6 V230 H0 Z" fill="#7f9542"/>
+            <path d="M0 200 q60 -10 130 -2 q70 8 130 -4 V230 H0 Z" fill="url(#stRiver2)"/>
+            <g stroke="#d3effa" stroke-width="2" stroke-linecap="round" fill="none" opacity=".8">
+              <path d="M24 214 q8 -6 16 0 t16 0"/><path d="M190 216 q8 -6 16 0 t16 0"/>
+            </g>
+            <g transform="translate(38,96)">
+              <rect x="-4" y="20" width="8" height="52" rx="3" fill="#7c5330"/>
+              <g fill="#6f8b39"><circle cx="0" cy="8" r="22"/><circle cx="-18" cy="18" r="16"/><circle cx="18" cy="16" r="17"/><circle cx="0" cy="26" r="18"/></g>
+              <g fill="#5f7431" opacity=".7"><circle cx="-8" cy="4" r="7"/><circle cx="10" cy="20" r="6"/></g>
+            </g>
+
+            <!-- ===== LUPA : storybook gray wolf (head lowered to twins) ===== -->
+            <g transform="translate(150,116)">
+              <ellipse cx="0" cy="58" rx="70" ry="10" fill="#0E1C42" opacity=".10"/>
+              <!-- FAR legs (darker) -->
+              <path d="M-16 12 L-18 54 L-11 55 L-10 13 Z" fill="#7a7f89"/>
+              <ellipse cx="-14" cy="55" rx="5" ry="3" fill="#6b7079"/>
+              <path d="M22 10 L22 54 L29 55 L30 13 Z" fill="#7a7f89"/>
+              <ellipse cx="25" cy="55" rx="5" ry="3" fill="#6b7079"/>
+              <!-- TAIL (soft bushy, low) -->
+              <path d="M38 -2 C54 -6 64 8 61 24 C59 33 52 36 46 32 C51 27 50 16 44 10 C40 6 37 4 38 -2 Z" fill="url(#gry2)" stroke="#6a6f78" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M55 20 C60 24 60 30 56 32 C58 27 55 22 52 20 Z" fill="#ece7dd" opacity=".8"/>
+              <!-- BODY (lean, arched back) -->
+              <path d="M-30 -20 C-12 -33 18 -33 34 -22 C43 -15 45 -2 39 8 C33 16 24 14 18 18 C4 24 -12 24 -24 17 C-33 12 -35 -6 -30 -20 Z" fill="url(#gry2)" stroke="#6a6f78" stroke-width="1.8" stroke-linejoin="round"/>
+              <!-- soft darker saddle over back -->
+              <path d="M-26 -18 C-6 -30 16 -30 30 -20 C20 -26 -4 -27 -24 -14 C-27 -16 -27 -17 -26 -18 Z" fill="#6f747e" opacity=".55"/>
+              <!-- cream belly / chest -->
+              <path d="M-30 4 C-20 20 4 24 22 17 C16 22 0 24 -14 22 C-24 20 -30 14 -32 4 Z" fill="#ece7dd" opacity=".85"/>
+              <!-- soft fur tufts -->
+              <g stroke="#ffffff" stroke-width="1.3" stroke-linecap="round" fill="none" opacity=".55">
+                <path d="M-18 -14 q4 6 0 12"/><path d="M4 -16 q4 6 0 12"/><path d="M24 -12 q4 6 0 12"/>
+              </g>
+              <!-- NEAR legs -->
+              <path d="M-30 8 L-33 54 L-24 55 L-22 12 Z" fill="url(#gry2)" stroke="#6a6f78" stroke-width="1.8"/>
+              <path d="M-31 40 L-33 54 L-24 55 L-24 40 Z" fill="#ece7dd" opacity=".7"/>
+              <ellipse cx="-28" cy="55" rx="5.5" ry="3.2" fill="#b7bcc4"/>
+              <path d="M40 6 C44 12 44 20 42 28 L40 54 L31 55 L28 22 C27 14 30 8 40 6 Z" fill="url(#gry2)" stroke="#6a6f78" stroke-width="1.8"/>
+              <path d="M38 40 L40 54 L31 55 L30 40 Z" fill="#ece7dd" opacity=".7"/>
+              <ellipse cx="35" cy="55" rx="5.5" ry="3.2" fill="#b7bcc4"/>
+              <!-- NECK + HEAD (lowered toward twins) -->
+              <path d="M-28 -20 C-40 -22 -50 -14 -54 -6 L-50 4 C-46 8 -38 8 -30 4 C-26 0 -26 -14 -28 -20 Z" fill="url(#gry2)" stroke="#6a6f78" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M-52 -16 C-60 -17 -67 -12 -70 -3 L-84 14 L-85 19 L-79 20 L-71 13 C-66 10 -60 9 -56 6 C-51 3 -49 -8 -52 -16 Z" fill="url(#gry2)" stroke="#6a6f78" stroke-width="1.8" stroke-linejoin="round"/>
+              <!-- cream muzzle underside + cheek -->
+              <path d="M-84 14 L-85 19 L-79 20 L-71 13 C-67 11 -62 10 -58 8 C-63 12 -72 15 -84 14 Z" fill="#ece7dd"/>
+              <path d="M-58 4 C-54 8 -52 4 -52 0 C-55 2 -57 3 -58 4 Z" fill="#ece7dd" opacity=".8"/>
+              <!-- EARS (tall pointed, pink inner) -->
+              <path d="M-60 -15 L-60 -44 L-51 -16 Z" fill="#8c9099" stroke="#6a6f78" stroke-width="1.6"/>
+              <path d="M-50 -15 L-46 -42 L-40 -17 Z" fill="url(#gry2)" stroke="#6a6f78" stroke-width="1.6"/>
+              <path d="M-48 -18 L-46 -34 L-43 -19 Z" fill="#e6b7bc"/>
+              <!-- eye (gentle round) + nose -->
+              <circle cx="-60" cy="-2" r="3" fill="#3a3730"/>
+              <circle cx="-61" cy="-3" r="1" fill="#fff" opacity=".9"/>
+              <path d="M-83 13 q-5 2 -3 6 q4 1 6 -3 Z" fill="#3a3730"/>
+              <path d="M-79 20 q4 3 9 1" stroke="#6a6f78" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+            </g>
+
+            <!-- ===== TWINS (kept from approved scene) ===== -->
+            <g transform="translate(120,186)">
+              <g transform="translate(-16,0)">
+                <ellipse cx="0" cy="6" rx="14" ry="9" fill="#f2d8b0" stroke="#dcbc86" stroke-width="1.4"/>
+                <circle cx="0" cy="-6" r="9" fill="#f0d3a6" stroke="#dcbc86" stroke-width="1.4"/>
+                <circle cx="-3" cy="-6" r="1.4" fill="#3a2a18"/><circle cx="3" cy="-6" r="1.4" fill="#3a2a18"/>
+                <path d="M-3 -2 q3 2 6 0" fill="none" stroke="#b07a4a" stroke-width="1.2" stroke-linecap="round"/>
+              </g>
+              <g transform="translate(16,2)">
+                <ellipse cx="0" cy="6" rx="14" ry="9" fill="#f6e0bd" stroke="#dcbc86" stroke-width="1.4"/>
+                <circle cx="0" cy="-6" r="9" fill="#f0d3a6" stroke="#dcbc86" stroke-width="1.4"/>
+                <circle cx="-3" cy="-6" r="1.4" fill="#3a2a18"/><circle cx="3" cy="-6" r="1.4" fill="#3a2a18"/>
+                <path d="M-3 -2 q3 2 6 0" fill="none" stroke="#b07a4a" stroke-width="1.2" stroke-linecap="round"/>
+              </g>
+            </g>
+            <text x="130" y="224" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="12.5" font-weight="800" fill="#0E1C42">lupa · Rōmulus &amp; Remus</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. HOROLOGIUM -->
+    <section class="card">
+      <div class="card-head">
+        <span class="lat">hōrologium</span>
+        <span class="mod-tag">Q1 · M03</span>
+      </div>
+      <span class="gloss">a clock face with Roman numerals I–XII</span>
+      <div class="frame big">
+        <div class="illus" data-illus="horologium">
+          <svg viewBox="0 0 240 240" role="img" aria-label="A round clock face with Roman numerals one through twelve around the edge and gold clock hands">
+            <defs>
+              <radialGradient id="clkFace" cx="0.42" cy="0.36" r="0.72">
+                <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f2ead6"/>
+              </radialGradient>
+              <linearGradient id="clkRim" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e2b866"/><stop offset="1" stop-color="#b8862a"/>
+              </linearGradient>
+              <linearGradient id="clkRim2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1a2f5c"/><stop offset="1" stop-color="#0E1C42"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="240" height="240" rx="16" fill="#eaf4f9"/>
+            <circle cx="120" cy="120" r="106" fill="#0E1C42" opacity=".06"/>
+            <!-- gold outer rim -->
+            <circle cx="120" cy="120" r="100" fill="url(#clkRim)"/>
+            <circle cx="120" cy="120" r="92" fill="url(#clkRim2)"/>
+            <!-- face -->
+            <circle cx="120" cy="120" r="86" fill="url(#clkFace)" stroke="#d8c79c" stroke-width="1.5"/>
+            <!-- minute ticks -->
+            <g stroke="#c9b58a" stroke-width="1.4">
+              <!-- generated evenly; 12 major handled by numerals, add small ticks -->
+              <line x1="120" y1="40" x2="120" y2="46"/>
+              <line x1="200" y1="120" x2="194" y2="120"/>
+              <line x1="120" y1="200" x2="120" y2="194"/>
+              <line x1="40" y1="120" x2="46" y2="120"/>
+            </g>
+            <!-- Roman numerals I..XII positioned on a radius of 68 from center (120,120) -->
+            <g font-family="Georgia,'Times New Roman',serif" font-size="16" font-weight="700" fill="#0E1C42" text-anchor="middle">
+              <text x="120" y="64">XII</text>
+              <text x="154" y="73">I</text>
+              <text x="179" y="98">II</text>
+              <text x="188" y="126">III</text>
+              <text x="179" y="154">IV</text>
+              <text x="154" y="179">V</text>
+              <text x="120" y="188">VI</text>
+              <text x="86" y="179">VII</text>
+              <text x="61" y="154">VIII</text>
+              <text x="52" y="126">IX</text>
+              <text x="61" y="98">X</text>
+              <text x="86" y="73">XI</text>
+            </g>
+            <!-- hands: pointing to roughly X past II -->
+            <g stroke-linecap="round">
+              <line x1="120" y1="120" x2="120" y2="76" stroke="#0E1C42" stroke-width="5"/>
+              <line x1="120" y1="120" x2="158" y2="132" stroke="#C7922C" stroke-width="4"/>
+            </g>
+            <circle cx="120" cy="120" r="7" fill="#C7922C" stroke="#8f6614" stroke-width="1.5"/>
+            <circle cx="120" cy="120" r="2.6" fill="#0E1C42"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>Original inline SVG · no external image assets · rights-clean · Optima Academy Elementary Latin · Canonical source of truth (10 approved scene illustrations)</footer>
+</main>
+
+</body>
+</html>

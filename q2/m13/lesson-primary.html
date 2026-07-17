@@ -155,16 +155,78 @@
         </div>
 
         <div class="el-map">
-            <div class="el-arcade-row">
-                <div class="el-arch"></div>
-                <div class="el-arch"></div>
-                <div class="el-arch"></div>
-                <div class="el-arch"></div>
-                <div class="el-arch"></div>
-                <div class="el-arch"></div>
+            <div style="max-width:320px;margin:0 auto;">
+          <svg viewBox="0 0 260 230" role="img" aria-label="A Roman aqueduct with a long row of stone arches crossing a green valley, water flowing in a channel across the top" style="width:100%;height:auto;display:block;">
+            <defs>
+              <linearGradient id="aqSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#cfeaf6"/><stop offset="1" stop-color="#eaf6ee"/>
+              </linearGradient>
+              <linearGradient id="aqStone" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f0dcb6"/><stop offset="1" stop-color="#d3ac72"/>
+              </linearGradient>
+              <linearGradient id="aqStoneTop" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e7c98f"/><stop offset="1" stop-color="#cea15e"/>
+              </linearGradient>
+              <linearGradient id="aqWater" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#7fc9e8"/><stop offset="1" stop-color="#4aa6cf"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="260" height="230" rx="16" fill="url(#aqSky)"/>
+            <circle cx="42" cy="44" r="17" fill="#f4c86a" opacity=".85"/>
+            <g fill="#ffffff" opacity=".8">
+              <ellipse cx="196" cy="46" rx="26" ry="12"/>
+              <ellipse cx="176" cy="50" rx="16" ry="9"/>
+            </g>
+            <!-- distant hills -->
+            <path d="M0 150 q60 -30 130 -8 q66 20 130 -6 V230 H0 Z" fill="#a6bd63" opacity=".55"/>
+            <!-- aqueduct -->
+            <g stroke-linejoin="round">
+              <!-- lower pier band -->
+              <rect x="14" y="70" width="232" height="118" fill="none"/>
+              <!-- big lower arcade: piers -->
+              <g fill="url(#aqStone)" stroke="#b98f52" stroke-width="1.6">
+                <rect x="16" y="96" width="14" height="86" rx="3"/>
+                <rect x="58" y="96" width="14" height="86" rx="3"/>
+                <rect x="100" y="96" width="14" height="86" rx="3"/>
+                <rect x="142" y="96" width="14" height="86" rx="3"/>
+                <rect x="184" y="96" width="14" height="86" rx="3"/>
+                <rect x="226" y="96" width="14" height="86" rx="3"/>
+              </g>
+              <!-- lower arch openings (sky/hills show through) -->
+              <g fill="#dfeecf">
+                <path d="M30 182 L30 118 a20 20 0 0 1 28 0 L58 182 Z"/>
+                <path d="M72 182 L72 118 a20 20 0 0 1 28 0 L100 182 Z"/>
+                <path d="M114 182 L114 118 a20 20 0 0 1 28 0 L142 182 Z"/>
+                <path d="M156 182 L156 118 a20 20 0 0 1 28 0 L184 182 Z"/>
+                <path d="M198 182 L198 118 a20 20 0 0 1 28 0 L226 182 Z"/>
+              </g>
+              <!-- arch outlines -->
+              <g fill="none" stroke="#b98f52" stroke-width="2">
+                <path d="M30 118 a20 20 0 0 1 28 0"/>
+                <path d="M72 118 a20 20 0 0 1 28 0"/>
+                <path d="M114 118 a20 20 0 0 1 28 0"/>
+                <path d="M156 118 a20 20 0 0 1 28 0"/>
+                <path d="M198 118 a20 20 0 0 1 28 0"/>
+              </g>
+              <!-- deck / entablature -->
+              <rect x="12" y="82" width="236" height="16" rx="3" fill="url(#aqStoneTop)" stroke="#b98f52" stroke-width="1.6"/>
+              <!-- water channel walls on top -->
+              <rect x="12" y="66" width="236" height="8" rx="2" fill="url(#aqStoneTop)" stroke="#b98f52" stroke-width="1.4"/>
+              <rect x="16" y="74" width="228" height="8" fill="url(#aqWater)"/>
+              <!-- water sparkle -->
+              <g stroke="#d3effa" stroke-width="1.6" stroke-linecap="round" opacity=".85">
+                <path d="M40 78 h10"/><path d="M96 78 h10"/><path d="M160 78 h10"/><path d="M212 78 h10"/>
+              </g>
+            </g>
+            <!-- foreground grass + shrubs -->
+            <path d="M0 190 q64 -12 130 -2 q66 8 130 -4 V230 H0 Z" fill="#7f9542"/>
+            <g fill="#5f7431">
+              <path d="M28 190 l7 -18 l7 18 Z"/>
+              <path d="M218 192 l8 -20 l8 20 Z"/>
+            </g>
+          </svg>
             </div>
-            <div class="el-channel"></div>
-            <div style="font-size:14px; color:#0E1C42; margin-top:8px;">💧 A simple sketch of an aqueduct arcade &mdash; arches below, water channel on top</div>
+            <div style="font-size:14px; color:#0E1C42; margin-top:8px;">💧 A Roman aqueduct arcade &mdash; tiers of stone arches carry the water channel across the valley</div>
         </div>
 
         <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 10px 0 0 0;">Watch this short video for a closer look at Roman aqueducts, including the Pont du Gard.</p>

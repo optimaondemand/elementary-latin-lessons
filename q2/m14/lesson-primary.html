@@ -155,12 +155,72 @@
         </div>
 
         <div class="el-map">
-            <div class="el-colosseum">
-                <div class="el-tier"></div>
-                <div class="el-arches"></div>
-                <div class="el-floor"></div>
+            <div style="max-width:320px;margin:0 auto;">
+          <svg viewBox="0 0 260 230" role="img" aria-label="The Roman Colosseum, an oval tiered amphitheater with three rows of arches under a sunny sky" style="width:100%;height:auto;display:block;">
+            <defs>
+              <linearGradient id="coSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#cfeaf6"/><stop offset="1" stop-color="#fbe9cf"/>
+              </linearGradient>
+              <linearGradient id="coStone" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f2ddb2"/><stop offset="1" stop-color="#d7b072"/>
+              </linearGradient>
+              <linearGradient id="coStoneWarm" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e7c48a"/><stop offset="1" stop-color="#c6934f"/>
+              </linearGradient>
+              <radialGradient id="coArena" cx="0.5" cy="0.35" r="0.8">
+                <stop offset="0" stop-color="#e9d3a4"/><stop offset="1" stop-color="#c39a5e"/>
+              </radialGradient>
+            </defs>
+            <rect x="0" y="0" width="260" height="230" rx="16" fill="url(#coSky)"/>
+            <circle cx="212" cy="42" r="19" fill="#f4c86a" opacity=".9"/>
+            <!-- rolling hills -->
+            <path d="M0 158 q46 -30 96 -10 q50 18 96 -6 q40 -20 78 2 V230 H0 Z" fill="#9fb35a" opacity=".65"/>
+            <path d="M0 176 q56 -22 116 -4 q60 16 144 -8 V230 H0 Z" fill="#8aa04a"/>
+            <!-- amphitheater group -->
+            <g stroke-linejoin="round">
+              <!-- far rim (back of the oval) -->
+              <ellipse cx="130" cy="96" rx="98" ry="30" fill="url(#coStoneWarm)" stroke="#b0863f" stroke-width="2"/>
+              <!-- inner arena bowl -->
+              <ellipse cx="130" cy="98" rx="70" ry="19" fill="url(#coArena)" stroke="#b0863f" stroke-width="1.5"/>
+              <ellipse cx="130" cy="99" rx="52" ry="12" fill="#b98a4a" opacity=".55"/>
+              <!-- outer front wall body -->
+              <path d="M32 96
+                       a98 30 0 0 0 196 0
+                       L228 150
+                       a98 30 0 0 1 -196 0 Z"
+                    fill="url(#coStone)" stroke="#b0863f" stroke-width="2"/>
+              <!-- shadow on right of the drum -->
+              <path d="M228 96 L228 150 a98 30 0 0 1 -40 21 L188 117 a98 30 0 0 0 40 -21 Z" fill="#0E1C42" opacity=".08"/>
+            </g>
+            <!-- TIER 1 (upper) arches -->
+            <g fill="#b98a4a" stroke="#8f6a2f" stroke-width="1">
+              <path d="M46 106 a6 8 0 0 1 12 0 l0 12 l-12 0 Z"/>
+              <path d="M69 111 a6 8 0 0 1 12 0 l0 12 l-12 0 Z"/>
+              <path d="M93 114 a6 8 0 0 1 12 0 l0 13 l-12 0 Z"/>
+              <path d="M118 115 a6 8 0 0 1 12 0 l0 13 l-12 0 Z"/>
+              <path d="M143 114 a6 8 0 0 1 12 0 l0 13 l-12 0 Z"/>
+              <path d="M167 111 a6 8 0 0 1 12 0 l0 12 l-12 0 Z"/>
+              <path d="M190 106 a6 8 0 0 1 12 0 l0 12 l-12 0 Z"/>
+            </g>
+            <!-- pilaster caps between tiers -->
+            <g fill="#e7cf9d" opacity=".8">
+              <rect x="44" y="128" width="160" height="3"/>
+            </g>
+            <!-- TIER 2 (lower) arches -->
+            <g fill="#9c7238" stroke="#7a5626" stroke-width="1">
+              <path d="M50 132 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+              <path d="M74 136 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+              <path d="M99 138 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+              <path d="M124 139 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+              <path d="M149 138 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+              <path d="M173 136 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+              <path d="M197 132 a7 10 0 0 1 14 0 l0 16 l-14 0 Z"/>
+            </g>
+            <!-- ground shadow -->
+            <ellipse cx="130" cy="176" rx="104" ry="12" fill="#0E1C42" opacity=".06"/>
+          </svg>
             </div>
-            <div style="font-size:14px; color:#0E1C42; margin-top:8px;">A simple cross-section: tiered stone seating on top, an arched entrance level, and the arena floor below</div>
+            <div style="font-size:14px; color:#0E1C42; margin-top:8px;">The Roman Colosseum &mdash; an oval, tiered stone amphitheater ringed with rows of arches</div>
         </div>
 
         <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 10px 0 0 0;">Watch this short video for a closer look at the Colosseum and the Circus Maximus.</p>

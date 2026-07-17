@@ -160,21 +160,56 @@
         </div>
 
         <div class="el-clock-wrap">
-            <div class="el-clock-face">
-                <div class="el-clock-num" style="left:85px; top:13px;">XII</div>
-                <div class="el-clock-num" style="left:122px; top:22px;">I</div>
-                <div class="el-clock-num" style="left:148px; top:49px;">II</div>
-                <div class="el-clock-num" style="left:157px; top:85px;">III</div>
-                <div class="el-clock-num" style="left:148px; top:121px;">IV</div>
-                <div class="el-clock-num" style="left:122px; top:148px;">V</div>
-                <div class="el-clock-num" style="left:85px; top:157px;">VI</div>
-                <div class="el-clock-num" style="left:49px; top:148px;">VII</div>
-                <div class="el-clock-num" style="left:22px; top:121px;">VIII</div>
-                <div class="el-clock-num" style="left:13px; top:85px;">IX</div>
-                <div class="el-clock-num" style="left:22px; top:49px;">X</div>
-                <div class="el-clock-num" style="left:49px; top:22px;">XI</div>
-                <div class="el-clock-center"></div>
-            </div>
+          <svg viewBox="0 0 240 240" role="img" aria-label="A round clock face with Roman numerals one through twelve around the edge and gold clock hands" style="display:block; width:100%; max-width:280px; height:auto; margin:0 auto;">
+            <defs>
+              <radialGradient id="clkFace" cx="0.42" cy="0.36" r="0.72">
+                <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f2ead6"/>
+              </radialGradient>
+              <linearGradient id="clkRim" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e2b866"/><stop offset="1" stop-color="#b8862a"/>
+              </linearGradient>
+              <linearGradient id="clkRim2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1a2f5c"/><stop offset="1" stop-color="#0E1C42"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="240" height="240" rx="16" fill="#eaf4f9"/>
+            <circle cx="120" cy="120" r="106" fill="#0E1C42" opacity=".06"/>
+            <!-- gold outer rim -->
+            <circle cx="120" cy="120" r="100" fill="url(#clkRim)"/>
+            <circle cx="120" cy="120" r="92" fill="url(#clkRim2)"/>
+            <!-- face -->
+            <circle cx="120" cy="120" r="86" fill="url(#clkFace)" stroke="#d8c79c" stroke-width="1.5"/>
+            <!-- minute ticks -->
+            <g stroke="#c9b58a" stroke-width="1.4">
+              <!-- generated evenly; 12 major handled by numerals, add small ticks -->
+              <line x1="120" y1="40" x2="120" y2="46"/>
+              <line x1="200" y1="120" x2="194" y2="120"/>
+              <line x1="120" y1="200" x2="120" y2="194"/>
+              <line x1="40" y1="120" x2="46" y2="120"/>
+            </g>
+            <!-- Roman numerals I..XII positioned on a radius of 68 from center (120,120) -->
+            <g font-family="Georgia,'Times New Roman',serif" font-size="16" font-weight="700" fill="#0E1C42" text-anchor="middle">
+              <text x="120" y="64">XII</text>
+              <text x="154" y="73">I</text>
+              <text x="179" y="98">II</text>
+              <text x="188" y="126">III</text>
+              <text x="179" y="154">IV</text>
+              <text x="154" y="179">V</text>
+              <text x="120" y="188">VI</text>
+              <text x="86" y="179">VII</text>
+              <text x="61" y="154">VIII</text>
+              <text x="52" y="126">IX</text>
+              <text x="61" y="98">X</text>
+              <text x="86" y="73">XI</text>
+            </g>
+            <!-- hands: pointing to roughly X past II -->
+            <g stroke-linecap="round">
+              <line x1="120" y1="120" x2="120" y2="76" stroke="#0E1C42" stroke-width="5"/>
+              <line x1="120" y1="120" x2="158" y2="132" stroke="#C7922C" stroke-width="4"/>
+            </g>
+            <circle cx="120" cy="120" r="7" fill="#C7922C" stroke="#8f6614" stroke-width="1.5"/>
+            <circle cx="120" cy="120" r="2.6" fill="#0E1C42"/>
+          </svg>
             <div style="font-size:14px; color:#0E1C42; margin-top:6px;">A clock face using Roman numerals I through XII. Today's vocabulary covers I through X.</div>
         </div>
 

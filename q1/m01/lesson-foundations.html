@@ -152,11 +152,59 @@
         <p style="font-size: 19px; color: #1a2340; line-height: 1.7; margin: 0 0 12px 0;">Rome is a city in a country called <strong>Italia</strong> (Italy). Italy is shaped just like a big boot! Look at the boot shape below — the little red dot is where the city of Rome sits.</p>
 
         <div class="el-map">
-            <div style="position:relative; display:inline-block;">
-                <div class="el-boot"></div>
-                <div class="el-dot" style="position:absolute; top:62px; left:38px;"></div>
+            <div style="max-width:290px; margin:0 auto;">
+          <svg viewBox="0 0 240 260" role="img" aria-label="Stylized map of the Italian peninsula with the capital city Rome marked by a gold star" style="width:100%;height:auto;display:block;">
+            <defs>
+              <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#bfe6f4"/><stop offset="1" stop-color="#8fcfe8"/>
+              </linearGradient>
+              <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#a9bd66"/><stop offset="1" stop-color="#7f9542"/>
+              </linearGradient>
+              <linearGradient id="landHi" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#c7d68a"/><stop offset="1" stop-color="#a9bd66"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="240" height="260" rx="20" fill="url(#sea)"/>
+            <!-- subtle sea wave strokes -->
+            <g stroke="#a6dcf0" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".7">
+              <path d="M24 214 q9 -7 18 0 t18 0"/>
+              <path d="M198 60 q9 -7 18 0 t18 0"/>
+              <path d="M196 210 q9 -7 18 0 t18 0"/>
+            </g>
+            <!-- Sardinia -->
+            <path d="M34 138 q-8 10 -3 24 q4 12 16 12 q11 -1 12 -14 q1 -14 -8 -24 q-9 -8 -17 2 Z" fill="url(#land)" stroke="#6c8138" stroke-width="2"/>
+            <!-- Sicily -->
+            <path d="M64 218 q-12 4 -14 16 q-1 11 12 15 q16 4 27 -4 q7 -6 -1 -13 q-11 -9 -24 -14 Z" fill="url(#land)" stroke="#6c8138" stroke-width="2"/>
+            <!-- Peninsula (the boot) -->
+            <path d="M56 56
+                     C 72 40, 122 42, 152 56
+                     C 164 62, 158 80, 146 92
+                     C 138 102, 150 114, 160 128
+                     C 174 146, 190 160, 192 178
+                     C 193 189, 182 192, 174 186
+                     C 167 181, 162 175, 154 172
+                     C 147 176, 146 184, 138 188
+                     C 122 196, 112 206, 102 214
+                     C 94 220, 84 216, 88 206
+                     C 92 195, 104 188, 110 176
+                     C 115 164, 106 156, 98 148
+                     C 86 135, 78 120, 72 104
+                     C 66 88, 58 74, 56 62 Z"
+                  fill="url(#land)" stroke="#6c8138" stroke-width="2.4" stroke-linejoin="round"/>
+            <!-- inner highlight for depth -->
+            <path d="M64 62 C 80 52, 118 54, 142 64 C 150 70, 146 82, 138 90 C 128 100, 138 112, 146 126 C 132 118, 122 106, 116 92 C 100 80, 82 74, 64 70 Z"
+                  fill="url(#landHi)" opacity=".55"/>
+            <!-- Rome star + label -->
+            <g transform="translate(96,116)">
+              <circle r="15" fill="#0E1C42" opacity=".12"/>
+              <path d="M0 -11 L3.2 -3.4 L11 -3 L4.8 2.2 L6.8 10 L0 5.4 L-6.8 10 L-4.8 2.2 L-11 -3 L-3.2 -3.4 Z"
+                    fill="#C7922C" stroke="#8f6614" stroke-width="1"/>
+            </g>
+            <text x="112" y="120" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="800" fill="#0E1C42">Rōma</text>
+          </svg>
             </div>
-            <div style="font-size:16px; color:#0E1C42; margin-top:8px;">🟥 = Rome, the city in the middle of the boot!</div>
+            <div style="font-size:16px; color:#0E1C42; margin-top:10px;">This is <strong>Italia</strong> — the land shaped like a big boot. The gold star shows <strong>Rōma</strong>, right in the middle!</div>
         </div>
 
         <p style="font-size: 19px; color: #1a2340; line-height: 1.7; margin: 10px 0 0 0;">Watch this short video to see the real Rome.</p>
