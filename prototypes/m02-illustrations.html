@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Elementary Latin — Illustration Prototype (Module 02)</title>
+<style>
+  :root{
+    --navy:#0E1C42;
+    --cyan:#55C8E8;
+    --gold:#C7922C;
+    --terracotta:#C4703F;
+    --olive:#7B8C3F;
+    --sky:#AEE0F2;
+    --sand:#E8D6A8;
+    --ink:#243049;
+    --paper:#FBF7EF;
+    --card:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.5;
+  }
+
+  /* ---- Optima header ---- */
+  header.optima{
+    background:var(--navy);
+    border-bottom:4px solid var(--cyan);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:16px 28px;
+  }
+  header.optima .brand{display:flex;align-items:center;gap:12px;}
+  header.optima h1{
+    font-size:1.25rem;
+    margin:0;
+    font-weight:700;
+    letter-spacing:.2px;
+  }
+  header.optima .kicker{
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:var(--cyan);
+    margin:0 0 2px;
+  }
+
+  main{max-width:1080px;margin:0 auto;padding:28px 24px 64px;}
+  .intro{
+    font-size:1.02rem;
+    color:#4a566e;
+    background:#fff;
+    border-left:5px solid var(--gold);
+    padding:14px 18px;
+    border-radius:8px;
+    box-shadow:0 1px 3px rgba(14,28,66,.08);
+    margin-bottom:32px;
+  }
+
+  section.card{
+    background:var(--card);
+    border:1px solid #ece4d4;
+    border-radius:16px;
+    box-shadow:0 6px 18px rgba(14,28,66,.07);
+    padding:24px 26px;
+    margin-bottom:26px;
+  }
+  .card-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;}
+  .lat{font-size:1.7rem;font-weight:800;color:var(--navy);}
+  .gloss{font-size:1rem;color:var(--gold);font-weight:600;font-style:italic;}
+  .idea-num{
+    font-size:.7rem;font-weight:700;color:#fff;background:var(--cyan);
+    border-radius:999px;padding:3px 10px;letter-spacing:1px;
+  }
+
+  .compare{
+    display:flex;flex-wrap:wrap;align-items:center;gap:28px;margin-top:14px;
+  }
+  .slot{display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .slot .tag{
+    font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  }
+  .slot.now .tag{color:#b04a3a;}
+  .slot.proposed .tag{color:var(--olive);}
+  .frame{
+    background:#f6f1e6;border:1px dashed #d8ccb2;border-radius:12px;
+    width:130px;height:130px;display:flex;align-items:center;justify-content:center;
+  }
+  .frame.big{
+    background:linear-gradient(160deg,#ffffff,#f7f2e8);
+    border:1px solid #e7dcc6;border-radius:16px;
+    width:270px;height:270px;box-shadow:inset 0 2px 10px rgba(14,28,66,.05);
+    padding:6px;
+  }
+  .frame.big svg{width:250px;height:250px;}
+  .arrow{font-size:2rem;color:#c9bda3;user-select:none;}
+
+  /* ---- crude "current" recreations ---- */
+  .crude-tri{
+    width:0;height:0;border-left:44px solid transparent;border-right:44px solid transparent;
+    border-bottom:74px solid #6b7bbf;
+  }
+  .crude-glyph{font-size:66px;color:#3b73a6;line-height:1;}
+  .crude-dot{width:46px;height:46px;border-radius:50%;background:#c0392b;}
+  .crude-boot{
+    width:78px;height:104px;background:#8a7d5c;
+    -webkit-clip-path:polygon(30% 0,70% 2%,66% 34%,90% 55%,78% 74%,60% 66%,58% 88%,30% 100%,40% 70%,22% 46%);
+    clip-path:polygon(30% 0,70% 2%,66% 34%,90% 55%,78% 74%,60% 66%,58% 88%,30% 100%,40% 70%,22% 46%);
+  }
+
+  .options-head{margin:44px 0 4px;color:var(--navy);font-size:1.15rem;font-weight:800;}
+  .options-sub{margin:0 0 18px;color:#5a6580;font-size:.95rem;}
+  .opt-row{display:flex;flex-wrap:wrap;gap:24px;}
+  .opt-card{
+    background:#fff;border:1px solid #ece4d4;border-radius:14px;padding:16px;
+    display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;min-width:240px;
+    box-shadow:0 4px 12px rgba(14,28,66,.06);
+  }
+  .opt-card .label{font-weight:700;color:var(--navy);}
+  .opt-card .desc{font-size:.82rem;color:#6b7488;text-align:center;}
+  footer{color:#8a8778;font-size:.8rem;text-align:center;padding:20px;}
+</style>
+</head>
+<body>
+
+<header class="optima">
+  <div class="brand">
+    <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width:50px;height:40px;object-fit:contain;" />
+    <div>
+      <p class="kicker">Elementary Latin</p>
+      <h1>Elementary Latin — Illustration Prototype (Module 02)</h1>
+    </div>
+  </div>
+</header>
+
+<main>
+  <p class="intro">Prototype — original inline SVG (rights-clean). Judge the quality bar before we scale.</p>
+
+  <!-- ============ 1. ITALIA ============ -->
+  <section class="card">
+    <div class="card-head">
+      <span class="idea-num">IDEA 1</span>
+      <span class="lat">Italia</span>
+      <span class="gloss">Italy — the peninsula</span>
+    </div>
+    <p style="margin:.2rem 0 0;color:#5a6580;">A friendly, recognizable map of the Italian peninsula with the capital marked: Rōma.</p>
+    <div class="compare">
+      <div class="slot now">
+        <span class="tag">Now</span>
+        <div class="frame"><div class="crude-boot" aria-hidden="true"></div></div>
+      </div>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
+      <div class="slot proposed">
+        <span class="tag">Proposed</span>
+        <div class="frame big">
+          <!-- ITALIA MAP -->
+          <svg viewBox="0 0 240 260" role="img" aria-label="Stylized map of the Italian peninsula with the capital city Rome marked by a gold star">
+            <defs>
+              <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#bfe6f4"/><stop offset="1" stop-color="#8fcfe8"/>
+              </linearGradient>
+              <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#a9bd66"/><stop offset="1" stop-color="#7f9542"/>
+              </linearGradient>
+              <linearGradient id="landHi" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#c7d68a"/><stop offset="1" stop-color="#a9bd66"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="240" height="260" rx="20" fill="url(#sea)"/>
+            <!-- subtle sea wave strokes -->
+            <g stroke="#a6dcf0" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".7">
+              <path d="M24 214 q9 -7 18 0 t18 0"/>
+              <path d="M198 60 q9 -7 18 0 t18 0"/>
+              <path d="M196 210 q9 -7 18 0 t18 0"/>
+            </g>
+            <!-- Sardinia -->
+            <path d="M34 138 q-8 10 -3 24 q4 12 16 12 q11 -1 12 -14 q1 -14 -8 -24 q-9 -8 -17 2 Z" fill="url(#land)" stroke="#6c8138" stroke-width="2"/>
+            <!-- Sicily -->
+            <path d="M64 218 q-12 4 -14 16 q-1 11 12 15 q16 4 27 -4 q7 -6 -1 -13 q-11 -9 -24 -14 Z" fill="url(#land)" stroke="#6c8138" stroke-width="2"/>
+            <!-- Peninsula (the boot) -->
+            <path d="M56 56
+                     C 72 40, 122 42, 152 56
+                     C 164 62, 158 80, 146 92
+                     C 138 102, 150 114, 160 128
+                     C 174 146, 190 160, 192 178
+                     C 193 189, 182 192, 174 186
+                     C 167 181, 162 175, 154 172
+                     C 147 176, 146 184, 138 188
+                     C 122 196, 112 206, 102 214
+                     C 94 220, 84 216, 88 206
+                     C 92 195, 104 188, 110 176
+                     C 115 164, 106 156, 98 148
+                     C 86 135, 78 120, 72 104
+                     C 66 88, 58 74, 56 62 Z"
+                  fill="url(#land)" stroke="#6c8138" stroke-width="2.4" stroke-linejoin="round"/>
+            <!-- inner highlight for depth -->
+            <path d="M64 62 C 80 52, 118 54, 142 64 C 150 70, 146 82, 138 90 C 128 100, 138 112, 146 126 C 132 118, 122 106, 116 92 C 100 80, 82 74, 64 70 Z"
+                  fill="url(#landHi)" opacity=".55"/>
+            <!-- Rome star + label -->
+            <g transform="translate(96,116)">
+              <circle r="15" fill="#0E1C42" opacity=".12"/>
+              <path d="M0 -11 L3.2 -3.4 L11 -3 L4.8 2.2 L6.8 10 L0 5.4 L-6.8 10 L-4.8 2.2 L-11 -3 L-3.2 -3.4 Z"
+                    fill="#C7922C" stroke="#8f6614" stroke-width="1"/>
+            </g>
+            <text x="112" y="120" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="800" fill="#0E1C42">Rōma</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. ROMA ============ -->
+  <section class="card">
+    <div class="card-head">
+      <span class="idea-num">IDEA 2</span>
+      <span class="lat">Rōma</span>
+      <span class="gloss">Rome — the city</span>
+    </div>
+    <p style="margin:.2rem 0 0;color:#5a6580;">A warm city vignette: Colosseum, a columned temple, an aqueduct, and hills.</p>
+    <div class="compare">
+      <div class="slot now">
+        <span class="tag">Now</span>
+        <div class="frame"><div class="crude-dot" aria-hidden="true"></div></div>
+      </div>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
+      <div class="slot proposed">
+        <span class="tag">Proposed</span>
+        <div class="frame big">
+          <!-- ROMA VIGNETTE -->
+          <svg viewBox="0 0 260 210" role="img" aria-label="A warm illustration of the city of Rome with a Colosseum, a temple with columns, an aqueduct, and hills">
+            <defs>
+              <linearGradient id="rSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#cfeaf6"/><stop offset="1" stop-color="#fbe9cf"/>
+              </linearGradient>
+              <linearGradient id="rStone" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f0dcb6"/><stop offset="1" stop-color="#d9b980"/>
+              </linearGradient>
+              <linearGradient id="rStoneWarm" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e6c58f"/><stop offset="1" stop-color="#c99a5c"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="260" height="210" rx="16" fill="url(#rSky)"/>
+            <!-- sun -->
+            <circle cx="212" cy="44" r="20" fill="#f4c86a" opacity=".9"/>
+            <!-- back hills -->
+            <path d="M0 150 q40 -34 90 -12 q46 20 90 -6 q42 -24 80 2 V210 H0 Z" fill="#9fb35a" opacity=".7"/>
+            <path d="M0 168 q54 -26 110 -6 q56 18 150 -8 V210 H0 Z" fill="#8aa04a"/>
+            <!-- aqueduct (back left) -->
+            <g fill="url(#rStone)" stroke="#c19a5f" stroke-width="1.5">
+              <rect x="8" y="96" width="86" height="12" rx="2"/>
+              <g>
+                <rect x="10" y="108" width="9" height="46"/>
+                <rect x="31" y="108" width="9" height="46"/>
+                <rect x="52" y="108" width="9" height="46"/>
+                <rect x="73" y="108" width="9" height="46"/>
+                <rect x="90" y="108" width="6" height="46"/>
+              </g>
+              <path d="M19 130 a10 10 0 0 1 12 0" fill="none" stroke="#b98f52" stroke-width="2.4"/>
+              <path d="M40 130 a10 10 0 0 1 12 0" fill="none" stroke="#b98f52" stroke-width="2.4"/>
+              <path d="M61 130 a10 10 0 0 1 12 0" fill="none" stroke="#b98f52" stroke-width="2.4"/>
+            </g>
+            <!-- temple (center back, on a rise) -->
+            <g transform="translate(120,70)">
+              <!-- steps -->
+              <rect x="-2" y="76" width="72" height="8" rx="2" fill="#cfae74"/>
+              <rect x="4" y="70" width="60" height="8" rx="2" fill="#e0c48c"/>
+              <!-- columns -->
+              <g fill="url(#rStone)" stroke="#c19a5f" stroke-width="1">
+                <rect x="8" y="30" width="9" height="42" rx="2"/>
+                <rect x="24" y="30" width="9" height="42" rx="2"/>
+                <rect x="40" y="30" width="9" height="42" rx="2"/>
+                <rect x="56" y="30" width="9" height="42" rx="2"/>
+              </g>
+              <!-- entablature -->
+              <rect x="2" y="22" width="68" height="9" rx="2" fill="#e0c48c" stroke="#c19a5f" stroke-width="1"/>
+              <!-- pediment -->
+              <path d="M0 22 L36 2 L72 22 Z" fill="url(#rStoneWarm)" stroke="#b98f52" stroke-width="1.5" stroke-linejoin="round"/>
+            </g>
+            <!-- Colosseum (front right) -->
+            <g transform="translate(150,96)">
+              <path d="M0 62 C 0 30, 96 30, 96 62 L96 96 L0 96 Z" fill="url(#rStoneWarm)" stroke="#b0863f" stroke-width="2" stroke-linejoin="round"/>
+              <!-- top arch row -->
+              <g fill="#c99a5c" stroke="#a87e3c" stroke-width="1">
+                <rect x="10" y="46" width="10" height="18" rx="5"/>
+                <rect x="27" y="43" width="10" height="21" rx="5"/>
+                <rect x="45" y="42" width="10" height="22" rx="5"/>
+                <rect x="63" y="43" width="10" height="21" rx="5"/>
+                <rect x="80" y="46" width="8" height="18" rx="4"/>
+              </g>
+              <!-- lower arch row -->
+              <g fill="#b98a4a" stroke="#8f6a2f" stroke-width="1">
+                <rect x="8" y="70" width="11" height="22" rx="5"/>
+                <rect x="26" y="70" width="11" height="22" rx="5"/>
+                <rect x="44" y="70" width="11" height="22" rx="5"/>
+                <rect x="62" y="70" width="11" height="22" rx="5"/>
+                <rect x="79" y="70" width="10" height="22" rx="5"/>
+              </g>
+              <!-- shading -->
+              <path d="M96 62 L96 96 L70 96 C 86 90, 92 78, 96 62 Z" fill="#0E1C42" opacity=".08"/>
+            </g>
+            <!-- foreground ground -->
+            <path d="M0 190 q60 -14 130 -4 q70 10 130 -2 V210 H0 Z" fill="#7f9542"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. MONS ============ -->
+  <section class="card">
+    <div class="card-head">
+      <span class="idea-num">IDEA 3</span>
+      <span class="lat">mōns</span>
+      <span class="gloss">mountain / hill</span>
+    </div>
+    <p style="margin:.2rem 0 0;color:#5a6580;">A layered mountain with depth — back ranges, a snow cap, and foothill greenery.</p>
+    <div class="compare">
+      <div class="slot now">
+        <span class="tag">Now</span>
+        <div class="frame"><div class="crude-tri" aria-hidden="true"></div></div>
+      </div>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
+      <div class="slot proposed">
+        <span class="tag">Proposed</span>
+        <div class="frame big">
+          <!-- MONS (primary) -->
+          <svg viewBox="0 0 240 210" role="img" aria-label="A layered mountain with a snow cap, distant ranges, and green foothills">
+            <defs>
+              <linearGradient id="mSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#cdeaf7"/><stop offset="1" stop-color="#eaf6fb"/>
+              </linearGradient>
+              <linearGradient id="mFront" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#8b95ad"/><stop offset="1" stop-color="#5d6a86"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="240" height="210" rx="16" fill="url(#mSky)"/>
+            <circle cx="196" cy="46" r="18" fill="#f4c86a" opacity=".85"/>
+            <!-- back range -->
+            <path d="M-10 150 L58 66 L118 150 Z" fill="#aeb9cf" opacity=".8"/>
+            <path d="M96 150 L168 58 L246 150 Z" fill="#9aa6c0" opacity=".85"/>
+            <!-- front mountain -->
+            <path d="M12 172 L104 52 L200 172 Z" fill="url(#mFront)" stroke="#4c5872" stroke-width="2" stroke-linejoin="round"/>
+            <!-- lit face -->
+            <path d="M104 52 L200 172 L118 172 Z" fill="#0E1C42" opacity=".14"/>
+            <!-- snow cap -->
+            <path d="M104 52 L82 82 q10 6 22 2 q12 -4 18 6 L104 52 Z" fill="#ffffff"/>
+            <path d="M104 52 L124 80 q-10 -2 -20 4 q-8 5 -18 -2 L104 52 Z" fill="#eef4fa"/>
+            <!-- foothills / trees -->
+            <path d="M0 178 q40 -20 80 -6 q46 16 90 0 q40 -14 80 4 V210 H0 Z" fill="#7f9542"/>
+            <g fill="#5f7431">
+              <path d="M40 176 l8 -22 l8 22 Z"/>
+              <path d="M56 178 l7 -18 l7 18 Z"/>
+              <path d="M180 178 l8 -20 l8 20 Z"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. INSULA ============ -->
+  <section class="card">
+    <div class="card-head">
+      <span class="idea-num">IDEA 4</span>
+      <span class="lat">īnsula</span>
+      <span class="gloss">island</span>
+    </div>
+    <p style="margin:.2rem 0 0;color:#5a6580;">An island landmass with a tree, surrounded by water and gentle waves.</p>
+    <div class="compare">
+      <div class="slot now">
+        <span class="tag">Now</span>
+        <div class="frame"><div class="crude-glyph" aria-hidden="true">&#11054;</div></div>
+      </div>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
+      <div class="slot proposed">
+        <span class="tag">Proposed</span>
+        <div class="frame big">
+          <!-- INSULA -->
+          <svg viewBox="0 0 240 210" role="img" aria-label="A small island with a tree, surrounded by blue water with waves">
+            <defs>
+              <radialGradient id="iSky" cx="0.7" cy="0.2" r="1">
+                <stop offset="0" stop-color="#eaf7fc"/><stop offset="1" stop-color="#bfe6f4"/>
+              </radialGradient>
+              <linearGradient id="iSea" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#7fc9e8"/><stop offset="1" stop-color="#3f9dc9"/>
+              </linearGradient>
+              <linearGradient id="iSand" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f4e2b4"/><stop offset="1" stop-color="#e0c483"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="240" height="210" rx="16" fill="url(#iSky)"/>
+            <circle cx="196" cy="44" r="17" fill="#f4c86a" opacity=".85"/>
+            <!-- sea -->
+            <path d="M0 96 q60 -12 120 0 q60 12 120 0 V210 H0 Z" fill="url(#iSea)"/>
+            <!-- wave strokes -->
+            <g stroke="#d3effa" stroke-width="2.6" stroke-linecap="round" fill="none" opacity=".85">
+              <path d="M24 150 q8 -7 16 0 t16 0"/>
+              <path d="M186 158 q8 -7 16 0 t16 0"/>
+              <path d="M150 186 q8 -7 16 0 t16 0"/>
+              <path d="M40 190 q8 -7 16 0 t16 0"/>
+            </g>
+            <!-- island sand -->
+            <ellipse cx="120" cy="158" rx="72" ry="26" fill="url(#iSand)" stroke="#cba85f" stroke-width="1.5"/>
+            <!-- grassy mound -->
+            <path d="M74 152 q46 -30 92 0 q-46 12 -92 0 Z" fill="#8aa04a"/>
+            <path d="M84 150 q36 -20 72 0 q-36 8 -72 0 Z" fill="#7f9542"/>
+            <!-- palm tree -->
+            <g transform="translate(120,132)">
+              <path d="M-3 0 q-2 -22 3 -34 q3 8 2 34 Z" fill="#9a6a3b" stroke="#7c5330" stroke-width="1"/>
+              <g fill="#6f8b39" stroke="#5f7431" stroke-width="1">
+                <path d="M2 -34 q-22 -10 -34 -2 q16 -2 34 6 Z"/>
+                <path d="M2 -34 q22 -10 34 -2 q-16 -2 -34 6 Z"/>
+                <path d="M2 -34 q-14 -20 -6 -32 q6 14 6 34 Z"/>
+                <path d="M2 -34 q16 -18 30 -16 q-16 4 -30 18 Z"/>
+                <path d="M2 -34 q-18 -6 -30 4 q16 -4 30 2 Z"/>
+              </g>
+              <circle cx="2" cy="-34" r="3" fill="#5f7431"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STYLE OPTIONS ============ -->
+  <h2 class="options-head">Style options — pick a direction (mōns)</h2>
+  <p class="options-sub">The same mountain rendered two ways so the lead can choose the overall visual language for the set.</p>
+  <div class="opt-row">
+    <div class="opt-card">
+      <div class="frame big">
+        <!-- OPTION A: soft / rounded -->
+        <svg viewBox="0 0 240 210" role="img" aria-label="Soft rounded style mountain with gentle curved peaks and pastel shading">
+          <defs>
+            <linearGradient id="sSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#d6eef9"/><stop offset="1" stop-color="#f2f9fc"/>
+            </linearGradient>
+            <linearGradient id="sMt" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#9aa7c4"/><stop offset="1" stop-color="#77849f"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="240" height="210" rx="16" fill="url(#sSky)"/>
+          <circle cx="192" cy="48" r="18" fill="#f7d27e" opacity=".9"/>
+          <!-- soft clouds -->
+          <g fill="#ffffff" opacity=".8">
+            <ellipse cx="52" cy="52" rx="26" ry="12"/>
+            <ellipse cx="72" cy="48" rx="18" ry="11"/>
+          </g>
+          <!-- rounded back hill -->
+          <path d="M-10 168 q70 -74 150 -30 q40 22 110 8 V210 H-10 Z" fill="#b3bdd4"/>
+          <!-- rounded front mountain -->
+          <path d="M6 176 q60 -104 108 -104 q48 0 112 104 Z" fill="url(#sMt)"/>
+          <!-- soft snow cap -->
+          <path d="M78 96 q36 -50 72 0 q-20 -12 -36 -6 q-18 -6 -36 6 Z" fill="#ffffff"/>
+          <!-- gentle shade -->
+          <path d="M114 72 q48 26 112 104 q-58 0 -112 0 Z" fill="#0E1C42" opacity=".08"/>
+          <!-- grass base -->
+          <path d="M0 182 q60 -16 120 -6 q60 10 120 -2 V210 H0 Z" fill="#8fa24e"/>
+        </svg>
+      </div>
+      <span class="label">Option A — Soft &amp; rounded</span>
+      <span class="desc">Curved peaks, pastel fills, cloud accents. Gentle, storybook feel for early grades (K–2).</span>
+    </div>
+
+    <div class="opt-card">
+      <div class="frame big">
+        <!-- OPTION B: geometric / modern -->
+        <svg viewBox="0 0 240 210" role="img" aria-label="Geometric modern style mountain built from faceted flat triangular planes with sharp light and shadow">
+          <defs>
+            <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#0E1C42"/><stop offset="1" stop-color="#3a5a86"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="240" height="210" rx="16" fill="url(#gSky)"/>
+          <circle cx="192" cy="46" r="16" fill="#C7922C"/>
+          <!-- back facets -->
+          <path d="M-10 170 L60 78 L128 170 Z" fill="#3f5a7e"/>
+          <path d="M90 170 L156 66 L232 170 Z" fill="#4a6a92"/>
+          <!-- front mountain facets -->
+          <path d="M14 176 L108 48 L118 176 Z" fill="#2c4767"/>
+          <path d="M108 48 L202 176 L118 176 Z" fill="#38597e"/>
+          <!-- angular snow cap facets -->
+          <path d="M108 48 L86 78 L108 84 Z" fill="#eaf3fb"/>
+          <path d="M108 48 L130 78 L108 84 Z" fill="#c3d7ea"/>
+          <!-- base band -->
+          <path d="M0 176 L60 172 L120 178 L180 172 L240 178 V210 H0 Z" fill="#1c2f4d"/>
+          <!-- cyan accent ridge -->
+          <path d="M108 48 L118 176" stroke="#55C8E8" stroke-width="2" opacity=".6"/>
+        </svg>
+      </div>
+      <span class="label">Option B — Geometric modern</span>
+      <span class="desc">Faceted flat planes, sharp light/shadow split, brand navy + cyan + gold. Crisp, upper-elementary feel (3–5).</span>
+    </div>
+  </div>
+
+  <footer>Original inline SVG · no external image assets · rights-clean · Optima Academy Elementary Latin</footer>
+</main>
+
+</body>
+</html>
