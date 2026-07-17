@@ -54,6 +54,7 @@
     .el-garment-name { font-size: 20px; color: #0E1C42; margin: 8px 0 4px 0; font-weight:600; }
     .el-garment-def { font-size: 15px; color: #1a2340; line-height: 1.5; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -106,6 +107,12 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Romans didn't wear the same thing every day!</div>
         <div style="font-size: 19px; color: #1a2340; line-height: 1.7;">Just like you might wear something special for a birthday party, Romans had clothes just for regular days and clothes just for big, special days. Today we find out what those clothes looked like — and learn two new Latin words for them.</div>
+    </div>
+
+    <!-- ▼ Shared widget library: Magister Caesar guide ▼ -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 5px solid #0F8B8D; border-radius: 8px; padding: 16px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0a5f60; margin-bottom: 10px;">🏛️ YOUR GUIDE · MAGISTER CAESAR</div>
+        <div class="elw-caesar" data-lines='["Salvē!","Romans wore a tunica every day, and a toga on special days."]'></div>
     </div>
 
     <!-- Objectives -->
@@ -227,6 +234,12 @@
         </details>
     </div>
 
+    <!-- ▼ Shared widget library: interactive practice game ▼ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🎮 PLAY IT · SORT THE OUTFITS</div>
+        <div class="elw-sort" data-title="Everyday or special day?" data-bins='["🎽 Everyday (tunica)","🏛️ Special day (toga)"]' data-items='[["Playing outside in a tunica",0],["Running errands in a tunica",0],["A toga for a big ceremony",1],["A toga for a special day",1]]'></div>
+    </div>
+
     <!-- What you'll do next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
@@ -295,6 +308,8 @@
   });
 })();
 </script>
+
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 
 </body>
 </html>

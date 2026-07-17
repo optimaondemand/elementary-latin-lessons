@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Elementary Latin (5007090) — Facilitator Guidance Bank</title>
+<style>
+  :root {
+    --navy: #0E1C42;
+    --cyan: #55C8E8;
+    --gold: #C7922C;
+    --ink: #1f2733;
+    --paper: #f4f6fb;
+    --card: #ffffff;
+    --line: #e2e7f0;
+    --muted: #5a6472;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  /* Header */
+  header {
+    background: var(--navy);
+    color: #fff;
+    border-bottom: 5px solid var(--cyan);
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .owl-circle {
+    width: 52px;
+    height: 52px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  }
+  header .titles h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    margin: 0 0 2px 0;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+  }
+  header .titles .sub {
+    font-size: 0.9rem;
+    color: var(--cyan);
+    font-weight: 600;
+  }
+  /* Layout */
+  main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 28px 22px 60px;
+  }
+  .intro {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--gold);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 26px;
+    box-shadow: 0 1px 3px rgba(14,28,66,0.06);
+  }
+  .intro p { margin: 0.4em 0; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px 26px;
+    margin-bottom: 26px;
+    box-shadow: 0 1px 3px rgba(14,28,66,0.06);
+  }
+  h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--navy);
+    font-size: 1.35rem;
+    margin: 0 0 14px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--cyan);
+  }
+  h2 .num {
+    display: inline-block;
+    background: var(--navy);
+    color: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 0.95rem;
+    margin-right: 10px;
+    font-family: "Segoe UI", sans-serif;
+  }
+  h3 {
+    font-family: Georgia, serif;
+    color: var(--gold);
+    font-size: 1.05rem;
+    margin: 18px 0 6px;
+  }
+  a { color: #1a6fb0; }
+  code {
+    background: #eef1f7;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 0.9em;
+  }
+  .steps { margin: 8px 0 8px 0; padding-left: 22px; }
+  .steps li { margin-bottom: 6px; }
+  .callout {
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 0.96rem;
+  }
+  .callout.tip {
+    background: #eaf7fc;
+    border: 1px solid #bfe6f4;
+    border-left: 5px solid var(--cyan);
+  }
+  .callout.gold {
+    background: #fbf4e6;
+    border: 1px solid #e9d9b3;
+    border-left: 5px solid var(--gold);
+  }
+  .callout.warn {
+    background: #fdeeee;
+    border: 1px solid #f3cccc;
+    border-left: 5px solid #c0392b;
+  }
+  .callout strong { color: var(--navy); }
+  .lane-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .lane {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    background: #fbfcfe;
+  }
+  .lane h3 { margin-top: 0; color: var(--navy); }
+  .lane .band {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--gold);
+    border-radius: 20px;
+    padding: 2px 12px;
+    margin-bottom: 8px;
+  }
+  /* Tables */
+  .table-wrap { overflow-x: auto; margin-top: 10px; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 640px;
+    font-size: 0.93rem;
+  }
+  caption {
+    caption-side: top;
+    text-align: left;
+    font-family: Georgia, serif;
+    font-weight: 700;
+    color: var(--navy);
+    background: #eaf7fc;
+    border: 1px solid #bfe6f4;
+    border-bottom: none;
+    padding: 8px 12px;
+    border-radius: 8px 8px 0 0;
+    font-size: 1rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    vertical-align: top;
+  }
+  thead th {
+    background: var(--navy);
+    color: #fff;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+  }
+  tbody tr:nth-child(even) { background: #f7f9fd; }
+  td.latin { font-weight: 700; color: var(--navy); white-space: nowrap; }
+  td.modern { font-weight: 600; }
+  .greekflag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #7a4a00;
+    background: #f6e2c0;
+    border: 1px solid #e3c384;
+    border-radius: 4px;
+    padding: 0 5px;
+    margin-left: 4px;
+    white-space: nowrap;
+  }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    padding: 20px;
+  }
+  @media (max-width: 640px) {
+    .lane-grid { grid-template-columns: 1fr; }
+    header .titles h1 { font-size: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="owl-circle">
+    <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width:50px;height:40px;object-fit:contain;" />
+  </div>
+  <div class="titles">
+    <h1>Elementary Latin (5007090) — Facilitator Guidance Bank</h1>
+    <div class="sub">Optima Academy Online &middot; K–5 Latin &middot; Teacher Resource</div>
+  </div>
+</header>
+
+<main>
+  <div class="intro">
+    <p>Salvē, and welcome! This guide is your behind-the-scenes companion for the K–5 Latin course. The lessons run themselves — the games auto-check, nothing here needs grading — so your energy goes where it matters most: <strong>bringing warmth, wonder, and a live human voice into the room.</strong></p>
+    <p>Use this bank to drop in a class video, spark "aha!" moments with real Latin-to-English connections, understand the built-in games, and choose the right lane for each learner. Skim it once, then keep it open in a tab.</p>
+  </div>
+
+  <!-- SECTION 1 -->
+  <section class="card">
+    <h2><span class="num">1</span>Adding a Class Video (the 🎬 slot)</h2>
+    <p>Every lesson includes a placeholder that reads <strong>"🎬 Facilitator video goes here."</strong> That slot is <em>yours</em>. It's the spot to add a short clip that connects the module's Roman-world topic to something your class will love — and to let your personality into the lesson. You do not have to fill it, but a well-chosen 2–3 minute video is one of the easiest ways to make Latin feel alive.</p>
+    <p>There are two ways to fill it, depending on your access:</p>
+
+    <h3>(a) Easiest — no repo access needed (do this in Canvas)</h3>
+    <p>The lesson students see is an <strong>embedded page</strong> inside a Canvas module page. Your video sits in the Canvas page <em>around</em> that embed, right above it. You never touch any code.</p>
+    <ol class="steps">
+      <li>In Canvas, open the lesson's <strong>module page</strong>.</li>
+      <li>Click <strong>Edit</strong> (top right).</li>
+      <li>Click in the space <strong>above</strong> the embedded lesson, in the <strong>Rich Content Editor</strong>.</li>
+      <li>Add your video one of two ways:
+        <ul>
+          <li>Paste a <strong>YouTube or Vimeo link</strong> on its own line — Canvas usually auto-previews it; or</li>
+          <li>Use <strong>Insert &rarr; Media</strong> (or the media icon) to embed a clip directly.</li>
+        </ul>
+      </li>
+      <li>Click <strong>Save</strong>. Your video now appears each time a student opens that lesson.</li>
+    </ol>
+    <div class="callout tip">
+      <strong>Tip:</strong> Because the video lives on the Canvas page (not inside the lesson embed), you can change it any time, per class, without affecting anyone else's course. Different section? Different video. Totally fine.
+    </div>
+
+    <h3>(b) Permanent swap — for the repo maintainer</h3>
+    <p>If you want the video baked into the lesson itself (so it travels with the shared lesson for every class), whoever maintains the <strong>GitHub lessons repository</strong> can replace the placeholder block's embed URL directly in the lesson HTML. This is a permanent, course-wide change — use it for a clip you're confident every section should see.</p>
+
+    <div class="callout gold">
+      <strong>What makes a good pick?</strong>
+      <ul style="margin:6px 0 0;">
+        <li><strong>Short</strong> — aim for 2–5 minutes. Little learners fade fast.</li>
+        <li><strong>Age-appropriate</strong> — friendly narration, clean visuals, K–5 tone.</li>
+        <li><strong>Ad-safe</strong> — preview it start to finish; watch for surprise ads or "up next" clutter. Consider a distraction-free player when possible.</li>
+        <li><strong>Relevant</strong> — tie it to the module's Roman-world topic (a virtual tour of the Forum, how an aqueduct works, Roman numerals, a myth retelling, gladiator daily life, etc.).</li>
+        <li><strong>Fresh &amp; engaging</strong> — this is <em>your</em> place to bring in current, exciting, relevant material. A great new documentary short, a museum clip, a maker rebuilding a Roman gadget — if it makes kids lean in, use it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="card">
+    <h2><span class="num">2</span>Living Latin Example Bank</h2>
+    <p>Latin never really left — it's hiding in plain sight all around us. Use this bank for the <strong>"Guess Where It Came From"</strong> activity, as bell-ringers, or just to share a quick "did you know?" Each row is a genuine, verified connection.</p>
+    <div class="callout warn">
+      <strong>Accuracy note:</strong> Every etymology below is a real Latin root — not a look-alike guess. Many science and space words that <em>sound</em> Latin are actually <strong>Greek</strong> (octopus, dinosaur, astronaut, telescope, planet). Where a familiar word has a Greek part mixed in, it's flagged so you can teach it honestly. When in doubt, check before you share — surface resemblance fools everyone.
+    </div>
+
+    <!-- Numbers & calendar -->
+    <div class="table-wrap">
+      <table>
+        <caption>Numbers &amp; the Calendar</caption>
+        <thead>
+          <tr><th>Modern thing</th><th>Latin root</th><th>What it means</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="modern">October</td><td class="latin">octō</td><td>eight</td><td>The 8th month in the old Roman calendar (which started in March).</td></tr>
+          <tr><td class="modern">September</td><td class="latin">septem</td><td>seven</td><td>Once the 7th month — same pattern.</td></tr>
+          <tr><td class="modern">November</td><td class="latin">novem</td><td>nine</td><td>The old 9th month.</td></tr>
+          <tr><td class="modern">December</td><td class="latin">decem</td><td>ten</td><td>The old 10th month; also gives us "decimal."</td></tr>
+          <tr><td class="modern">January</td><td class="latin">Iānus</td><td>Janus, the two-faced god</td><td>God of doorways and beginnings — he looks back and forward.</td></tr>
+          <tr><td class="modern">March</td><td class="latin">Mārs</td><td>Mars, god of war</td><td>The Roman year once began here.</td></tr>
+          <tr><td class="modern">July</td><td class="latin">Iūlius</td><td>Julius (Caesar)</td><td>Renamed to honor Julius Caesar.</td></tr>
+          <tr><td class="modern">August</td><td class="latin">Augustus</td><td>the first emperor</td><td>Renamed for Caesar Augustus.</td></tr>
+          <tr><td class="modern">century</td><td class="latin">centum</td><td>hundred</td><td>Also "cent," "percent," "centipede."</td></tr>
+          <tr><td class="modern">annual</td><td class="latin">annus</td><td>year</td><td>Also "anniversary," "annum."</td></tr>
+          <tr><td class="modern">calendar</td><td class="latin">kalendae</td><td>the Kalends (1st of the month)</td><td>The day Romans "called out" the new month.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Body & medicine -->
+    <div class="table-wrap">
+      <table>
+        <caption>The Body &amp; Medicine</caption>
+        <thead>
+          <tr><th>Modern thing</th><th>Latin root</th><th>What it means</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="modern">manual</td><td class="latin">manus</td><td>hand</td><td>Done by hand. Also "manuscript," "manufacture."</td></tr>
+          <tr><td class="modern">℞ / recipe</td><td class="latin">recipe</td><td>"take!" (a command)</td><td>A doctor's order: "take this." The ℞ symbol comes from it.</td></tr>
+          <tr><td class="modern">doctor</td><td class="latin">docēre</td><td>to teach</td><td>A doctor was originally a learned teacher.</td></tr>
+          <tr><td class="modern">dentist</td><td class="latin">dēns, dentis</td><td>tooth</td><td>Also "dental," "dandelion" (dent-de-lion, "lion's tooth").</td></tr>
+          <tr><td class="modern">digit</td><td class="latin">digitus</td><td>finger, toe</td><td>We count on our digits — that's why numbers are "digits."</td></tr>
+          <tr><td class="modern">corpse / corporal</td><td class="latin">corpus</td><td>body</td><td>Also "corporation" (a legal "body") and "corps."</td></tr>
+          <tr><td class="modern">audio</td><td class="latin">audīre</td><td>to hear</td><td>Also "audience," "auditorium," "audible."</td></tr>
+          <tr><td class="modern">oral</td><td class="latin">ōs, ōris</td><td>mouth</td><td>Spoken by mouth. Not the same root as "aural" (ear).</td></tr>
+          <tr><td class="modern">vision / video</td><td class="latin">vidēre</td><td>to see</td><td>Also "visible," "supervise," "evident."</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Space & NASA -->
+    <div class="table-wrap">
+      <table>
+        <caption>Space &amp; NASA</caption>
+        <thead>
+          <tr><th>Modern thing</th><th>Latin root</th><th>What it means</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="modern">Mars rovers</td><td class="latin">Mārs</td><td>Mars, god of war</td><td>The red planet is named for the war god (red = blood).</td></tr>
+          <tr><td class="modern">Aquila constellation</td><td class="latin">aquila</td><td>eagle</td><td>The eagle was the standard of the Roman legions.</td></tr>
+          <tr><td class="modern">Luna / lunar missions</td><td class="latin">lūna</td><td>moon</td><td>Also "lunar," and "lunatic" (once blamed on the moon).</td></tr>
+          <tr><td class="modern">solar power</td><td class="latin">sōl</td><td>sun</td><td>Also "solar system," "parasol" (shields from the sun).</td></tr>
+          <tr><td class="modern">Gemini program</td><td class="latin">geminī</td><td>twins</td><td>The two-seat capsule; the constellation of the twins.</td></tr>
+          <tr><td class="modern">orbit</td><td class="latin">orbis</td><td>circle, ring</td><td>A path that comes back around in a ring.</td></tr>
+          <tr><td class="modern">Jupiter</td><td class="latin">Iuppiter</td><td>king of the gods</td><td>The largest planet, named for the chief god.</td></tr>
+          <tr><td class="modern">Mercury</td><td class="latin">Mercurius</td><td>the swift messenger god</td><td>The fastest-orbiting planet.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Science & taxonomy -->
+    <div class="table-wrap">
+      <table>
+        <caption>Science &amp; Taxonomy (naming living things)</caption>
+        <thead>
+          <tr><th>Modern thing</th><th>Latin root</th><th>What it means</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="modern"><em>Homo sapiens</em></td><td class="latin">homō sapiēns</td><td>"wise human"</td><td>The scientific name for us — <em>homō</em> = human, <em>sapiēns</em> = wise.</td></tr>
+          <tr><td class="modern"><em>T. rex</em> (the "rex")</td><td class="latin">rēx</td><td>king</td><td>"Rex" is Latin (king). <span class="greekflag">"Tyranno-saurus" is Greek</span> (tyrant-lizard).</td></tr>
+          <tr><td class="modern">aquarium</td><td class="latin">aqua</td><td>water</td><td>A place for water. Also "aquatic," "aqua."</td></tr>
+          <tr><td class="modern">aqueduct</td><td class="latin">aqua + dūcere</td><td>"to lead water"</td><td>Romans led water across valleys on arches.</td></tr>
+          <tr><td class="modern">carnivore</td><td class="latin">carō, carnis + vorāre</td><td>"flesh-devourer"</td><td>A meat-eater. Also "chili con carne."</td></tr>
+          <tr><td class="modern">herbivore</td><td class="latin">herba + vorāre</td><td>"plant-devourer"</td><td>A plant-eater. Also "herb," "herbal."</td></tr>
+          <tr><td class="modern"><em>Canis</em> (dog genus)</td><td class="latin">canis</td><td>dog</td><td>Wolves and dogs are <em>Canis</em>.</td></tr>
+          <tr><td class="modern"><em>Felis</em> (cat genus)</td><td class="latin">fēlis</td><td>cat</td><td>The house cat is <em>Felis catus</em>.</td></tr>
+          <tr><td class="modern"><em>Ursa Major</em></td><td class="latin">ursa + māior</td><td>"the greater she-bear"</td><td>The Big Dipper's constellation, the Great Bear.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Government & law -->
+    <div class="table-wrap">
+      <table>
+        <caption>Government &amp; Law</caption>
+        <thead>
+          <tr><th>Modern thing</th><th>Latin root</th><th>What it means</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="modern">senate</td><td class="latin">senātus</td><td>"council of elders"</td><td>From <em>senex</em>, "old man." The U.S. Senate copies Rome's.</td></tr>
+          <tr><td class="modern">republic</td><td class="latin">rēspūblica</td><td>"the public thing/affair"</td><td>Government owned by the people, not a king.</td></tr>
+          <tr><td class="modern">veto</td><td class="latin">vetō</td><td>"I forbid"</td><td>A Roman tribune's power to block a law — still used today.</td></tr>
+          <tr><td class="modern">legislature</td><td class="latin">lēx, lēgis</td><td>law</td><td>Also "legal," "legislation," "legitimate."</td></tr>
+          <tr><td class="modern">candidate</td><td class="latin">candidus</td><td>bright white</td><td>Roman office-seekers wore a whitened toga (<em>candidātus</em>).</td></tr>
+          <tr><td class="modern">civic</td><td class="latin">cīvis</td><td>citizen</td><td>Also "city," "civilization," "civil."</td></tr>
+          <tr><td class="modern">capitol</td><td class="latin">caput</td><td>head</td><td>The Capitoline was Rome's "head" hill; a capital is the "head" city.</td></tr>
+          <tr><td class="modern">justice</td><td class="latin">iūs, iūstitia</td><td>right, law, fairness</td><td>Also "just," "judge," "jury."</td></tr>
+          <tr><td class="modern">vote</td><td class="latin">vōtum</td><td>a vow, solemn wish</td><td>A vote was once a solemn promise or wish.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Everyday phrases -->
+    <div class="table-wrap">
+      <table>
+        <caption>Everyday Latin Phrases (we still say these!)</caption>
+        <thead>
+          <tr><th>Modern thing</th><th>Latin root</th><th>What it means</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="modern">et cetera (etc.)</td><td class="latin">et cētera</td><td>"and the rest"</td><td>The "…and so on" of Latin.</td></tr>
+          <tr><td class="modern">alma mater</td><td class="latin">alma māter</td><td>"nourishing mother"</td><td>The school that "fed" you knowledge.</td></tr>
+          <tr><td class="modern">per capita</td><td class="latin">per capita</td><td>"by heads"</td><td>Counted per person (per "head," <em>caput</em>).</td></tr>
+          <tr><td class="modern">ad hoc</td><td class="latin">ad hoc</td><td>"for this"</td><td>Made for one specific purpose, on the spot.</td></tr>
+          <tr><td class="modern">vice versa</td><td class="latin">vice versā</td><td>"the position turned"</td><td>The other way around.</td></tr>
+          <tr><td class="modern">e.g.</td><td class="latin">exemplī grātiā</td><td>"for the sake of example"</td><td>Means "for example."</td></tr>
+          <tr><td class="modern">i.e.</td><td class="latin">id est</td><td>"that is"</td><td>Means "in other words." (Different from e.g.!)</td></tr>
+          <tr><td class="modern">a.m. / p.m.</td><td class="latin">ante / post merīdiem</td><td>"before / after midday"</td><td>How we still split the clock.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Animals -->
+    <div class="table-wrap">
+      <table>
+        <caption>Animals (the "-ine" describing words)</caption>
+        <thead>
+          <tr><th>Modern thing</th><th>Latin root</th><th>What it means</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="modern">canine</td><td class="latin">canis</td><td>dog</td><td>Dog-like; also our pointed "canine" teeth.</td></tr>
+          <tr><td class="modern">equestrian</td><td class="latin">equus</td><td>horse</td><td>Having to do with horses and riding.</td></tr>
+          <tr><td class="modern">feline</td><td class="latin">fēlis</td><td>cat</td><td>Cat-like.</td></tr>
+          <tr><td class="modern">bovine</td><td class="latin">bōs, bovis</td><td>ox, cow</td><td>Cattle-like. Also "beef" (through French).</td></tr>
+          <tr><td class="modern">avian</td><td class="latin">avis</td><td>bird</td><td>Bird-related; also "aviary," "aviation."</td></tr>
+          <tr><td class="modern">porcine</td><td class="latin">porcus</td><td>pig</td><td>Pig-like. Also "pork" and "porcupine" ("spiny pig").</td></tr>
+          <tr><td class="modern">leonine</td><td class="latin">leō, leōnis</td><td>lion</td><td>Lion-like; also the name "Leo."</td></tr>
+          <tr><td class="modern">vulpine</td><td class="latin">vulpēs</td><td>fox</td><td>Fox-like, clever.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout tip" style="margin-top:18px;">
+      <strong>How to run "Guess Where It Came From":</strong> Show the modern word first, cover the Latin, and let the class guess the ancient meaning before the reveal. Kids love it when a word they use every day turns out to be 2,000 years old.
+    </div>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="card">
+    <h2><span class="num">3</span>Using the Interactive Games</h2>
+    <p>Every lesson comes with built-in, tap-and-drag games — students play right on the page:</p>
+    <ul>
+      <li><strong>Match</strong> — pair a Latin word with its meaning or picture.</li>
+      <li><strong>Memory</strong> — flip-and-find card pairs.</li>
+      <li><strong>Sort</strong> — drag items into the right group or category.</li>
+      <li><strong>Guess</strong> — pick the meaning or the missing word.</li>
+    </ul>
+    <p>Grades 3–5 lessons also offer an optional <strong>"beat your best time" timer</strong> — it's opt-in, encourages a friendly replay, and is <strong>never graded</strong>. Younger students (K–2) simply play at their own pace with no clock.</p>
+    <p>Guiding all of it is <strong>Magister Caesar</strong>, a friendly talking guide who explains, cheers, and nudges students along.</p>
+    <div class="callout gold">
+      <strong>Nothing to grade.</strong> The games auto-check answers and are pure practice — there's no gradebook column and no submission to review. Let students replay freely; repetition is the point.
+    </div>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section class="card">
+    <h2><span class="num">4</span>The Two Lanes</h2>
+    <p>The course runs in two parallel lanes so one classroom can serve the whole K–5 span. Assign each student the lane that fits — and reassign any time.</p>
+    <div class="lane-grid">
+      <div class="lane">
+        <span class="band">Grades K–2</span>
+        <h3>Foundations</h3>
+        <p>Gentle pacing, heavy on pictures, sounds, and simple matching. No timers. Built for pre-readers and early readers.</p>
+      </div>
+      <div class="lane">
+        <span class="band">Grades 3–5</span>
+        <h3>Primary</h3>
+        <p>More reading, more vocabulary, the optional "beat your best time" timer, and richer Roman-world content.</p>
+      </div>
+    </div>
+    <ul style="margin-top:16px;">
+      <li><strong>Either lane can be reassigned per student</strong> — move a strong young reader up, or give an older student who's new to Latin a gentler start. It's your call, student by student.</li>
+      <li><strong>Read-aloud and verbal responses are always OK for younger students.</strong> This is a built-in accommodation: if a K–2 learner (or anyone still building reading skills) does better speaking answers or having text read to them, that's fully acceptable and expected.</li>
+    </ul>
+  </section>
+
+  <footer>
+    Optima Academy Online &middot; Elementary Latin (5007090) &middot; Facilitator Guidance Bank
+  </footer>
+</main>
+</body>
+</html>

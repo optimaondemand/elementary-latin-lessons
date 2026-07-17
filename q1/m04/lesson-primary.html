@@ -47,6 +47,7 @@
     .el-legend-emoji { font-size: 54px; line-height: 1; }
     .el-legend-caption { font-size: 15px; color: #0E1C42; margin-top: 8px; font-style: italic; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -99,6 +100,12 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">One of Rome's own stories about its own beginning.</div>
         <div style="font-size: 18px; color: #1a2340; line-height: 1.7;">Ancient Romans told a <strong>legend</strong> &mdash; a traditional story, passed down over time &mdash; about how their city began. Historians today don't think it happened exactly this way, and there's no way to prove it. But the story mattered enormously to the Romans themselves, and it's still one of the most famous legends from the ancient world.</div>
+    </div>
+
+    <!-- ▼ Shared widget library: Magister Caesar guide ▼ -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 5px solid #0F8B8D; border-radius: 8px; padding: 16px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0a5f60; margin-bottom: 10px;">🏛️ YOUR GUIDE · MAGISTER CAESAR</div>
+        <div class="elw-caesar" data-lines='["Salvē, young scholar!","This is a legend — a story Rome told about itself. Words like urbs still live in English."]'></div>
     </div>
 
     <!-- Objectives -->
@@ -288,6 +295,18 @@
         </details>
     </div>
 
+    <!-- ▼ Shared widget library: interactive practice game ▼ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🎮 PLAY IT · MATCH-UP</div>
+        <div class="elw-match" data-title="Match the legend word to its meaning" data-pairs='[["lupa","she-wolf"],["frāter","brother"],["urbs","city"],["Rōmulus","first king of Rome"],["Remus","the twin brother"]]' data-timer="true"></div>
+    </div>
+
+    <!-- ▼ Shared widget library: Living Latin ▼ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0F8B8D; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0a5f60; margin-bottom: 14px;">🌍 LIVING LATIN</div>
+        <div class="elw-guess" data-title="Guess where it came from!" data-rounds='[{"icon":"🏙️","prompt":"A busy city area is called urban. Which Latin word grew into it?","options":["urbs (city)","hortus (garden)","silva (forest)"],"answer":0,"reveal":"✨ urbs means city — the root of urban and suburb!"},{"icon":"🤝","prompt":"A fraternity is a brotherhood. Which Latin word is hiding inside it?","options":["fīlius (son)","frāter (brother)","pater (father)"],"answer":1,"reveal":"✨ frāter means brother — the root of fraternity and fraternal!"}]'></div>
+    </div>
+
     <!-- Roman Passport tie-in -->
     <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-radius: 6px; padding: 16px 22px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 10px;">📝 ADD TO YOUR ROMAN PASSPORT</div>
@@ -362,6 +381,8 @@
   });
 })();
 </script>
+
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 
 </body>
 </html>

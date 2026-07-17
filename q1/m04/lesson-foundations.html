@@ -49,6 +49,7 @@
     .el-story-emoji { font-size: 44px; line-height: 1; margin-bottom: 6px; text-align: center; }
     .el-story-caption { text-align: center; font-size: 17px; color: #0E1C42; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -101,6 +102,12 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Every place has a story about how it began.</div>
         <div style="font-size: 19px; color: #1a2340; line-height: 1.7;">The Romans told a story about two baby brothers, a kind wolf, and a brand-new city. It is a <strong>legend</strong> &mdash; that means it is a story people have told for a very long time, passed down instead of written down as it happened. Today we hear the legend the Romans told about themselves.</div>
+    </div>
+
+    <!-- ▼ Shared widget library: Magister Caesar guide ▼ -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 5px solid #0F8B8D; border-radius: 8px; padding: 16px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0a5f60; margin-bottom: 10px;">🏛️ YOUR GUIDE · MAGISTER CAESAR</div>
+        <div class="elw-caesar" data-lines='["Salvē!","Long ago a lupa, a she-wolf, found two baby brothers by a river."]'></div>
     </div>
 
     <!-- Objectives -->
@@ -250,6 +257,12 @@
         </div>
     </div>
 
+    <!-- ▼ Shared widget library: interactive practice game ▼ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🎮 PLAY IT · MATCH THE STORY WORD</div>
+        <div class="elw-match" data-title="Match the story word to its picture" data-pairs='[["lupa","🐺 she-wolf"],["frāter","👦 brother"],["urbs","🏛️ city"],["Rōma","👑 Rome"]]'></div>
+    </div>
+
     <!-- What you'll do next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
@@ -318,6 +331,8 @@
   });
 })();
 </script>
+
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 
 </body>
 </html>

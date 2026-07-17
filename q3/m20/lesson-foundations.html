@@ -45,6 +45,7 @@
     .el-boot { display:inline-block; width:90px; height:150px; background:#C7922C; clip-path: polygon(45% 0%, 70% 0%, 70% 55%, 100% 65%, 100% 85%, 60% 100%, 20% 90%, 30% 55%, 45% 55%); position:relative; }
     .el-dot { display:inline-block; width:14px; height:14px; background:#E23A33; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 1px #0E1C42; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -97,6 +98,11 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Every year has four seasons — and Roman farmers watched them closely!</div>
         <div style="font-size: 19px; color: #1a2340; line-height: 1.7;">Long ago, Roman farmers did not have calendars hanging on the wall like we do. They watched the seasons change — cold, then warm, then hot, then cool again — so they would know exactly when to plant their seeds and when to gather their crops. Today we learn the Latin words for all four seasons!</div>
+    </div>
+
+    <!-- Magister Caesar guide (shared elatin-widgets library) -->
+    <div style="background:#FFFFFF; border:1px solid #D0D9E8; border-left:5px solid #C7922C; border-radius:8px; padding:12px 16px; margin-bottom:20px;">
+        <div class="elw-caesar" data-lines='["Salvē!","Today we learn four Latin seasons: vēr, aestās, hiems, and autumnus!"]'></div>
     </div>
 
     <!-- Objectives -->
@@ -211,6 +217,9 @@
             <button class="widget-reset">Reset</button>
         </div>
 
+        <!-- Shared interactive game (elatin-widgets library) -->
+        <div class="elw-match" data-title="Match the season words" data-pairs='[["vēr","spring 🌱"],["aestās","summer ☀️"],["autumnus","autumn 🍂"],["hiems","winter ❄️"]]'></div>
+
         <!-- Need Help (gold) -->
         <div style="background: #FFF6E6; border-left: 5px solid #C7922C; border-top: 3px solid #E0B45A; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
             <div style="font-size: 11px; color: #9a7b1e; margin-bottom: 8px;">🤗 NEED HELP?</div>
@@ -297,5 +306,6 @@
 })();
 </script>
 
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 </body>
 </html>

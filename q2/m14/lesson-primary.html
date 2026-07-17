@@ -46,6 +46,7 @@
     .el-arches { height: 28px; background: repeating-linear-gradient(90deg, #E6F6F5 0 16px, #0F8B8D 16px 20px); }
     .el-floor { height: 36px; background: #FDF3E3; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -98,6 +99,11 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">How do you build a stadium for tens of thousands of people with no modern machines?</div>
         <div style="font-size: 18px; color: #1a2340; line-height: 1.7;">The <strong>Colosseum</strong> was one of the ancient world's great engineering achievements: a massive oval stone stadium with tiered seating and a hidden network of passages beneath its arena floor. Just as impressive in its own way was the <strong>Circus Maximus</strong>, Rome's giant chariot-racing track and one of the most popular entertainment venues in the Roman world.</div>
+    </div>
+
+    <!-- ===== Magister Caesar guide (shared widget library) ===== -->
+    <div style="background:#FFFFFF;border:1px solid #D0D9E8;border-left:5px solid #C7922C;border-radius:8px;padding:14px 18px;margin-bottom:20px;">
+        <div class="elw-caesar" data-lines='["Salvē! I am Magister Caesar.","Romans loved the lūdī (games)! They filled the Colosseum and cheered chariot races at the Circus Maximus."]'></div>
     </div>
 
     <!-- Objectives -->
@@ -229,6 +235,13 @@
         </details>
     </div>
 
+    <!-- ===== Interactive practice (shared widget library) ===== -->
+    <div style="background:#FFFFFF;border-top:3px solid #0F8B8D;border:1px solid #D0D9E8;border-radius:8px;padding:20px 24px;margin-bottom:20px;">
+        <div style="font-size:11px;color:#0a5f60;margin-bottom:14px;">🎮 PLAY &amp; EXPLORE</div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;margin:0 0 12px 0;">Match each Latin word to its meaning. The optional timer is just for fun.</p>
+        <div class="elw-match" data-title="Match the Latin word to its meaning" data-pairs='[["lūdī","the public games"],["circus","chariot racetrack"],["gladiātor","arena fighter"],["arēna","sand of the arena"],["Colosseum","the great amphitheater of Rome"]]' data-timer="true"></div>
+    </div>
+
     <!-- What you'll do next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
@@ -298,5 +311,6 @@
 })();
 </script>
 
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 </body>
 </html>

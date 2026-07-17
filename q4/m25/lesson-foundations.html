@@ -45,6 +45,7 @@
     .el-boot { display:inline-block; width:90px; height:150px; background:#C7922C; clip-path: polygon(45% 0%, 70% 0%, 70% 55%, 100% 65%, 100% 85%, 60% 100%, 20% 90%, 30% 55%, 45% 55%); position:relative; }
     .el-dot { display:inline-block; width:14px; height:14px; background:#E23A33; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 1px #0E1C42; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -97,6 +98,11 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A place, a group, and a big idea from long ago</div>
         <div style="font-size: 19px; color: #1a2340; line-height: 1.7;">Long ago in Rome, there was a giant outdoor square called the <strong>forum</strong> where everyone gathered. There was also a group of Roman leaders called the <strong>senātus</strong> (Senate) who met together and took turns talking about what was best for the city. And there was a big idea called <strong>rēspūblica</strong> — that the city belonged to everyone, not just to one king. Let's meet all three today!</div>
+    </div>
+
+    <!-- Magister Caesar — shared interactive widget guide -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 5px solid #C7922C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px;">
+        <div class="elw-caesar" data-lines='["Salvē!","Long ago, Romans met in the big forum, and the senate took turns talking. The city belonged to everyone!"]'></div>
     </div>
 
     <!-- Objectives -->
@@ -213,6 +219,14 @@
         </details>
     </div>
 
+    <!-- Extra practice — shared interactive widget library -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0F8B8D; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0a5f60; margin-bottom: 14px;">🎮 EXTRA PRACTICE · PLAY &amp; EXPLORE</div>
+        <p style="font-size: 19px; color: #1a2340; line-height: 1.7; margin: 0 0 12px 0;">Let's play! Drag each Roman word to what it means. Play as many times as you like!</p>
+        <div class="elw-match" data-title="Match the Roman Word" data-pairs='[["forum","🏛️ a big meeting square"],["senātus","🗣️ leaders who take turns talking"],["rēspūblica","🤝 a city for everyone"]]'></div>
+        <div class="elw-guess" data-title="Guess where it came from!" data-rounds='[{"icon":"🏛️","prompt":"The word senate comes from a Roman word. Which one?","options":["senātus","aqua","canis"],"answer":0,"reveal":"✨ Yes! Senate comes from senātus."},{"icon":"🗳️","prompt":"Republic comes from rēspūblica. It means the city belongs to…","options":["everyone","one king","nobody"],"answer":0,"reveal":"✨ Right! Everyone — that&#39;s the big idea!"}]'></div>
+    </div>
+
     <!-- What you'll do next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
@@ -282,5 +296,6 @@
 })();
 </script>
 
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 </body>
 </html>

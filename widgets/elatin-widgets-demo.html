@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Elementary Latin — Widget Library Demo & Authoring Spec</title>
+
+<!-- The library: relative CSS + JS. Copy both next to your lesson HTML,
+     link them the same way, and the JS auto-scans on load. -->
+<link rel="stylesheet" href="elatin-widgets.css" />
+
+<style>
+  /* Page chrome only — NOT part of the widget library. */
+  :root{
+    --navy:#0E1C42;--cyan:#55C8E8;--gold:#C7922C;--teal:#0F8B8D;--ground:#F0F2F8;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--ground);color:#1a2340;line-height:1.5;
+  }
+  header.brandbar{
+    background:var(--navy);border-bottom:5px solid var(--cyan);
+    padding:16px 22px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:50;
+  }
+  .owl-circle{
+    width:52px;height:52px;border-radius:50%;background:#fff;
+    display:flex;align-items:center;justify-content:center;flex:0 0 auto;box-shadow:0 2px 8px rgba(0,0,0,.25);
+  }
+  .brand-text h1{font-size:1.15rem;margin:0;color:#fff;font-weight:700;letter-spacing:.3px;}
+  .brand-text p{font-size:.78rem;margin:2px 0 0;color:var(--cyan);font-weight:600;letter-spacing:1.2px;}
+  main{max-width:920px;margin:0 auto;padding:22px 18px 60px;}
+
+  .intro{
+    background:linear-gradient(135deg,var(--navy),#16295c);color:#fff;
+    border-radius:18px;padding:26px;margin:26px 0;box-shadow:0 6px 20px rgba(14,28,66,.12);
+  }
+  .intro h2{color:#fff;margin:0 0 8px;font-size:1.4rem;}
+  .intro p{color:#dbe4ff;font-size:1.05rem;margin:8px 0 0;}
+  .intro code{background:rgba(255,255,255,.14);padding:2px 6px;border-radius:6px;color:#fff;}
+
+  .lesson-tag{
+    display:inline-block;background:var(--teal);color:#fff;font-size:.72rem;font-weight:700;
+    letter-spacing:.8px;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin:26px 0 10px;
+  }
+
+  /* Authoring spec code blocks */
+  .spec{
+    background:#0d1730;color:#e7edff;border-radius:14px;padding:16px 18px;margin:10px 0 4px;
+    font-family:"Cascadia Code",Consolas,"Courier New",monospace;font-size:.85rem;line-height:1.55;
+    overflow-x:auto;white-space:pre;
+  }
+  .spec .k{color:#8fd3ff;}   /* attribute name */
+  .spec .s{color:#ffd479;}   /* string value  */
+  .spec-note{font-size:.9rem;color:#41506e;margin:0 0 8px;}
+  .spec-note b{color:var(--navy);}
+  footer{text-align:center;color:#7a86a4;font-size:.82rem;padding:20px;}
+</style>
+</head>
+<body>
+
+<header class="brandbar">
+  <div class="owl-circle">
+    <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width:50px;height:40px;object-fit:contain;" />
+  </div>
+  <div class="brand-text">
+    <h1>Optima Academy Online</h1>
+    <p>ELEMENTARY LATIN — WIDGET LIBRARY DEMO &amp; SPEC</p>
+  </div>
+</header>
+
+<main>
+
+  <section class="intro">
+    <h2>Data-driven widget library</h2>
+    <p>Link <code>elatin-widgets.css</code> and <code>elatin-widgets.js</code> in any lesson page, then drop in one of the five declarative elements below. The script auto-scans on load and turns each element into a working, mouse+touch game with its own Reset. Config lives in <code>data-*</code> attributes: wrap the attribute in <b>single quotes</b> so the JSON inside can keep its double quotes. This page shows one live example of each widget and doubles as the authoring spec.</p>
+  </section>
+
+  <!-- ==========================================================
+       1 · DRAG-MATCH
+       ========================================================== -->
+  <span class="lesson-tag">1 · Drag-Match &nbsp;·&nbsp; .elw-match</span>
+  <p class="spec-note"><b>data-title</b> heading · <b>data-pairs</b> array of <code>[Latin, meaning]</code> · <b>data-timer</b> <code>"true"</code> adds the optional, never-graded "beat your best time" toggle (localStorage best time, off by default).</p>
+  <div class="spec">&lt;div class=<span class="s">"elw-match"</span> <span class="k">data-title</span>=<span class="s">'Match the words'</span>
+     <span class="k">data-pairs</span>=<span class="s">'[["salvē","hello"],["valē","goodbye"],["grātiās","thank you"]]'</span>
+     <span class="k">data-timer</span>=<span class="s">"true"</span>&gt;&lt;/div&gt;</div>
+
+  <div class="elw-match"
+       data-title='Match the words'
+       data-pairs='[["salvē","hello"],["valē","goodbye"],["grātiās","thank you"],["quaesō","please"]]'
+       data-timer="true"></div>
+
+  <!-- ==========================================================
+       2 · FLIP MEMORY
+       ========================================================== -->
+  <span class="lesson-tag">2 · Flip Memory &nbsp;·&nbsp; .elw-memory</span>
+  <p class="spec-note"><b>data-title</b> heading · <b>data-pairs</b> array of <code>[cardA, cardB]</code>; each pair becomes two cards that match each other. Emoji are welcome in either side.</p>
+  <div class="spec">&lt;div class=<span class="s">"elw-memory"</span> <span class="k">data-title</span>=<span class="s">'Memory match'</span>
+     <span class="k">data-pairs</span>=<span class="s">'[["Neptūnus","🔱 sea"],["Iuppiter","⚡ sky"]]'</span>&gt;&lt;/div&gt;</div>
+
+  <div class="elw-memory"
+       data-title='Memory match — Roman gods'
+       data-pairs='[["Neptūnus","🔱 sea"],["Iuppiter","⚡ sky"],["Mārs","⚔️ war"],["Venus","💗 love"]]'></div>
+
+  <!-- ==========================================================
+       3 · SORT BINS
+       ========================================================== -->
+  <span class="lesson-tag">3 · Sort Bins &nbsp;·&nbsp; .elw-sort</span>
+  <p class="spec-note"><b>data-title</b> heading · <b>data-bins</b> array of bin labels (any number) · <b>data-items</b> array of <code>[label, binIndex]</code> where binIndex points into <code>data-bins</code>.</p>
+  <div class="spec">&lt;div class=<span class="s">"elw-sort"</span> <span class="k">data-title</span>=<span class="s">'Sort the words'</span>
+     <span class="k">data-bins</span>=<span class="s">'["Comes from Latin","Not from Latin"]'</span>
+     <span class="k">data-items</span>=<span class="s">'[["aquarium",0],["ninja",1]]'</span>&gt;&lt;/div&gt;</div>
+
+  <div class="elw-sort"
+       data-title='Sort the words'
+       data-bins='["🏛️ Comes from Latin","🌍 Not from Latin"]'
+       data-items='[["aquarium",0],["territory",0],["video",0],["senator",0],["ninja",1],["sushi",1],["karate",1]]'></div>
+
+  <!-- ==========================================================
+       4 · GUESS / LIVING LATIN
+       ========================================================== -->
+  <span class="lesson-tag">4 · Guess / Living Latin &nbsp;·&nbsp; .elw-guess</span>
+  <p class="spec-note"><b>data-title</b> heading · <b>data-rounds</b> array of round objects: <code>icon</code> (emoji), <code>prompt</code>, <code>options</code> (array), <code>answer</code> (index of the correct option), <code>reveal</code> (the ✨ explanation shown after any choice). Multiple rounds get a <b>Next ▶</b> button.</p>
+  <div class="spec">&lt;div class=<span class="s">"elw-guess"</span> <span class="k">data-title</span>=<span class="s">'Where did it come from?'</span>
+     <span class="k">data-rounds</span>=<span class="s">'[{"icon":"🚀","prompt":"The NASA program Artemis…",
+                 "options":["Mārs","aqua","octō"],"answer":0,
+                 "reveal":"✨ Mars rovers are named for the Latin war-god Mārs!"}]'</span>&gt;&lt;/div&gt;</div>
+
+  <div class="elw-guess"
+       data-title='Guess where it came from!'
+       data-rounds='[{"icon":"🚀","prompt":"The planet Mars is named after a Roman god. Which Latin word gave us the name \"Mars\"?","options":["Mārs (god of war)","mare (the sea)","magnus (big)"],"answer":0,"reveal":"The Red Planet is named for <b>Mārs</b>, the Roman god of war — its blood-red color reminded people of battle. The month <i>March</i> comes from the same god!"},{"icon":"🐙","prompt":"A fish tank at the zoo is called an \"aquarium.\" Which Latin word did it grow from?","options":["aqua (water)","ager (field)","avis (bird)"],"answer":0,"reveal":"<b>Aqua</b> means <i>water</i> — an <i>aquarium</i> is literally \"a place of water\"!"},{"icon":"📅","prompt":"October is the 10th month, but its name hides a number. Which Latin number is inside \"October\"?","options":["octō (eight)","decem (ten)","ūnus (one)"],"answer":0,"reveal":"<b>Octō</b> means <i>eight</i>! October was the 8th month in the oldest Roman calendar, which started in March."}]'></div>
+
+  <!-- ==========================================================
+       5 · TALKING GUIDE / MAGISTER CAESAR
+       ========================================================== -->
+  <span class="lesson-tag">5 · Talking Guide &nbsp;·&nbsp; .elw-caesar</span>
+  <p class="spec-note"><b>data-lines</b> array of lines the guide reads aloud (▶ Play uses <code>speechSynthesis</code> and cycles through them) · <b>data-name</b> optional guide name (default "Magister Caesar"). Falls back gracefully when browser speech is unavailable.</p>
+  <div class="spec">&lt;div class=<span class="s">"elw-caesar"</span>
+     <span class="k">data-lines</span>=<span class="s">'["Salvē, young scholar!","Today we meet the numbers of Rome."]'</span>&gt;&lt;/div&gt;</div>
+
+  <div class="elw-caesar"
+       data-name='Magister Caesar'
+       data-lines='["Salvē, young scholar! Today we meet the numbers of Rome.","Ūnus, duo, trēs! Counting in Latin is easier than you think.","Remember: Latin is a living language, hiding in words you use every day. Valē!"]'></div>
+
+</main>
+
+<footer>Optima Academy Online · Elementary Latin (5007090) · elatin-widgets library — demo &amp; authoring spec</footer>
+
+<!-- The library JS: auto-scans the page on DOMContentLoaded. -->
+<script src="elatin-widgets.js"></script>
+</body>
+</html>

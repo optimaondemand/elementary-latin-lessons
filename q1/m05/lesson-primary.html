@@ -42,6 +42,7 @@
     .el-boot { display:inline-block; width:80px; height:130px; background:#C7922C; clip-path: polygon(45% 0%, 70% 0%, 70% 55%, 100% 65%, 100% 85%, 60% 100%, 20% 90%, 30% 55%, 45% 55%); position:relative; }
     .el-dot { display:inline-block; width:12px; height:12px; background:#E23A33; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 1px #0E1C42; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -94,6 +95,12 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">What did a Roman family's house actually look like?</div>
         <div style="font-size: 18px; color: #1a2340; line-height: 1.7;">A well-off Roman family lived in a house called a <em>domus</em>, built around one central room open to the sky. Today you'll step inside that room, meet the words Romans used for the people in a <em>familia</em>, and picture a day in a Roman child's life.</div>
+    </div>
+
+    <!-- ▼ Shared widget library: Magister Caesar guide ▼ -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 5px solid #0F8B8D; border-radius: 8px; padding: 16px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0a5f60; margin-bottom: 10px;">🏛️ YOUR GUIDE · MAGISTER CAESAR</div>
+        <div class="elw-caesar" data-lines='["Salvē, young scholar!","A Roman home was a domus built around one open room. Family words live on in English."]'></div>
     </div>
 
     <!-- Objectives -->
@@ -248,6 +255,18 @@
         </details>
     </div>
 
+    <!-- ▼ Shared widget library: interactive practice game ▼ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🎮 PLAY IT · MATCH-UP</div>
+        <div class="elw-match" data-title="Match the family word to its meaning" data-pairs='[["familia","family"],["domus","house, home"],["māter","mother"],["pater","father"],["fīlia","daughter"]]' data-timer="true"></div>
+    </div>
+
+    <!-- ▼ Shared widget library: Living Latin ▼ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0F8B8D; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0a5f60; margin-bottom: 14px;">🌍 LIVING LATIN</div>
+        <div class="elw-guess" data-title="Guess where it came from!" data-rounds='[{"icon":"👩","prompt":"A word that means motherly is maternal. Which Latin word grew into it?","options":["māter (mother)","soror (sister)","fīlia (daughter)"],"answer":0,"reveal":"✨ māter means mother — the root of maternal and maternity!"},{"icon":"🏠","prompt":"A house cat that lives at home is a domestic animal. Which Latin word is hiding here?","options":["hortus (garden)","domus (house)","urbs (city)"],"answer":1,"reveal":"✨ domus means house — the root of domestic and domicile!"}]'></div>
+    </div>
+
     <!-- What you'll do next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
@@ -316,6 +335,8 @@
   });
 })();
 </script>
+
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 
 </body>
 </html>

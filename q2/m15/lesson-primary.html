@@ -42,6 +42,7 @@
     .el-boot { display:inline-block; width:80px; height:130px; background:#C7922C; clip-path: polygon(45% 0%, 70% 0%, 70% 55%, 100% 65%, 100% 85%, 60% 100%, 20% 90%, 30% 55%, 45% 55%); position:relative; }
     .el-dot { display:inline-block; width:12px; height:12px; background:#E23A33; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 1px #0E1C42; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -94,6 +95,11 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A symbol can carry a whole story.</div>
         <div style="font-size: 18px; color: #1a2340; line-height: 1.7;">Back in Module 8, you met <em>Iuppiter</em>, <em>Iūnō</em>, and <em>Neptūnus</em> and learned the picture-symbols that stood for each one. Today you'll meet four more Roman gods and their symbols, then play a review round that mixes all seven gods together.</div>
+    </div>
+
+    <!-- ===== Magister Caesar guide (shared widget library) ===== -->
+    <div style="background:#FFFFFF;border:1px solid #D0D9E8;border-left:5px solid #C7922C;border-radius:8px;padding:14px 18px;margin-bottom:20px;">
+        <div class="elw-caesar" data-lines='["Salvē! I am Magister Caesar.","Meet more gods of Rome: Mārs rules war, Venus love, Minerva wisdom, and swift Mercurius carries messages."]'></div>
     </div>
 
     <!-- Objectives -->
@@ -250,6 +256,13 @@
         </details>
     </div>
 
+    <!-- ===== Interactive practice (shared widget library) ===== -->
+    <div style="background:#FFFFFF;border-top:3px solid #0F8B8D;border:1px solid #D0D9E8;border-radius:8px;padding:20px 24px;margin-bottom:20px;">
+        <div style="font-size:11px;color:#0a5f60;margin-bottom:14px;">🎮 PLAY &amp; EXPLORE</div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;margin:0 0 12px 0;">Flip the cards to match each god with what they rule.</p>
+        <div class="elw-memory" data-title="Memory match: each god and what they rule" data-pairs='[["Mārs","⚔️ war"],["Venus","💗 love"],["Minerva","🦉 wisdom"],["Mercurius","✉️ messages"]]'></div>
+    </div>
+
     <!-- What you'll do next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
@@ -319,5 +332,6 @@
 })();
 </script>
 
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 </body>
 </html>

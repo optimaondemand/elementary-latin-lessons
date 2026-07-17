@@ -42,6 +42,7 @@
     .el-boot { display:inline-block; width:80px; height:130px; background:#C7922C; clip-path: polygon(45% 0%, 70% 0%, 70% 55%, 100% 65%, 100% 85%, 60% 100%, 20% 90%, 30% 55%, 45% 55%); position:relative; }
     .el-dot { display:inline-block; width:12px; height:12px; background:#E23A33; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 1px #0E1C42; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -94,6 +95,11 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Why do "discipline" and "magistrate" sound like school words?</div>
         <div style="font-size: 18px; color: #1a2340; line-height: 1.7;">Latin school words are still part of English today. A <em>magister</em> was a Roman teacher, and the English word <strong>magistrate</strong> &mdash; a judge or official &mdash; grew out of it. A <em>discipulus</em> was a Roman student, and the English word <strong>discipline</strong> grew out of it too. Today you'll step inside a Roman school, called a <em>lūdus</em>, and see how different a school day there really was.</div>
+    </div>
+
+    <!-- Magister Caesar guide (shared elatin-widgets library) -->
+    <div style="background:#FFFFFF; border:1px solid #D0D9E8; border-left:5px solid #C7922C; border-radius:8px; padding:12px 16px; margin-bottom:20px;">
+        <div class="elw-caesar" data-lines='["Salvē, young scholar!","Welcome to the Roman lūdus, the school. Your magister is the teacher, and you are the discipulus.","Two of these words still hide inside English: discipline and magistrate!"]'></div>
     </div>
 
     <!-- Objectives -->
@@ -219,6 +225,11 @@
             <button class="widget-reset">Reset</button>
         </div>
 
+        <!-- Shared interactive games (elatin-widgets library) -->
+        <div class="elw-match" data-title="Match the Latin school words" data-timer="true" data-pairs='[["lūdus","school"],["discipulus","student"],["magister","teacher"],["liber","book"]]'></div>
+
+        <div class="elw-guess" data-title="Guess where it came from!" data-rounds='[{"icon":"⚖️","prompt":"A magistrate is a judge or official because…","options":["magister (teacher, master)","discipulus (student)","lūdus (school)"],"answer":0,"reveal":"✨ Yes! magistrate comes from magister, Latin for teacher or master."},{"icon":"📚","prompt":"Discipline is the self-control a student practices because…","options":["discipulus (student)","magister (teacher)","lūdus (school)"],"answer":0,"reveal":"✨ Correct! discipline comes from discipulus, Latin for student."}]'></div>
+
         <!-- Need Help (gold) -->
         <div style="background: #FFF6E6; border-left: 5px solid #C7922C; border-top: 3px solid #E0B45A; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
             <div style="font-size: 11px; color: #9a7b1e; margin-bottom: 8px;">🤗 NEED HELP?</div>
@@ -305,5 +316,6 @@
 })();
 </script>
 
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 </body>
 </html>

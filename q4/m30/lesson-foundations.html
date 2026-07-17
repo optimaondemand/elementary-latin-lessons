@@ -45,6 +45,7 @@
     .el-boot { display:inline-block; width:90px; height:150px; background:#C7922C; clip-path: polygon(45% 0%, 70% 0%, 70% 55%, 100% 65%, 100% 85%, 60% 100%, 20% 90%, 30% 55%, 45% 55%); position:relative; }
     .el-dot { display:inline-block; width:14px; height:14px; background:#E23A33; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 1px #0E1C42; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -97,6 +98,11 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A big reunion of every Roman god we've met this year!</div>
         <div style="font-size: 19px; color: #1a2340; line-height: 1.7;">This year you met <strong>eleven</strong> gods and goddesses of Rome. Today they all come back together for one big review! You don't have to remember every single one perfectly — just have fun saying hello to old friends and seeing how many symbols you recognize.</div>
+    </div>
+
+    <!-- Magister Caesar — shared interactive widget guide -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 5px solid #C7922C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px;">
+        <div class="elw-caesar" data-lines='["Salvē!","It is a reunion of ALL the Roman gods! Say hello to Jupiter, Neptune, Venus, and more!"]'></div>
     </div>
 
     <!-- Objectives -->
@@ -242,6 +248,14 @@
         </details>
     </div>
 
+    <!-- Extra practice — shared interactive widget library -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0F8B8D; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0a5f60; margin-bottom: 14px;">🎮 EXTRA PRACTICE · PLAY &amp; EXPLORE</div>
+        <p style="font-size: 19px; color: #1a2340; line-height: 1.7; margin: 0 0 12px 0;">Let's play! Flip the cards to match each god to their symbol. Play as many times as you like!</p>
+        <div class="elw-memory" data-title="Gods Memory Match" data-pairs='[["Jupiter","⚡"],["Neptune","🔱"],["Venus","💐"],["Diana","🌙"]]'></div>
+        <div class="elw-guess" data-title="Guess where it came from!" data-rounds='[{"icon":"🔴","prompt":"The red planet Mars is named after the Roman god of…","options":["war","cooking","sleep"],"answer":0,"reveal":"✨ Yes! Mars, god of war!"},{"icon":"🌙","prompt":"Diana was the goddess of the moon and the…","options":["hunt","sea","forge"],"answer":0,"reveal":"✨ Right! The hunt!"}]'></div>
+    </div>
+
     <!-- What you'll do next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
@@ -310,5 +324,6 @@
 })();
 </script>
 
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 </body>
 </html>

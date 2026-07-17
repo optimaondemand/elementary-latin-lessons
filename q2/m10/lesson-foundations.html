@@ -40,6 +40,7 @@
     .el-bb-name { font-size: 20px; color: #0E1C42; margin: 8px 0 4px 0; font-weight:600; }
     .el-bb-def { font-size: 15px; color: #1a2340; line-height: 1.5; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -92,6 +93,11 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Every day of your week has a Roman name hiding inside it!</div>
         <div style="font-size: 19px; color: #1a2340; line-height: 1.7;">Long ago, Romans named each day of the week after something in the sky — the sun, the moon, or one of a few wandering stars they connected to their gods. Some of our English day names still sound just like the Latin ones! Today we learn three of them: Sunday, Monday, and Saturday.</div>
+    </div>
+
+    <!-- ===== Magister Caesar guide (shared widget library) ===== -->
+    <div style="background:#FFFFFF;border:1px solid #D0D9E8;border-left:5px solid #C7922C;border-radius:8px;padding:14px 18px;margin-bottom:20px;">
+        <div class="elw-caesar" data-lines='["Salvē!","Every day has a name. dies Sōlis is the day of the Sun — Sunday!"]'></div>
     </div>
 
     <!-- Objectives -->
@@ -209,6 +215,14 @@
         </details>
     </div>
 
+    <!-- ===== Interactive practice (shared widget library) ===== -->
+    <div style="background:#FFFFFF;border-top:3px solid #0F8B8D;border:1px solid #D0D9E8;border-radius:8px;padding:20px 24px;margin-bottom:20px;">
+        <div style="font-size:11px;color:#0a5f60;margin-bottom:14px;">🎮 PLAY &amp; EXPLORE</div>
+        <p style="font-size:18px;color:#1a2340;line-height:1.7;margin:0 0 12px 0;">Match each Latin day to its English day!</p>
+        <div class="elw-match" data-title="Match the Latin day to its English day" data-pairs='[["dies Sōlis","☀️ Sunday"],["dies Lūnae","🌙 Monday"],["dies Saturnī","🪐 Saturday"]]'></div>
+        <div class="elw-guess" data-title="Guess where it came from!" data-rounds='[{"icon":"☀️","prompt":"The word solar is about the…","options":["☀️ sun","🌧️ rain"],"answer":0,"reveal":"✨ Yes! solar comes from sōl — the sun!"},{"icon":"🌙","prompt":"The word lunar is about the…","options":["🌙 moon","🌳 tree"],"answer":0,"reveal":"✨ Yes! lunar comes from lūna — the moon!"}]'></div>
+    </div>
+
     <!-- What you'll do next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
@@ -278,5 +292,6 @@
 })();
 </script>
 
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 </body>
 </html>

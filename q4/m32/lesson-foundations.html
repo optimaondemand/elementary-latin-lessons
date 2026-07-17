@@ -45,6 +45,7 @@
     .el-boot { display:inline-block; width:90px; height:150px; background:#C7922C; clip-path: polygon(45% 0%, 70% 0%, 70% 55%, 100% 65%, 100% 85%, 60% 100%, 20% 90%, 30% 55%, 45% 55%); position:relative; }
     .el-dot { display:inline-block; width:14px; height:14px; background:#E23A33; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 1px #0E1C42; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -97,6 +98,11 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Let's remember everything we learned about counting, days, and months in Latin this year!</div>
         <div style="font-size: 19px; color: #1a2340; line-height: 1.7;">You have learned so many Latin words this year! Today we bring them all back together &mdash; counting numbers, naming the days of the week, and saying the months of the year. You won't have to remember every single one today. We'll just visit some old friends and see how much you already know.</div>
+    </div>
+
+    <!-- Magister Caesar — shared interactive widget guide -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 5px solid #C7922C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px;">
+        <div class="elw-caesar" data-lines='["Salvē!","Let us remember our Latin numbers, days, and months together!"]'></div>
     </div>
 
     <!-- Objectives -->
@@ -233,6 +239,14 @@
         </details>
     </div>
 
+    <!-- Extra practice — shared interactive widget library -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0F8B8D; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0a5f60; margin-bottom: 14px;">🎮 EXTRA PRACTICE · PLAY &amp; EXPLORE</div>
+        <p style="font-size: 19px; color: #1a2340; line-height: 1.7; margin: 0 0 12px 0;">Let's play! Flip the cards to match each Latin word to its picture. Play as many times as you like!</p>
+        <div class="elw-memory" data-title="Review Memory Match" data-pairs='[["Ūnus","1️⃣"],["Quīnque","✋"],["Decem","🙌"],["Diēs Sōlis","☀️"]]'></div>
+        <div class="elw-guess" data-title="Guess where it came from!" data-rounds='[{"icon":"✋","prompt":"The Latin word quīnque means…","options":["five","one","ten"],"answer":0,"reveal":"✨ Yes! Quīnque = five!"},{"icon":"☀️","prompt":"Diēs Sōlis means day of the Sun. In English that is…","options":["Sunday","Monday","Friday"],"answer":0,"reveal":"✨ Right! Sunday!"}]'></div>
+    </div>
+
     <!-- What you'll do next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
@@ -301,5 +315,6 @@
 })();
 </script>
 
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 </body>
 </html>

@@ -45,6 +45,7 @@
     .el-boot { display:inline-block; width:90px; height:150px; background:#C7922C; clip-path: polygon(45% 0%, 70% 0%, 70% 55%, 100% 65%, 100% 85%, 60% 100%, 20% 90%, 30% 55%, 45% 55%); position:relative; }
     .el-dot { display:inline-block; width:14px; height:14px; background:#E23A33; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 1px #0E1C42; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -97,6 +98,11 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Some Roman words never went away!</div>
         <div style="font-size: 19px; color: #1a2340; line-height: 1.7;">Nobody speaks Latin every day anymore &mdash; but a few Roman words are still hard at work! Grown-ups use them at school, in meetings, on lists, and even when a leader says no to a new law. Today we meet four of these words.</div>
+    </div>
+
+    <!-- Magister Caesar guide (shared elatin-widgets library) -->
+    <div style="background:#FFFFFF; border:1px solid #D0D9E8; border-left:5px solid #C7922C; border-radius:8px; padding:12px 16px; margin-bottom:20px;">
+        <div class="elw-caesar" data-lines='["Salvē!","Some old Roman words are still used today: et cētera, alma māter, agenda, and vēto!"]'></div>
     </div>
 
     <!-- Objectives -->
@@ -218,6 +224,11 @@
             <button class="widget-reset">Reset</button>
         </div>
 
+        <!-- Shared interactive games (elatin-widgets library) -->
+        <div class="elw-match" data-title="Match the word to where we use it" data-pairs='[["et cētera","and the rest 📝"],["agenda","a meeting list 📋"],["vēto","I say stop 🛑"],["alma māter","your school 🏫"]]'></div>
+
+        <div class="elw-guess" data-title="Where does the word come from?" data-rounds='[{"icon":"📝","prompt":"We write etc. at the end of a list. What does et cētera mean?","options":["and the rest","I forbid"],"answer":0,"reveal":"✨ Yes! et cētera means and the rest."},{"icon":"🛑","prompt":"A leader can vēto a law. What does vēto mean?","options":["I forbid","and the rest"],"answer":0,"reveal":"✨ Yes! vēto means I forbid."}]'></div>
+
         <!-- Need Help (gold) -->
         <div style="background: #FFF6E6; border-left: 5px solid #C7922C; border-top: 3px solid #E0B45A; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
             <div style="font-size: 11px; color: #9a7b1e; margin-bottom: 8px;">🤗 NEED HELP?</div>
@@ -304,5 +315,6 @@
 })();
 </script>
 
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 </body>
 </html>

@@ -45,6 +45,7 @@
     .el-boot { display:inline-block; width:90px; height:150px; background:#C7922C; clip-path: polygon(45% 0%, 70% 0%, 70% 55%, 100% 65%, 100% 85%, 60% 100%, 20% 90%, 30% 55%, 45% 55%); position:relative; }
     .el-dot { display:inline-block; width:14px; height:14px; background:#E23A33; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 1px #0E1C42; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -97,6 +98,11 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Scientists still use old Roman (and Greek) words today!</div>
         <div style="font-size: 19px; color: #1a2340; line-height: 1.7;">Scientists give every plant and animal a special two-part name using old words from Latin (and sometimes Greek) so that everyone in the world, no matter what language they speak, knows exactly which animal they mean! Today we meet three animals with famous two-part names.</div>
+    </div>
+
+    <!-- Magister Caesar — shared interactive widget guide -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 5px solid #C7922C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px;">
+        <div class="elw-caesar" data-lines='["Salvē!","A T. rex is a tyrant lizard king. Rex is my Latin word for king!"]'></div>
     </div>
 
     <!-- Objectives -->
@@ -209,6 +215,14 @@
         </details>
     </div>
 
+    <!-- Extra practice — shared interactive widget library -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0F8B8D; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0a5f60; margin-bottom: 14px;">🎮 EXTRA PRACTICE · PLAY &amp; EXPLORE</div>
+        <p style="font-size: 19px; color: #1a2340; line-height: 1.7; margin: 0 0 12px 0;">Let's play! Drag each creature's science name to what it means. Play as many times as you like!</p>
+        <div class="elw-match" data-title="Match the Science Name" data-pairs='[["Homo sapiens","🧑 wise human — that is us!"],["Tyrannosaurus rex","🦖 tyrant lizard king"],["Canis lupus","🐺 the gray wolf"]]'></div>
+        <div class="elw-guess" data-title="Guess where it came from!" data-rounds='[{"icon":"🦖","prompt":"The rex in T. rex is a Latin word. It means…","options":["king","lizard","dog"],"answer":0,"reveal":"✨ Yes! Rex means king in Latin."},{"icon":"🦎","prompt":"The -saurus part is a Greek word. It means…","options":["lizard","king","wise"],"answer":0,"reveal":"✨ Right! -saurus is Greek for lizard."}]'></div>
+    </div>
+
     <!-- What you'll do next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
@@ -277,5 +291,6 @@
 })();
 </script>
 
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 </body>
 </html>

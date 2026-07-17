@@ -44,6 +44,7 @@
     .el-bb-name { font-size: 19px; color: #0E1C42; margin: 8px 0 4px 0; font-weight:600; }
     .el-bb-def { font-size: 14px; color: #1a2340; line-height: 1.5; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -96,6 +97,11 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Why do some day names sound Roman and others don't?</div>
         <div style="font-size: 18px; color: #1a2340; line-height: 1.7;">Every day of your week traces back to something the Romans saw in the sky. But English didn't keep all seven Latin names — some got swapped out along the way. Today you'll become a word detective and figure out which days stayed Roman and which ones changed, and why.</div>
+    </div>
+
+    <!-- ===== Magister Caesar guide (shared widget library) ===== -->
+    <div style="background:#FFFFFF;border:1px solid #D0D9E8;border-left:5px solid #C7922C;border-radius:8px;padding:14px 18px;margin-bottom:20px;">
+        <div class="elw-caesar" data-lines='["Salvē! I am Magister Caesar.","The Romans named each day for a sky-light or a god: dies Sōlis is the day of the Sun (Sunday), dies Lūnae the day of the Moon (Monday)."]'></div>
     </div>
 
     <!-- Objectives -->
@@ -232,6 +238,14 @@
         </details>
     </div>
 
+    <!-- ===== Interactive practice (shared widget library) ===== -->
+    <div style="background:#FFFFFF;border-top:3px solid #0F8B8D;border:1px solid #D0D9E8;border-radius:8px;padding:20px 24px;margin-bottom:20px;">
+        <div style="font-size:11px;color:#0a5f60;margin-bottom:14px;">🎮 PLAY &amp; EXPLORE</div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;margin:0 0 12px 0;">Match each Latin day name to its English day. The optional timer is just for fun.</p>
+        <div class="elw-match" data-title="Match the Latin day to the English day" data-pairs='[["dies Sōlis","Sunday"],["dies Lūnae","Monday"],["dies Mārtis","Tuesday"],["dies Veneris","Friday"],["dies Saturnī","Saturday"]]' data-timer="true"></div>
+        <div class="elw-guess" data-title="Guess where it came from!" data-rounds='[{"icon":"☀️","prompt":"A solar panel soaks up energy from the…","options":["sōl (sun)","lūna (moon)","mare (sea)"],"answer":0,"reveal":"✨ Yes! solar comes from sōl, Latin for sun — the root of dies Sōlis, Sunday."},{"icon":"🌙","prompt":"A lunar rover explores the…","options":["stella (star)","lūna (moon)","silva (forest)"],"answer":1,"reveal":"✨ Right! lunar comes from lūna, Latin for moon — the root of dies Lūnae, Monday."}]'></div>
+    </div>
+
     <!-- What you'll do next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
@@ -301,5 +315,6 @@
 })();
 </script>
 
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 </body>
 </html>

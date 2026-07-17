@@ -42,6 +42,7 @@
     .el-boot { display:inline-block; width:80px; height:130px; background:#C7922C; clip-path: polygon(45% 0%, 70% 0%, 70% 55%, 100% 65%, 100% 85%, 60% 100%, 20% 90%, 30% 55%, 45% 55%); position:relative; }
     .el-dot { display:inline-block; width:12px; height:12px; background:#E23A33; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 1px #0E1C42; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -94,6 +95,11 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Round three: closing out the Roman pantheon</div>
         <div style="font-size: 18px; color: #1a2340; line-height: 1.7;">Back in Module 8 you met Jupiter, Juno, and Neptune. In Module 15 you added Mars, Venus, Minerva, and Mercury. Today you'll meet the third and final group of Roman gods for this year — bringing your total to eleven. Like every Roman god you've studied, each one had a specific job, called a <strong>domain</strong>, and a symbol that stood in for them in art and stories.</div>
+    </div>
+
+    <!-- Magister Caesar guide (shared elatin-widgets library) -->
+    <div style="background:#FFFFFF; border:1px solid #D0D9E8; border-left:5px solid #C7922C; border-radius:8px; padding:12px 16px; margin-bottom:20px;">
+        <div class="elw-caesar" data-lines='["Salvē, young scholar!","Meet four more Roman gods: Apollō, Diāna, Vulcānus, and Vesta.","One note for scholars: Apollō kept his Greek name when the Romans welcomed him. Match each god to their symbol!"]'></div>
     </div>
 
     <!-- Objectives -->
@@ -192,6 +198,9 @@
             <button class="widget-reset">Reset</button>
         </div>
 
+        <!-- Shared interactive game (elatin-widgets library) -->
+        <div class="elw-memory" data-title="Memory match: gods and their symbols" data-pairs='[["Apollō","🎵 music & sun"],["Diāna","🏹 hunt & moon"],["Vulcānus","🔨 fire & forge"],["Vesta","🔥 hearth & home"]]'></div>
+
         <!-- Need Help (gold) -->
         <div style="background: #FFF6E6; border-left: 5px solid #C7922C; border-top: 3px solid #E0B45A; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
             <div style="font-size: 11px; color: #9a7b1e; margin-bottom: 8px;">🤗 NEED HELP?</div>
@@ -278,5 +287,6 @@
 })();
 </script>
 
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 </body>
 </html>

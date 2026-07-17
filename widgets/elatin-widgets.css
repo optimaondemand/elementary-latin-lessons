@@ -1,0 +1,226 @@
+/* ================================================================
+   ELEMENTARY LATIN — REUSABLE WIDGET LIBRARY  (elatin-widgets.css)
+   Optima Academy Online · Elementary Latin (5007090)
+
+   All selectors use the .elw- prefix so this library COEXISTS with
+   the lessons' existing inline widgets (.ow-select / .ow-reflect /
+   .optima-widget). Nothing here touches those classes.
+
+   Brand tokens are namespaced as --elw-* on :root to avoid clobbering
+   any --navy / --cyan variables a host lesson may already define.
+   ================================================================ */
+
+:root{
+  --elw-navy:#0E1C42;
+  --elw-cyan:#55C8E8;
+  --elw-gold:#C7922C;
+  --elw-teal:#0F8B8D;      /* accent */
+  --elw-ground:#F0F2F8;
+  --elw-text:#1a2340;
+  --elw-card:#ffffff;
+  --elw-good:#1f9d55;
+  --elw-good-bg:#e4f7ec;
+  --elw-bad:#d64545;
+  --elw-shadow:0 6px 20px rgba(14,28,66,.12);
+  --elw-shadow-sm:0 3px 10px rgba(14,28,66,.10);
+  --elw-radius:18px;
+  --elw-font:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+/* ----------------------------------------------------------------
+   SHARED WIDGET SHELL
+   Every widget renders inside a rounded card. K-5 friendly spacing.
+   ---------------------------------------------------------------- */
+.elw-widget{
+  font-family:var(--elw-font);
+  color:var(--elw-text);
+  background:var(--elw-card);
+  border-radius:var(--elw-radius);
+  box-shadow:var(--elw-shadow);
+  padding:24px 24px 26px;
+  margin:24px 0;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  box-sizing:border-box;
+}
+.elw-widget *,
+.elw-widget *::before,
+.elw-widget *::after{box-sizing:border-box;}
+
+.elw-title{
+  margin:0 0 14px;
+  font-size:1.35rem;
+  color:var(--elw-navy);
+  font-weight:800;
+}
+.elw-desc{margin:0 0 16px;color:#41506e;font-size:1rem;}
+.elw-col-label{
+  font-weight:700;color:var(--elw-teal);margin-bottom:10px;
+  font-size:.9rem;letter-spacing:.5px;text-transform:uppercase;
+}
+.elw-subnote{font-size:.82rem;color:#6b7896;font-style:italic;margin-top:8px;}
+.elw-status{margin-top:14px;font-weight:700;min-height:1.4em;font-size:1.05rem;}
+.elw-status.elw-win{color:var(--elw-good);}
+
+/* ---------- Buttons (large tap targets) ---------- */
+.elw-widget button{
+  font-family:var(--elw-font);
+  cursor:pointer;border:none;border-radius:12px;font-weight:700;
+  transition:transform .08s ease, box-shadow .15s ease, background .15s ease;
+  touch-action:manipulation;
+}
+.elw-widget button:active{transform:scale(.96);}
+.elw-btn-primary{
+  background:var(--elw-gold);color:#fff;padding:14px 22px;font-size:1.05rem;
+  box-shadow:var(--elw-shadow-sm);min-height:48px;
+}
+.elw-btn-primary:hover{background:#b07f22;}
+.elw-btn-reset{
+  background:var(--elw-ground);color:var(--elw-navy);
+  border:2px solid #c9d2e8;padding:12px 20px;font-size:1rem;min-height:48px;
+}
+.elw-btn-reset:hover{background:#e2e8f6;}
+.elw-btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:18px;}
+
+/* ---------- Optional timer toggle ---------- */
+.elw-toggle-wrap{display:flex;align-items:center;gap:10px;font-size:.95rem;font-weight:600;color:var(--elw-navy);}
+.elw-switch{position:relative;display:inline-block;width:52px;height:28px;flex:0 0 auto;}
+.elw-switch input{opacity:0;width:0;height:0;}
+.elw-slider{position:absolute;inset:0;background:#c9d2e8;border-radius:999px;transition:.2s;}
+.elw-slider:before{
+  content:"";position:absolute;height:22px;width:22px;left:3px;top:3px;
+  background:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.3);
+}
+.elw-switch input:checked + .elw-slider{background:var(--elw-teal);}
+.elw-switch input:checked + .elw-slider:before{transform:translateX(24px);}
+
+@keyframes elw-nudge{0%,100%{transform:translateX(0);}25%{transform:translateX(-8px);}75%{transform:translateX(8px);}}
+@keyframes elw-pop{0%{transform:scale(.85);opacity:0;}60%{transform:scale(1.04);}100%{transform:scale(1);opacity:1;}}
+
+/* ================================================================
+   FLOATING DRAG GHOST  (shared by .elw-match & .elw-sort)
+   One element appended to <body>; follows the pointer.
+   ================================================================ */
+#elw-drag-ghost{
+  position:fixed;pointer-events:none;z-index:99999;display:none;
+  font-family:var(--elw-font);font-weight:700;
+  border-radius:14px;box-shadow:var(--elw-shadow);
+  background:var(--elw-cyan);color:var(--elw-navy);
+  font-size:1.3rem;padding:14px 22px;
+}
+#elw-drag-ghost.elw-ghost-sort{
+  background:var(--elw-gold);color:#fff;border-radius:999px;
+  font-size:1.05rem;padding:10px 18px;
+}
+
+/* ================================================================
+   WIDGET · DRAG & DROP MATCH  (.elw-match)
+   ================================================================ */
+.elw-match-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:18px;}
+@media(max-width:520px){.elw-match-grid{gap:16px;}}
+.elw-chip{
+  background:var(--elw-cyan);color:var(--elw-navy);font-size:1.3rem;font-weight:700;
+  padding:14px 10px;border-radius:14px;margin-bottom:12px;text-align:center;
+  box-shadow:var(--elw-shadow-sm);cursor:grab;user-select:none;touch-action:none;
+  border:3px solid transparent;min-height:52px;display:flex;align-items:center;justify-content:center;
+}
+.elw-chip.elw-dragging{opacity:.55;cursor:grabbing;}
+.elw-chip.elw-locked{background:var(--elw-good-bg);color:var(--elw-good);border-color:var(--elw-good);cursor:default;}
+.elw-chip.elw-nudge{animation:elw-nudge .4s ease;}
+.elw-drop{
+  background:var(--elw-ground);border:3px dashed #b6c1de;border-radius:14px;
+  padding:14px 10px;margin-bottom:12px;min-height:56px;font-size:1.15rem;font-weight:600;
+  display:flex;align-items:center;justify-content:center;text-align:center;color:var(--elw-navy);
+}
+.elw-drop.elw-over{border-color:var(--elw-gold);background:#fff6e6;}
+.elw-drop.elw-filled{border-style:solid;border-color:var(--elw-good);background:var(--elw-good-bg);color:var(--elw-good);}
+.elw-drop .elw-answer-word{font-weight:800;margin-right:6px;}
+
+/* ================================================================
+   WIDGET · FLIP CARD MEMORY  (.elw-memory)
+   ================================================================ */
+.elw-memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px;}
+@media(max-width:560px){.elw-memory-grid{grid-template-columns:repeat(2,1fr);}}
+.elw-mcard{aspect-ratio:1/1;border-radius:14px;position:relative;cursor:pointer;perspective:800px;touch-action:manipulation;}
+.elw-mcard-inner{position:absolute;inset:0;transition:transform .4s;transform-style:preserve-3d;}
+.elw-mcard.elw-flipped .elw-mcard-inner,
+.elw-mcard.elw-matched .elw-mcard-inner{transform:rotateY(180deg);}
+.elw-mface{
+  position:absolute;inset:0;border-radius:14px;display:flex;align-items:center;justify-content:center;
+  backface-visibility:hidden;font-weight:700;box-shadow:var(--elw-shadow-sm);text-align:center;padding:6px;
+}
+.elw-mface.elw-back{
+  background:var(--elw-navy);color:var(--elw-cyan);font-size:2rem;
+  background-image:radial-gradient(circle at 30% 30%, #1b3170, var(--elw-navy));
+}
+.elw-mface.elw-front{
+  background:#fff;color:var(--elw-navy);transform:rotateY(180deg);font-size:1.2rem;
+  border:3px solid var(--elw-cyan);
+}
+.elw-mcard.elw-matched .elw-mface.elw-front{background:var(--elw-good-bg);color:var(--elw-good);border-color:var(--elw-good);}
+.elw-moves-badge{font-weight:800;color:var(--elw-navy);}
+
+/* ================================================================
+   WIDGET · SORT INTO BINS  (.elw-sort)
+   ================================================================ */
+.elw-sort-source{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;min-height:56px;margin-bottom:20px;}
+.elw-bins-row{display:grid;gap:18px;}
+.elw-bin{background:var(--elw-ground);border:3px dashed #b6c1de;border-radius:16px;padding:14px;min-height:150px;}
+.elw-bin.elw-over{border-color:var(--elw-gold);background:#fff6e6;}
+.elw-bin h4{margin:0 0 12px;text-align:center;color:var(--elw-navy);font-size:1rem;}
+.elw-bin-items{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+.elw-sort-chip{
+  background:var(--elw-gold);color:#fff;font-weight:700;font-size:1.05rem;
+  padding:12px 18px;border-radius:999px;cursor:grab;user-select:none;touch-action:none;
+  box-shadow:var(--elw-shadow-sm);border:3px solid transparent;min-height:44px;
+}
+.elw-sort-chip.elw-dragging{opacity:.55;}
+.elw-sort-chip.elw-correct{background:var(--elw-good-bg);color:var(--elw-good);border-color:var(--elw-good);cursor:default;}
+.elw-sort-chip.elw-wrong{animation:elw-nudge .4s ease;}
+
+/* ================================================================
+   WIDGET · GUESS / LIVING LATIN  (.elw-guess)
+   ================================================================ */
+.elw-guess-stage{
+  background:linear-gradient(135deg,#f3f8ff,#e7f4fb);border-radius:16px;padding:26px 20px;text-align:center;
+  border:2px solid #d5e6f5;
+}
+.elw-guess-emoji{font-size:4.5rem;line-height:1;margin-bottom:6px;}
+.elw-guess-prompt{font-size:1.25rem;font-weight:700;color:var(--elw-navy);margin:8px 0 20px;}
+.elw-choice-row{display:flex;flex-direction:column;gap:12px;max-width:440px;margin:0 auto;}
+.elw-choice-btn{
+  background:#fff;border:3px solid var(--elw-cyan);color:var(--elw-navy);
+  padding:16px;font-size:1.15rem;border-radius:14px;min-height:52px;
+}
+.elw-choice-btn:hover{background:#eefaff;}
+.elw-choice-btn.elw-correct{background:var(--elw-good-bg);border-color:var(--elw-good);color:var(--elw-good);}
+.elw-choice-btn.elw-wrong{background:#fde7e7;border-color:var(--elw-bad);color:var(--elw-bad);}
+.elw-choice-btn:disabled{cursor:default;}
+.elw-reveal{
+  margin-top:20px;background:#fff;border-radius:14px;padding:18px;border-left:6px solid var(--elw-gold);
+  text-align:left;font-size:1.02rem;display:none;
+}
+.elw-reveal.elw-show{display:block;animation:elw-pop .4s ease;}
+.elw-tada{font-size:1.4rem;font-weight:800;color:var(--elw-gold);}
+.elw-round-dots{display:flex;gap:8px;justify-content:center;margin-top:16px;}
+.elw-round-dots span{width:11px;height:11px;border-radius:50%;background:#c9d2e8;}
+.elw-round-dots span.elw-active{background:var(--elw-teal);}
+.elw-guess-done{margin-top:14px;font-weight:800;color:var(--elw-good);}
+
+/* ================================================================
+   WIDGET · TALKING GUIDE / MAGISTER CAESAR  (.elw-caesar)
+   ================================================================ */
+.elw-caesar-wrap{display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;}
+.elw-caesar-figure{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:6px;}
+.elw-caesar-body{position:relative;width:130px;}
+.elw-caesar-name{font-weight:800;color:var(--elw-gold);font-size:.95rem;}
+.elw-caesar-svg{display:block;filter:drop-shadow(0 4px 6px rgba(14,28,66,.2));}
+.elw-speech{
+  background:#fff;border:3px solid var(--elw-cyan);border-radius:18px;padding:18px 20px;
+  position:relative;flex:1 1 320px;min-width:240px;font-size:1.2rem;color:var(--elw-navy);font-weight:600;
+}
+.elw-speech:before{
+  content:"";position:absolute;left:-16px;top:32px;border-width:10px 16px 10px 0;
+  border-style:solid;border-color:transparent var(--elw-cyan) transparent transparent;
+}
+.elw-speech.elw-speaking{border-color:var(--elw-gold);box-shadow:0 0 0 4px rgba(199,146,44,.18);}

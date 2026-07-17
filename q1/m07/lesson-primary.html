@@ -51,6 +51,7 @@
     .el-garment-name { font-size: 18px; color: #0E1C42; margin: 6px 0 4px 0; font-weight:600; }
     .el-garment-def { font-size: 14px; color: #1a2340; line-height: 1.5; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -103,6 +104,12 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Not every Roman wore the same thing.</div>
         <div style="font-size: 18px; color: #1a2340; line-height: 1.7;">Most Romans wore simple, everyday clothing. But one particular outfit was reserved for a very specific group of people, on very specific occasions. Today you'll learn what Romans actually wore, who wore what, and why — and you'll meet an English word that comes straight from Latin.</div>
+    </div>
+
+    <!-- ▼ Shared widget library: Magister Caesar guide ▼ -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 5px solid #0F8B8D; border-radius: 8px; padding: 16px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0a5f60; margin-bottom: 10px;">🏛️ YOUR GUIDE · MAGISTER CAESAR</div>
+        <div class="elw-caesar" data-lines='["Salvē, young scholar!","The tunica was everyday wear; the toga marked an adult citizen. English borrowed both words."]'></div>
     </div>
 
     <!-- Objectives -->
@@ -274,6 +281,18 @@
         </details>
     </div>
 
+    <!-- ▼ Shared widget library: interactive practice game ▼ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🎮 PLAY IT · SORT THE OUTFITS</div>
+        <div class="elw-sort" data-title="Everyday wear or special-occasion wear?" data-bins='["Everyday wear","Special-occasion wear"]' data-items='[["A child in a plain tunica",0],["A laborer in a tunica at work",0],["A mother in a tunica at home",0],["A senator in a toga in the Senate",1],["A citizen in a fine toga at a ceremony",1]]'></div>
+    </div>
+
+    <!-- ▼ Shared widget library: Living Latin ▼ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0F8B8D; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0a5f60; margin-bottom: 14px;">🌍 LIVING LATIN</div>
+        <div class="elw-guess" data-title="Guess where it came from!" data-rounds='[{"icon":"👕","prompt":"A long shirt-like top is still called a tunic. Which Latin word did it come from?","options":["tunica (everyday garment)","toga (formal garment)","palla (cloak)"],"answer":0,"reveal":"✨ tunica gave us the English word tunic!"},{"icon":"🎉","prompt":"We still say toga party today. Where did the word toga come from?","options":["Greek","Latin, the word toga","invented recently"],"answer":1,"reveal":"✨ English borrowed toga straight from Latin — same spelling and meaning!"}]'></div>
+    </div>
+
     <!-- What you'll do next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
@@ -342,6 +361,8 @@
   });
 })();
 </script>
+
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 
 </body>
 </html>

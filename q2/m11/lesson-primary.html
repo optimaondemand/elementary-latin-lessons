@@ -44,6 +44,7 @@
     .el-cal-num { font-size: 12px; color: #6b7a99; }
     .el-cal-name { font-size: 14px; color: #0E1C42; font-weight: 600; margin-top: 2px; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -96,6 +97,11 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;"><em>Octō</em> means eight. So why is October the tenth month?</div>
         <div style="font-size: 18px; color: #1a2340; line-height: 1.7;">Every month name on your calendar started as a Latin word. Most of them make sense right away — but four of them hide a strange puzzle. Today you'll solve it, and it all comes down to how the Romans used to count their year.</div>
+    </div>
+
+    <!-- ===== Magister Caesar guide (shared widget library) ===== -->
+    <div style="background:#FFFFFF;border:1px solid #D0D9E8;border-left:5px solid #C7922C;border-radius:8px;padding:14px 18px;margin-bottom:20px;">
+        <div class="elw-caesar" data-lines='["Salvē! I am Magister Caesar.","October means the eighth month? Yes! The old Roman year began in Mārtius (March), so octō (8) gave us October."]'></div>
     </div>
 
     <!-- Objectives -->
@@ -225,6 +231,14 @@
         </details>
     </div>
 
+    <!-- ===== Interactive practice (shared widget library) ===== -->
+    <div style="background:#FFFFFF;border-top:3px solid #0F8B8D;border:1px solid #D0D9E8;border-radius:8px;padding:20px 24px;margin-bottom:20px;">
+        <div style="font-size:11px;color:#0a5f60;margin-bottom:14px;">🎮 PLAY &amp; EXPLORE</div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;margin:0 0 12px 0;">Match each Latin number to the month it once named. The optional timer is just for fun.</p>
+        <div class="elw-match" data-title="Match the Latin number to the month it named" data-pairs='[["septem (7)","September"],["octō (8)","October"],["novem (9)","November"],["decem (10)","December"]]' data-timer="true"></div>
+        <div class="elw-guess" data-title="Guess where it came from!" data-rounds='[{"icon":"🗓️","prompt":"October was once the 8th month because octō means…","options":["eight","ten","six"],"answer":0,"reveal":"✨ Yes! octō is Latin for eight. The old Roman year began in March, so October was month 8."},{"icon":"🎶","prompt":"An octave in music spans 8 notes because octō means…","options":["eight","two","ten"],"answer":0,"reveal":"✨ Right! octave comes from octō, Latin for eight."},{"icon":"🔟","prompt":"A decimal counts by tens because decem means…","options":["ten","five","nine"],"answer":0,"reveal":"✨ Yes! decimal comes from decem, Latin for ten — the root of December, once the 10th month."}]'></div>
+    </div>
+
     <!-- What you'll do next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
@@ -294,5 +308,6 @@
 })();
 </script>
 
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 </body>
 </html>

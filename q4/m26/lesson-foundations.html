@@ -65,6 +65,7 @@
     .el-clock-center { position:absolute; top:50%; left:50%; width:10px; height:10px; background:#0E1C42; border-radius:50%; transform:translate(-50%,-50%); }
     .el-clock-caption { font-size:14px; color:#0E1C42; margin-top:10px; line-height:1.5; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -117,6 +118,11 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Remember our Roman numbers? They are still all around us!</div>
         <div style="font-size: 19px; color: #1a2340; line-height: 1.7;">A while back, you learned some special number shapes the Romans used: <strong>I, V, and X</strong>. Today we say hello to them again — and we look for them in places you might not expect, like clocks!</div>
+    </div>
+
+    <!-- Magister Caesar — shared interactive widget guide -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 5px solid #C7922C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px;">
+        <div class="elw-caesar" data-lines='["Salvē!","Look for I, V, and X all around you — they are even hiding on a clock!"]'></div>
     </div>
 
     <!-- Objectives -->
@@ -266,6 +272,14 @@
         </details>
     </div>
 
+    <!-- Extra practice — shared interactive widget library -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0F8B8D; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0a5f60; margin-bottom: 14px;">🎮 EXTRA PRACTICE · PLAY &amp; EXPLORE</div>
+        <p style="font-size: 19px; color: #1a2340; line-height: 1.7; margin: 0 0 12px 0;">Let's play! Drag each numeral shape to its number. Play as many times as you like!</p>
+        <div class="elw-match" data-title="Match the Numeral" data-pairs='[["I","1"],["V","5"],["X","10"],["III","3"]]'></div>
+        <div class="elw-guess" data-title="Guess where it came from!" data-rounds='[{"icon":"🕰️","prompt":"On many clocks, the number 4 is written…","options":["IIII","XII","V"],"answer":0,"reveal":"✨ Yes! Many clocks show IIII for 4."},{"icon":"🎬","prompt":"Movies and games still use Roman numbers. X means…","options":["10","1","5"],"answer":0,"reveal":"✨ Right! X = 10."}]'></div>
+    </div>
+
     <!-- What you'll do next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
@@ -334,5 +348,6 @@
 })();
 </script>
 
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 </body>
 </html>

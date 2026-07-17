@@ -49,6 +49,7 @@
     .el-arch::after { content: ""; position: absolute; left: 8px; right: 8px; bottom: 0; top: 22px; background: #E6F6F5; border-radius: 14px 14px 0 0; }
     .el-channel { height: 10px; background: #0F8B8D; border-radius: 4px; width: 320px; margin: 0 auto; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -101,6 +102,11 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">How did a Roman city get water without any pipes or pumps?</div>
         <div style="font-size: 19px; color: #1a2340; line-height: 1.7;">Romans built long stone paths called <strong>aqueducts</strong> to carry water from a faraway spring all the way into a city. The water didn't need a pump — it just gently rolled downhill the whole way! Today we follow the water on its long journey.</div>
+    </div>
+
+    <!-- ===== Magister Caesar guide (shared widget library) ===== -->
+    <div style="background:#FFFFFF;border:1px solid #D0D9E8;border-left:5px solid #C7922C;border-radius:8px;padding:14px 18px;margin-bottom:20px;">
+        <div class="elw-caesar" data-lines='["Salvē!","Aqua means water. Romans built aqueducts to carry water into the city!"]'></div>
     </div>
 
     <!-- Objectives -->
@@ -229,6 +235,14 @@
         </details>
     </div>
 
+    <!-- ===== Interactive practice (shared widget library) ===== -->
+    <div style="background:#FFFFFF;border-top:3px solid #0F8B8D;border:1px solid #D0D9E8;border-radius:8px;padding:20px 24px;margin-bottom:20px;">
+        <div style="font-size:11px;color:#0a5f60;margin-bottom:14px;">🎮 PLAY &amp; EXPLORE</div>
+        <p style="font-size:18px;color:#1a2340;line-height:1.7;margin:0 0 12px 0;">Match each water word to its picture!</p>
+        <div class="elw-match" data-title="Match the water word to its picture" data-pairs='[["Aqua","💧 water"],["Aquarium","🐠 fish tank"],["Aqueduct","🌉 water bridge"]]'></div>
+        <div class="elw-guess" data-title="Guess where it came from!" data-rounds='[{"icon":"🐠","prompt":"An aquarium is full of…","options":["💧 water","🔥 fire"],"answer":0,"reveal":"✨ Yes! aquarium comes from aqua — water!"},{"icon":"🏊","prompt":"An aquatic animal lives in the…","options":["💧 water","🏜️ desert"],"answer":0,"reveal":"✨ Yes! aquatic comes from aqua — water!"}]'></div>
+    </div>
+
     <!-- What you'll do next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
@@ -298,5 +312,6 @@
 })();
 </script>
 
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 </body>
 </html>

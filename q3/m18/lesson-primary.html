@@ -42,6 +42,7 @@
     .el-boot { display:inline-block; width:80px; height:130px; background:#C7922C; clip-path: polygon(45% 0%, 70% 0%, 70% 55%, 100% 65%, 100% 85%, 60% 100%, 20% 90%, 30% 55%, 45% 55%); position:relative; }
     .el-dot { display:inline-block; width:12px; height:12px; background:#E23A33; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 1px #0E1C42; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -94,6 +95,11 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Why does a "manual" have anything to do with hands?</div>
         <div style="font-size: 18px; color: #1a2340; line-height: 1.7;">Doctors and scientists still use Latin words for parts of the body today, even though nobody speaks Latin at the dinner table anymore. Today you'll learn four Latin body words &mdash; and discover that three of them are still hiding inside English words you already use.</div>
+    </div>
+
+    <!-- Magister Caesar guide (shared elatin-widgets library) -->
+    <div style="background:#FFFFFF; border:1px solid #D0D9E8; border-left:5px solid #C7922C; border-radius:8px; padding:12px 16px; margin-bottom:20px;">
+        <div class="elw-caesar" data-lines='["Salvē, young scholar!","Today we learn Latin words for the body: corpus, manus, pēs, and oculus.","Doctors still use these words all over the world, and three of them hide inside English words!"]'></div>
     </div>
 
     <!-- Objectives -->
@@ -197,6 +203,11 @@
             <button class="widget-reset">Reset</button>
         </div>
 
+        <!-- Shared interactive games (elatin-widgets library) -->
+        <div class="elw-match" data-title="Match the Latin body words" data-timer="true" data-pairs='[["corpus","body"],["manus","hand"],["pēs","foot"],["oculus","eye"]]'></div>
+
+        <div class="elw-guess" data-title="Guess where it came from!" data-rounds='[{"icon":"✋","prompt":"A manual is a book you do by hand because…","options":["manus (hand)","pēs (foot)","oculus (eye)"],"answer":0,"reveal":"✨ Yes! manual comes from manus, Latin for hand."},{"icon":"🚲","prompt":"You press a bike pedal with your foot because…","options":["pēs (foot)","manus (hand)","oculus (eye)"],"answer":0,"reveal":"✨ Correct! pedal comes from pēs, Latin for foot."},{"icon":"👁️","prompt":"An ocular exam checks your eye because…","options":["oculus (eye)","manus (hand)","pēs (foot)"],"answer":0,"reveal":"✨ Right! ocular comes from oculus, Latin for eye."}]'></div>
+
         <!-- Need Help (gold) -->
         <div style="background: #FFF6E6; border-left: 5px solid #C7922C; border-top: 3px solid #E0B45A; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
             <div style="font-size: 11px; color: #9a7b1e; margin-bottom: 8px;">🤗 NEED HELP?</div>
@@ -283,5 +294,6 @@
 })();
 </script>
 
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 </body>
 </html>

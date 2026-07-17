@@ -49,6 +49,7 @@
     .el-bb-name { font-size: 18px; color: #0E1C42; margin: 8px 0 4px 0; font-weight:600; }
     .el-bb-def { font-size: 14px; color: #1a2340; line-height: 1.5; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -101,6 +102,11 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Look how much Latin you've learned this year.</div>
         <div style="font-size: 18px; color: #1a2340; line-height: 1.7;">Back in the fall, you learned to count in Latin. Later, you learned the seven day names and the twelve month names. Today we pull all of it back together in one big cumulative review &mdash; numbers, days, and months &mdash; before the year's final review module.</div>
+    </div>
+
+    <!-- Magister Caesar — shared interactive widget guide -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 5px solid #C7922C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px;">
+        <div class="elw-caesar" data-lines='["Salvē!","Look how much Latin you know — numbers, days of the week, and months, all from Rome!"]'></div>
     </div>
 
     <!-- Objectives -->
@@ -251,6 +257,14 @@
         <div style="font-size: 17px; color: #1a2340; line-height: 1.65;">Open your Roman Passport document and write today's date. This year you've filled it with words for greetings, numbers, days, and months. For this entry, write down which of those four you think you'll remember the longest, and why.</div>
     </div>
 
+    <!-- Extra practice — shared interactive widget library -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0F8B8D; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0a5f60; margin-bottom: 14px;">🎮 EXTRA PRACTICE · PLAY &amp; EXPLORE</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.7; margin: 0 0 12px 0;">Flip the cards to match Latin to English — numbers, days, and months. Then see how Roman numbers still name our months. Just for fun and never graded.</p>
+        <div class="elw-memory" data-title="Review Memory: Numbers, Days, Months" data-pairs='[["decem","ten"],["diēs Veneris","Friday"],["Iānuārius","January"],["Iūlius","July"]]'></div>
+        <div class="elw-guess" data-title="Guess where it came from!" data-rounds='[{"icon":"🔟","prompt":"October comes from the Latin octō, which means…","options":["eight","ten","one"],"answer":0,"reveal":"✨ Yes! Octō = eight. October was once the 8th month!"},{"icon":"7️⃣","prompt":"September comes from septem, which means…","options":["seven","nine","five"],"answer":0,"reveal":"✨ Right! Septem = seven."},{"icon":"📅","prompt":"Friday in Latin is diēs Veneris, named after the goddess…","options":["Venus","Diana","Juno"],"answer":0,"reveal":"✨ Correct! Venus gives us diēs Veneris — Friday (Venerdì in Italian)."}]'></div>
+    </div>
+
     <!-- What you'll do next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
@@ -320,5 +334,6 @@
 })();
 </script>
 
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 </body>
 </html>

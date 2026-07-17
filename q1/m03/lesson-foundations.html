@@ -49,6 +49,7 @@
     .el-clock-num { position:absolute; font-size:16px; color:#0E1C42; font-weight:700; transform:translate(-50%,-50%); }
     .el-clock-center { position:absolute; width:10px; height:10px; background:#C7922C; border-radius:50%; top:50%; left:50%; transform:translate(-50%,-50%); }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -101,6 +102,12 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Romans didn't write numbers the way we do!</div>
         <div style="font-size: 19px; color: #1a2340; line-height: 1.7;">Instead of 1, 2, 3, Romans used letter shapes like <strong>I</strong>, <strong>V</strong>, and <strong>X</strong> to write numbers. And guess what &mdash; those letter-numbers are STILL hiding all around you today, on clocks and other everyday things! Today we count to ten like a Roman.</div>
+    </div>
+
+    <!-- ▼ Shared widget library: Magister Caesar guide ▼ -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 5px solid #0F8B8D; border-radius: 8px; padding: 16px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0a5f60; margin-bottom: 10px;">🏛️ YOUR GUIDE · MAGISTER CAESAR</div>
+        <div class="elw-caesar" data-lines='["Salvē!","Come count like a Roman: ūnus, duo, trēs!"]'></div>
     </div>
 
     <!-- Objectives -->
@@ -279,6 +286,12 @@
         </div>
     </div>
 
+    <!-- ▼ Shared widget library: interactive practice game ▼ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🎮 PLAY IT · MATCH THE NUMBER</div>
+        <div class="elw-match" data-title="Match the Latin number to its numeral" data-pairs='[["ūnus","I · one"],["duo","II · two"],["trēs","III · three"],["decem","X · ten"]]'></div>
+    </div>
+
     <!-- What you'll do next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
@@ -347,6 +360,8 @@
   });
 })();
 </script>
+
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 
 </body>
 </html>

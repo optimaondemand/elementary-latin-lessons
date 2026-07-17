@@ -46,6 +46,7 @@
     .el-arch::after { content: ""; position: absolute; left: 7px; right: 7px; bottom: 0; top: 19px; background: #E6F6F5; border-radius: 12px 12px 0 0; }
     .el-channel { height: 9px; background: #0F8B8D; border-radius: 4px; width: 280px; margin: 0 auto; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -98,6 +99,11 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">How do you move water for miles with no pumps or motors?</div>
         <div style="font-size: 18px; color: #1a2340; line-height: 1.7;">Romans solved this with <strong>aqueducts</strong>: long stone channels engineered with an extremely slight, carefully measured downhill slope, so gravity alone could carry water from a distant spring or lake all the way into a city — feeding fountains, baths, and homes along the way.</div>
+    </div>
+
+    <!-- ===== Magister Caesar guide (shared widget library) ===== -->
+    <div style="background:#FFFFFF;border:1px solid #D0D9E8;border-left:5px solid #C7922C;border-radius:8px;padding:14px 18px;margin-bottom:20px;">
+        <div class="elw-caesar" data-lines='["Salvē! I am Magister Caesar.","Rome ran on water! Aqua means water, and an aquaeductus (aqueduct) carries water across miles of stone arches."]'></div>
     </div>
 
     <!-- Objectives -->
@@ -217,6 +223,14 @@
         </details>
     </div>
 
+    <!-- ===== Interactive practice (shared widget library) ===== -->
+    <div style="background:#FFFFFF;border-top:3px solid #0F8B8D;border:1px solid #D0D9E8;border-radius:8px;padding:20px 24px;margin-bottom:20px;">
+        <div style="font-size:11px;color:#0a5f60;margin-bottom:14px;">🎮 PLAY &amp; EXPLORE</div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;margin:0 0 12px 0;">Which words grew from aqua? Drag each one into the right bin.</p>
+        <div class="elw-sort" data-title="Which words grew from aqua?" data-bins='["Comes from aqua (water)","Not from aqua"]' data-items='[["aquarium",0],["aquatic",0],["aqueduct",0],["aquamarine",0],["telephone",1],["dinosaur",1]]'></div>
+        <div class="elw-guess" data-title="Guess where it came from!" data-rounds='[{"icon":"🐠","prompt":"An aquarium is full of water because aqua means…","options":["water","fire","air"],"answer":0,"reveal":"✨ Yes! aquarium comes from aqua, Latin for water."},{"icon":"🏊","prompt":"An aquatic animal lives in the…","options":["water","desert","sky"],"answer":0,"reveal":"✨ Right! aquatic comes from aqua, Latin for water."},{"icon":"💎","prompt":"Aquamarine is the color of sea water because aqua means…","options":["water","gold","stone"],"answer":0,"reveal":"✨ Yes! aquamarine blends aqua (water) and marīnus (of the sea)."}]'></div>
+    </div>
+
     <!-- What you'll do next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">➡️ WHAT YOU'LL DO NEXT</div>
@@ -286,5 +300,6 @@
 })();
 </script>
 
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 </body>
 </html>

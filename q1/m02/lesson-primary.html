@@ -51,6 +51,7 @@
     .el-hill { display:inline-block; width:0; height:0; border-left:9px solid transparent; border-right:9px solid transparent; border-bottom:14px solid #0F8B8D; }
     .el-island { display:inline-block; width:16px; height:11px; background:#0F8B8D; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 1px #0E1C42; }
 </style>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
 </head>
 <body>
 <div class="canvas-frame">
@@ -103,6 +104,12 @@
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">📖 TODAY'S FOCUS</div>
         <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Why did Rome grow up exactly where it did?</div>
         <div style="font-size: 18px; color: #1a2340; line-height: 1.7;">A city's location is never an accident. Rome was built across a cluster of hills, next to a river that connected it to the sea, inside a peninsula shaped like a boot. Today you'll learn the geography that shaped Rome — and two Latin words hiding inside English words you already know.</div>
+    </div>
+
+    <!-- ▼ Shared widget library: Magister Caesar guide ▼ -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 5px solid #0F8B8D; border-radius: 8px; padding: 16px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0a5f60; margin-bottom: 10px;">🏛️ YOUR GUIDE · MAGISTER CAESAR</div>
+        <div class="elw-caesar" data-lines='["Salvē, young scholar!","Rome grew up on seven hills beside the Tiber — and Latin words for land still sit on our maps."]'></div>
     </div>
 
     <!-- Objectives -->
@@ -291,6 +298,18 @@
         </details>
     </div>
 
+    <!-- ▼ Shared widget library: interactive practice game ▼ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">🎮 PLAY IT · MATCH-UP</div>
+        <div class="elw-match" data-title="Match the Latin to its meaning" data-pairs='[["Rōma","Rome"],["Italia","Italy"],["mōns","hill, mountain"],["īnsula","island"],["paene","almost"]]' data-timer="true"></div>
+    </div>
+
+    <!-- ▼ Shared widget library: Living Latin ▼ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0F8B8D; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0a5f60; margin-bottom: 14px;">🌍 LIVING LATIN</div>
+        <div class="elw-guess" data-title="Guess where it came from!" data-rounds='[{"icon":"🗺️","prompt":"Italy and Florida are land almost surrounded by water. What is that shape called?","options":["peninsula","island","valley"],"answer":0,"reveal":"✨ paene (almost) + īnsula (island) = peninsula, almost an island!"},{"icon":"⛰️","prompt":"Which English word for a huge landform grew from Latin mōns?","options":["meadow","mountain","desert"],"answer":1,"reveal":"✨ mōns (hill, mountain) became mountain, by way of Old French."}]'></div>
+    </div>
+
     <!-- Roman Passport tie-in -->
     <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-radius: 6px; padding: 16px 22px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 10px;">📝 ADD TO YOUR ROMAN PASSPORT</div>
@@ -365,6 +384,8 @@
   });
 })();
 </script>
+
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
 
 </body>
 </html>
