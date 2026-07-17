@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>M/J Spanish, Beginning &mdash; Lesson 1.02</title>
+<link rel="stylesheet" href="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.css">
+<style>
+    body { margin:0; padding:0; font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:#f4f6fa; color:#1a2340; }
+    .preview-banner { background:#fff3cd; border-bottom:2px solid #c7922c; padding:10px 24px; font-size:13px; color:#6b4f1d; }
+    .preview-banner strong { color:#0e1c42; }
+    .canvas-frame { max-width:1100px; margin:0 auto; background:#ffffff; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+    .markdone { display:flex; align-items:center; gap:14px; background:#E8F6FB; border:1px solid #C5DCE5; border-left:5px solid #55C8E8; border-radius:8px; padding:14px 20px; margin:0 0 20px 0; }
+    .markdone .box { width:26px; height:26px; border:2px solid #2196D0; border-radius:6px; flex-shrink:0; background:#fff; }
+    .markdone .txt { font-size:15px; color:#1a2340; line-height:1.5; }
+    .markdone .txt strong { color:#0e1c42; }
+    .card { background:#FFFFFF; border-top:3px solid #C7922C; border:1px solid #D0D9E8; border-radius:8px; padding:20px 24px; margin-bottom:20px; }
+    .card.navy { border-top-color:#0E1C42; }
+    .kicker { font-size:11px; color:#c7922c; letter-spacing:.4px; margin-bottom:12px; }
+    .card h3 { font-size:20px; color:#0e1c42; margin:4px 0 8px 0; }
+    .card p { font-size:17px; color:#1a2340; line-height:1.65; margin:0 0 10px 0; }
+    .es { font-style:italic; color:#0e1c42; }
+    .optima-widget { background:linear-gradient(135deg,#E8F6FB 0%,#F4F9FC 100%); border:1px solid #C5DCE5; border-left:5px solid #2196D0; border-radius:8px; padding:18px 22px; margin:18px 0; }
+    .widget-kicker { font-size:11px; color:#1B6A94; margin-bottom:10px; letter-spacing:.4px; }
+    .widget-question { font-size:17px; color:#0E1C42; margin-bottom:14px; line-height:1.55; }
+    .widget-row { background:#FFFFFF; border:1px solid #D0D9E8; border-radius:6px; padding:12px 14px; margin-bottom:10px; }
+    .widget-row-prompt { font-size:15px; color:#0E1C42; margin-bottom:8px; line-height:1.5; }
+    .widget-options { display:flex; flex-wrap:wrap; gap:8px; }
+    .widget-options button { background:#FFFFFF; border:1.5px solid #D0D9E8; border-radius:8px; padding:8px 14px; font-size:14px; color:#0E1C42; cursor:pointer; transition:all .15s; font-family:inherit; }
+    .widget-options button:hover { background:#F4F6FA; border-color:#55C8E8; }
+    .widget-options button.correct { background:#D8F0DD; border-color:#2A9D5C; color:#1A6B3D; }
+    .widget-options button.incorrect { background:#FDECEC; border-color:#C0392B; color:#8A1F16; }
+    .row-feedback { padding:8px 12px; margin-top:8px; font-size:14px; border-radius:4px; line-height:1.5; }
+    .row-feedback.correct { background:#D8F0DD; border-left:3px solid #2A9D5C; color:#1A6B3D; }
+    .row-feedback.incorrect { background:#FDECEC; border-left:3px solid #C0392B; color:#8A1F16; }
+    .widget-reset { background:transparent; border:1px solid #C7922C; color:#C7922C; border-radius:6px; padding:6px 12px; font-size:12px; cursor:pointer; font-family:inherit; margin-top:6px; }
+    .widget-reset:hover { background:#FDF3E3; }
+    .contrast { display:flex; gap:16px; flex-wrap:wrap; margin:12px 0; }
+    .contrast > div { flex:1; min-width:240px; border-radius:8px; padding:16px 18px; }
+    .contrast .en { background:#FDECEC; border:1px solid #E7B9B4; }
+    .contrast .sp { background:#E8F6FB; border:1px solid #C5DCE5; }
+    .contrast h4 { margin:0 0 8px 0; font-size:15px; }
+    .contrast .en h4 { color:#8A1F16; }
+    .contrast .sp h4 { color:#1B6A94; }
+    .contrast p { font-size:15px; line-height:1.55; margin:0; color:#1a2340; }
+    .vowel { display:flex; align-items:center; gap:18px; flex-wrap:wrap; background:#FFFFFF; border:1px solid #D0D9E8; border-left:5px solid #55C8E8; border-radius:8px; padding:16px 18px; margin-bottom:12px; }
+    .vowel .big { font-size:52px; font-weight:700; color:#0E1C42; min-width:60px; text-align:center; line-height:1; }
+    .vowel .info { flex:1; min-width:220px; }
+    .vowel .sound { font-size:17px; color:#1a2340; line-height:1.5; margin:0 0 4px 0; }
+    .vowel .sound strong { color:#c7922c; }
+    .vowel .ex { font-size:15px; color:#5b6577; margin:0; }
+    .vowel .ex span { color:#0e1c42; font-style:italic; font-weight:600; }
+    .vowel audio { height:34px; width:200px; max-width:100%; }
+    .chant { text-align:center; font-size:34px; letter-spacing:14px; color:#0E1C42; font-weight:700; background:#FDF6E6; border:1px dashed #C7922C; border-radius:8px; padding:16px; margin:14px 0; }
+    @media (max-width:520px){ .vowel .big{ min-width:auto;} .vowel audio{ width:100%;} }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. The vowel play buttons and the self-check load from the course's GitHub Pages site &mdash; they run on the hosted page, not in this local file.</div>
+<div class="canvas-frame">
+
+<!-- HEADER -->
+<div style="background:#0E1C42; border-bottom:5px solid #55C8E8; padding:22px 34px;">
+    <div style="display:flex; align-items:center; gap:14px; margin-bottom:10px;">
+        <div style="width:52px; height:52px; border-radius:50%; background:#FFFFFF; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width:50px; height:40px; object-fit:contain;" /></div>
+        <div>
+            <div style="font-size:28px; color:#ffffff; line-height:1.2;">Optima Academy Online</div>
+            <div style="font-size:12px; color:#55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size:36px; color:#ffffff; margin-bottom:6px;">M/J SPANISH, BEGINNING</div>
+</div>
+
+<!-- METADATA STRIP -->
+<div style="background:#FFFFFF; border-bottom:2px solid #D0D9E8; display:flex; flex-wrap:wrap;">
+    <div style="flex:1; min-width:140px; padding:12px 16px; border-right:1px solid #D0D9E8;">
+        <div style="font-size:11px; color:#6b7a99; margin-bottom:4px;">Quarter / Module</div>
+        <div style="font-size:17px; color:#0e1c42;">Q1 &middot; Module 1</div>
+        <div style="font-size:12px; color:#666;">&iexcl;Bienvenidos! &mdash; Greetings &amp; Vowels</div>
+    </div>
+    <div style="flex:1; min-width:140px; padding:12px 16px; border-right:1px solid #D0D9E8;">
+        <div style="font-size:11px; color:#6b7a99; margin-bottom:4px;">Lesson</div>
+        <div style="font-size:17px; color:#0e1c42;">Lesson 1.02 &middot; Day 2 of 5</div>
+    </div>
+    <div style="flex:1; min-width:140px; padding:12px 16px; border-right:1px solid #D0D9E8;">
+        <div style="font-size:11px; color:#6b7a99; margin-bottom:4px;">Topic</div>
+        <div style="font-size:17px; color:#0e1c42; font-style:italic;">The 5 Spanish vowels</div>
+    </div>
+    <div style="flex:1; min-width:140px; padding:12px 16px;">
+        <div style="font-size:11px; color:#6b7a99; margin-bottom:4px;">Time</div>
+        <div style="font-size:16px; color:#0e1c42;">about 20 minutes</div>
+    </div>
+</div>
+
+<!-- BODY -->
+<div style="padding:24px 34px;">
+
+    <div class="markdone">
+        <div class="box"></div>
+        <div class="txt"><strong>Mark as Done.</strong> Read this page out loud, listen to all five vowels, and finish the self-check at the bottom &mdash; then click <strong>&ldquo;Mark as Done&rdquo;</strong> in Canvas.</div>
+    </div>
+
+    <div style="background:#EEF1F8; border-left:5px solid #0E1C42; border-radius:7px; padding:18px 22px; margin-bottom:20px;">
+        <div style="font-size:11px; color:#0e1c42; margin-bottom:6px;">LESSON 1.02 &middot; THE MOST IMPORTANT SOUND LESSON OF THE YEAR</div>
+        <div style="font-size:22px; color:#0e1c42; margin-bottom:4px;">The 5 Spanish Vowels</div>
+        <div style="font-size:16px; color:#666;">Five sounds. Each one never changes. Learn these and you can read almost any Spanish word out loud.</div>
+    </div>
+
+    <!-- FOCUS -->
+    <div class="card">
+        <div class="kicker">&#128293; TODAY'S BIG IDEA</div>
+        <div style="font-size:20px; color:#0e1c42; font-style:italic; margin-bottom:10px;">Spanish has exactly five vowels &mdash; and each one makes the same sound every single time. No exceptions.</div>
+        <p>That one fact is the secret to reading Spanish. English vowels shift around constantly; Spanish vowels do not. Once you own these five sounds, you can look at a brand-new Spanish word and pronounce it correctly &mdash; even a word you have never seen before.</p>
+    </div>
+
+    <!-- OBJECTIVES -->
+    <div class="card">
+        <div class="kicker">&#127919; BY THE END OF THIS PAGE YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display:flex; align-items:flex-start; gap:12px; margin-bottom:12px;">
+            <div style="min-width:26px; height:26px; border-radius:50%; background:#C7922C; color:#fff; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">1</div>
+            <div style="font-size:18px; color:#1a2340; line-height:1.65;">Make each of the five Spanish vowel sounds: <strong>a e i o u</strong>.</div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:12px; margin-bottom:12px;">
+            <div style="min-width:26px; height:26px; border-radius:50%; background:#C7922C; color:#fff; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">2</div>
+            <div style="font-size:18px; color:#1a2340; line-height:1.65;">Explain why Spanish vowels are easier than English vowels.</div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+            <div style="min-width:26px; height:26px; border-radius:50%; background:#C7922C; color:#fff; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">3</div>
+            <div style="font-size:18px; color:#1a2340; line-height:1.65;">Pronounce <em>every</em> vowel in a word &mdash; because Spanish has no silent vowels.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 : the contrast -->
+    <div class="card">
+        <div class="kicker">&#128218; PART 1 &middot; WHY THIS MATTERS FOR AN ENGLISH SPEAKER</div>
+        <p>In English, one vowel letter can make many different sounds. Look at the letter <strong>A</strong> in these four words and say them out loud:</p>
+        <p style="text-align:center; font-size:20px; color:#0e1c42;"><strong>cat &nbsp;&middot;&nbsp; cake &nbsp;&middot;&nbsp; car &nbsp;&middot;&nbsp; about</strong></p>
+        <p>Four different sounds &mdash; from one letter. English spelling doesn't tell you which one to use; you just <em>know</em> because you have heard the words a thousand times. Spanish does not work this way, and that is great news for you.</p>
+        <div class="contrast">
+            <div class="en">
+                <h4>&#127468;&#127463; English vowels: SHIFTING</h4>
+                <p>The same letter changes sound depending on the word. You have to memorize each word's sound one at a time.</p>
+            </div>
+            <div class="sp">
+                <h4>&#127466;&#127480; Spanish vowels: FIXED</h4>
+                <p>The letter A is <em>always</em> the "ah" in <em>father</em>. Every time. Learn the sound once, use it forever.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PART 2 : the five vowels -->
+    <div class="card">
+        <div class="kicker">&#128266; PART 2 &middot; MEET THE FIVE &mdash; LISTEN AND REPEAT</div>
+        <p>Here is all of Spanish pronunciation, in five lines. Press play on each one and <strong>say it back out loud</strong>. Your brain will learn the rule, but your mouth needs to build the muscle.</p>
+
+        <div class="vowel">
+            <div class="big">A</div>
+            <div class="info">
+                <p class="sound">like the <strong>ah</strong> in <em>father</em> &mdash; not the "ay" in <em>cake</em></p>
+                <p class="ex">Examples: <span>casa</span> &middot; <span>mam&aacute;</span> &middot; <span>para</span></p>
+            </div>
+            <audio controls preload="none" aria-label="Escuchar: la vocal A">
+                <source src="../../audio/vocab/vowel-a.mp3" type="audio/mpeg">
+                Tu navegador no reproduce audio.
+            </audio>
+        </div>
+
+        <div class="vowel">
+            <div class="big">E</div>
+            <div class="info">
+                <p class="sound">like the <strong>e</strong> in <em>bed</em>, said a little shorter and cleaner</p>
+                <p class="ex">Examples: <span>beb&eacute;</span> &middot; <span>tres</span> &middot; <span>tiene</span></p>
+            </div>
+            <audio controls preload="none" aria-label="Escuchar: la vocal E">
+                <source src="../../audio/vocab/vowel-e.mp3" type="audio/mpeg">
+                Tu navegador no reproduce audio.
+            </audio>
+        </div>
+
+        <div class="vowel">
+            <div class="big">I</div>
+            <div class="info">
+                <p class="sound">like the <strong>ee</strong> in <em>see</em> &mdash; always</p>
+                <p class="ex">Examples: <span>s&iacute;</span> &middot; <span>fino</span> &middot; <span>mi</span></p>
+            </div>
+            <audio controls preload="none" aria-label="Escuchar: la vocal I">
+                <source src="../../audio/vocab/vowel-i.mp3" type="audio/mpeg">
+                Tu navegador no reproduce audio.
+            </audio>
+        </div>
+
+        <div class="vowel">
+            <div class="big">O</div>
+            <div class="info">
+                <p class="sound">like the <strong>oh</strong> in <em>open</em>, but shorter &mdash; don't let it drift</p>
+                <p class="ex">Examples: <span>poco</span> &middot; <span>solo</span> &middot; <span>nosotros</span></p>
+            </div>
+            <audio controls preload="none" aria-label="Escuchar: la vocal O">
+                <source src="../../audio/vocab/vowel-o.mp3" type="audio/mpeg">
+                Tu navegador no reproduce audio.
+            </audio>
+        </div>
+
+        <div class="vowel">
+            <div class="big">U</div>
+            <div class="info">
+                <p class="sound">like the <strong>oo</strong> in <em>moon</em> &mdash; always</p>
+                <p class="ex">Examples: <span>t&uacute;</span> &middot; <span>uno</span> &middot; <span>f&uacute;tbol</span></p>
+            </div>
+            <audio controls preload="none" aria-label="Escuchar: la vocal U">
+                <source src="../../audio/vocab/vowel-u.mp3" type="audio/mpeg">
+                Tu navegador no reproduce audio.
+            </audio>
+        </div>
+
+        <p style="margin-top:16px;">Now say all five in order, out loud, twice &mdash; a little faster the second time:</p>
+        <div class="chant">A E I O U</div>
+    </div>
+
+    <!-- PART 3 : every vowel is pronounced -->
+    <div class="card">
+        <div class="kicker">&#128161; PART 3 &middot; THE ONE HABIT TO BREAK</div>
+        <h3>In Spanish, you pronounce <em>every</em> vowel</h3>
+        <p>English has silent letters &mdash; think of the silent <strong>e</strong> at the end of <em>name</em> or <em>cake</em>. Spanish does not do this. Every vowel you see gets its full sound.</p>
+        <p>Take the word <span class="es">estudiante</span> (student). Your English brain wants to rush it and drop the last <strong>e</strong>. Don't. Say each vowel its own way:</p>
+        <p style="text-align:center; font-size:22px; color:#0e1c42; letter-spacing:2px;"><strong>e &ndash; s &ndash; t &ndash; u &ndash; d &ndash; i &ndash; a &ndash; n &ndash; t &ndash; e</strong></p>
+        <p style="margin-bottom:0;">Five vowels, all pronounced: e&hellip; u&hellip; i&hellip; a&hellip; e. This is the single hardest habit for English speakers &mdash; not the rolling R, not the double L. It's the vowels, because they feel <em>almost</em> like English but aren't. Slow down and give each one its clean, fixed sound.</p>
+    </div>
+
+    <!-- PRACTICE : ow-select predict -->
+    <div class="optima-widget ow-select">
+        <div class="widget-kicker">&#9989; TRY IT &middot; WHICH SOUND?</div>
+        <div class="widget-question">Use the five fixed sounds you just learned. No memorizing &mdash; just apply the rule.</div>
+
+        <div class="widget-row" data-correct="b" data-hint="Spanish A is the 'ah' in father, not the 'ay' in cake.">
+            <div class="widget-row-prompt">The Spanish <strong>A</strong> in <em class="es">casa</em> sounds like the vowel in&hellip;</div>
+            <div class="widget-options">
+                <button data-choice="a" data-fb="That's the English 'ay' in cake — Spanish A never does that.">cake</button>
+                <button data-choice="b" data-fb="Yes! The 'ah' in father. Spanish A is always this sound.">father</button>
+                <button data-choice="c" data-fb="That's a shifted English sound. Spanish A stays 'ah'.">about</button>
+            </div>
+        </div>
+
+        <div class="widget-row" data-correct="c" data-hint="Spanish I is the 'ee' in see.">
+            <div class="widget-row-prompt">The Spanish <strong>I</strong> in <em class="es">s&iacute;</em> sounds like the vowel in&hellip;</div>
+            <div class="widget-options">
+                <button data-choice="a" data-fb="That would be an English 'eye' sound — not Spanish I.">sky</button>
+                <button data-choice="b" data-fb="Close, but that's the short 'ih'. Spanish I is a clean 'ee'.">sit</button>
+                <button data-choice="c" data-fb="Right — the 'ee' in see. Every time.">see</button>
+            </div>
+        </div>
+
+        <div class="widget-row" data-correct="a" data-hint="Count the vowels: how many are silent in Spanish?">
+            <div class="widget-row-prompt">How many vowels do you pronounce in <em class="es">uno</em>?</div>
+            <div class="widget-options">
+                <button data-choice="a" data-fb="Correct — u-n-o has two vowels (u and o) and you say both. No silent vowels in Spanish.">Both of them (u and o)</button>
+                <button data-choice="b" data-fb="No — Spanish never drops a final vowel. You say the o.">Just the u; the o is silent</button>
+                <button data-choice="c" data-fb="No silent vowels in Spanish — say every one.">Only the stressed vowel</button>
+            </div>
+        </div>
+        <button class="widget-reset">Reset</button>
+    </div>
+
+    <!-- COMPREHENSION SELF-CHECK : elw-selfcheck (kit) -->
+    <div class="card navy">
+        <div class="kicker" style="color:#0e1c42;">&#129504; SHOW WHAT YOU LEARNED</div>
+        <p style="margin-bottom:6px;">This is ungraded practice &mdash; a green check locks in a right answer, and a wrong one just lets you try again. Make sure you can answer all three before moving on.</p>
+        <div class="elw-selfcheck"
+             data-title="The 5 Spanish vowels &mdash; self-check"
+             data-questions='[{"q":"How many vowels does Spanish have, and how do they behave?","options":["Five vowels, each with one fixed sound.","It changes from word to word, like English.","Ten vowels, like English."],"answer":0},{"q":"For an English speaker, the hardest part of Spanish pronunciation is usually…","options":["the rolling R","the vowels, because they feel close to English but are not the same","the letter H"],"answer":1},{"q":"You read the Spanish word estudiante. How many of its vowels do you pronounce?","options":["All of them — Spanish has no silent vowels.","Only the stressed one.","None at the end."],"answer":0}]'></div>
+    </div>
+
+    <!-- WRAP + NEXT -->
+    <div class="card navy">
+        <div class="kicker">&#10145;&#65039; ONE IDEA TO CARRY OUT &middot; WHAT'S NEXT</div>
+        <p><strong>Five vowels, five fixed sounds, every one pronounced.</strong> Say them once more before you close the page: <em>A &ndash; E &ndash; I &ndash; O &ndash; U</em>.</p>
+        <div style="display:flex; align-items:flex-start; gap:14px; margin-top:8px;">
+            <div style="min-width:34px; height:34px; border-radius:50%; background:#0E1C42; color:#fff; font-size:16px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">3</div>
+            <div>
+                <div style="font-size:18px; color:#0e1c42; margin-bottom:4px;"><strong>Lesson 1.03 &mdash; Greetings &amp; Goodbyes</strong></div>
+                <div style="font-size:16px; color:#1a2340; line-height:1.55;">Now that you can pronounce Spanish, you'll learn to say hello, ask someone's name, and say goodbye &mdash; with the vowels you just mastered.</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div style="background:#0E1C42; border-top:3px solid #55C8E8; padding:18px 34px; text-align:center;">
+    <div style="font-size:18px; color:#ffffff; margin-bottom:6px;"><span style="color:#55c8e8;">Optima Academy Online</span> &middot; M/J SPANISH, BEGINNING &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size:13px; color:rgba(255,255,255,0.65); margin-bottom:4px;">Lesson 1.02 &middot; The 5 Spanish Vowels</div>
+    <div style="font-size:12px; color:rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.flip-card').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var flip = e.target.closest('.ow-flip .flip-card');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === row.dataset.correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+  });
+})();
+</script>
+<script src="https://optimaondemand.github.io/elementary-latin-lessons/widgets/elatin-widgets.js" defer></script>
+
+</body>
+</html>
